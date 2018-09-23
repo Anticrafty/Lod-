@@ -33,36 +33,8 @@ namespace Lodě
            
         // Program
 
-            // mapa
-                // od zhora dolů
-            List<List<int>> mapa = new List<List<int>>();
-                // od leva do prava
-            for (int pismeno = 0; pismeno < 9; pismeno++ )
-            {
-                mapa.Add(new List<int>());
-                for (int cislo = 0; cislo < 9; cislo++)
-                {
-                    mapa[pismeno].Add(0);
-                }
-            }
-
-            foreach (List<int> pismeno in mapa)
-            {
-                int kolikaty = 0;
-                foreach (int cislo in pismeno)
-                {
-                    kolikaty++;
-                    if (kolikaty == 9)
-                    {
-                        Console.WriteLine("~");
-                    } else
-                    {
-                        Console.Write("~");
-                    }
-                }
-
-                // 
-            }
+            
+            
         }
     }
 }
