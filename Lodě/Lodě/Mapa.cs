@@ -9,5 +9,21 @@ namespace Lodě
     class Mapa
     {
         public List<Policko> Obal = new List<Policko>();
+
+        public void VypisMapu()
+        {
+            foreach ( Policko policko in Obal)
+            {
+                if(policko.X == 9)
+                {
+                    Console.WriteLine("~");
+                }
+                else
+                {
+                    Console.Write("~");
+                }
+                
+            }
+        }
     }
 }

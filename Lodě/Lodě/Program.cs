@@ -43,9 +43,15 @@ namespace Lodě
                         X=x,
                         Y=y
                     });
-                }
+                };  
             }
-            Mapa obalmapa = new Mapa();
+            Mapa obalmapa = new Mapa()
+            {
+                Obal = polickos
+
+            };
+
+            obalmapa.VypisMapu();
         }
     }
 }
