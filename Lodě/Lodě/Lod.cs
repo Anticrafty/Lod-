@@ -9,5 +9,17 @@ namespace Lodě
     class Lod
     {
         public List<Policko> kostra = new List<Policko>();
+
+        public void VytvorLod()
+        {
+            bool trythat = false;
+            while (!trythat)
+            {
+                string odpoved = Console.ReadLine();
+
+                trythat = int.TryParse(odpoved, out int bezpecnaodpoved);
+            }
+            
+        }
     }
 }
