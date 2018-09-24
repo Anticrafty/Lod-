@@ -12,25 +12,31 @@ namespace Lodě
 
         public void VypisMapu()
         {
+            Console.WriteLine("  123456789X");
+            Console.WriteLine(" -----------");
             foreach ( Policko policko in Obal)
             {
-                if(policko.X == 9)
+                if(policko.X == 1)
                 {
+                    Console.Write("{0}|", policko.Y);
+                }
+                if(policko.X == 9)
+                {                   
                     if ( policko.Stav == 0 || policko.Stav == 1)
                     {
-                        Console.WriteLine("~");
+                        Console.WriteLine("~|");
                     } 
                     else if ( policko.Stav == 2)
                     {
-                        Console.WriteLine("O");
+                        Console.WriteLine("O|");
                     }
                     else if ( policko.Stav == 3)
                     {
-                        Console.WriteLine("x");
+                        Console.WriteLine("x|");
                     } 
                     else if ( policko.Stav == 4 )
                     {
-                        Console.WriteLine("X");
+                        Console.WriteLine("X|");
                     }
                         
                 }
@@ -53,8 +59,8 @@ namespace Lodě
                         Console.Write("X");
                     }
                 }
-                
             }
+            Console.WriteLine("Y-----------");
         }
     }
 }
