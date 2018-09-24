@@ -58,9 +58,100 @@ namespace Lodě
                 Obal = polickos
 
             };
+            // funkce to aby si uživatel vybral pozici lodě a na jakou stranu se otočit
+            void urcipozici() {
+                bool urci = false;
+                while (!urci) {
+                    Console.Clear();
+                    obalmapa.VypisMapu();
+                    Console.Write("Pozice X chci: ");
+                    string zvolX = Console.ReadLine();
+                    Console.Clear();
+                    obalmapa.VypisMapu();
+                    Console.Write("Pozice Y chci: ");
+                    string zvolY = Console.ReadLine();
+                    Console.Clear();
+                    bool urci1 = int.TryParse(zvolX, out int zvolenyX);
+                    bool urci2 = int.TryParse(zvolY, out int zvolenyY);
+                    // nesmí jít mimo mapu
+                    if (urci1 && urci2) { 
+                        if ( zvolenyX > 0  && zvolenyX < 10 && zvolenyY > 0 && zvolenyY < 10)
+                        {
+                            obalmapa.VypisMapu();
+                            Console.WriteLine("1 - nahoru");
+                            Console.WriteLine("2 - doprava");
+                            Console.WriteLine("3 - dolu");
+                            Console.WriteLine("4 - doleva");
+                            Console.Write("Chci na stranu : ");
+                            string zvolstranu = Console.ReadLine();
+                            Console.Clear();
+                            urci = int.TryParse(zvolstranu, out int zvolenastrana);
+                            if (zvolenastrana < 1 || zvolenastrana > 5)
+                                {
+                                    urci = false;
+                                }
+                        }
+                        if (urci == false)
+                        {
+                            Console.WriteLine(" Něco si zadal špatně!!! Zadej znovu a pořádně!!!");
+                            Console.ReadLine();
+                        }
+                    }
+                }
+            }
 
                 // vykreslení mapy
             obalmapa.VypisMapu();
+            // postavení lodí
+            List<Lod> postavenylode = new List<Lod>();
+            List<int> druhylodi = new List<int>();
+            bool stavenilodi = true;
+            while (stavenilodi) { 
+                bool trythat = false;
+                while (!trythat)
+                {
+
+                    string odpoved = Console.ReadLine();
+                    // rohodovani druhu lodi
+                    if (!druhylodi.Contains(1)) { 
+                    Console.WriteLine("1 - ponorka");
+                    }
+                    if (!druhylodi.Contains(2))
+                    {
+                        Console.WriteLine("2 - torpedoborec");
+                    }
+                    if (!druhylodi.Contains(3))
+                    {
+                        Console.WriteLine("3 - křižník");
+                    }
+                    if (!druhylodi.Contains(4))
+                    {
+                        Console.WriteLine("4 - bitevní loď");
+                    }
+                    if (!druhylodi.Contains(5))
+                    {
+                        Console.WriteLine("5 - letadlová loď");
+                    }
+                    Console.WriteLine();
+                    // kontrola
+                    trythat = int.TryParse(odpoved, out int bezpecnaodpoved);
+                    if (trythat)
+                    {
+                        // udělat vyběr
+                        if (bezpecnaodpoved == 1 && !druhylodi.Contains(1))
+                        {
+                            //List<int> urcenapozice = urcipozici();
+                            urcipozici();
+                            postavenylode.Add(new Lod
+                            {
+
+                            });
+                        }
+                    }
+
+
+                }
+            }
         }
     }
 }
