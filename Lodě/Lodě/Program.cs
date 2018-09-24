@@ -10,7 +10,7 @@ namespace Lodě
     {
         static void Main(string[] args)
         {
-        // myšlenky
+            // myšlenky
             // mapa 9 * 9
             /*
                123456789
@@ -30,15 +30,37 @@ namespace Lodě
             // políčko bude základní třída
             // mapa bude jen List políček
             // lodě budou ovlivňovat políčka
-           
-        // Program
 
-            // mapa
-                // od zhora dolů
-        
+            // prázdný - 0 = ~
+            // plný - 1 = ~
+            // prázdný zásah - 2 = O
+            // plný zásah - 3 = x
+            // zničená loď - 4 = X
 
-                // 
+            // Program
+            
+                // vytvoření mapy
+            List<Policko> polickos = new List<Policko>();
+            for (int y = 1; y < 10; y++ )
+            {
+                for (int x = 1; x < 10; x++)
+                {
+                    polickos.Add(new Policko()
+                    {
+                        X = x,
+                        Y = y,
+                        Stav = 0
+                    });
+                };  
             }
+            Mapa obalmapa = new Mapa()
+            {
+                Obal = polickos
+
+            };
+
+                // vykreslení mapy
+            obalmapa.VypisMapu();
         }
     }
 }
