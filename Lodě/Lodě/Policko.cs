@@ -11,6 +11,6 @@ namespace Lodě
         public Lod Prvek;
         public int X;
         public int Y;
-        public int stav;
+        public int Stav;
     }
 }

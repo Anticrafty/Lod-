@@ -31,8 +31,15 @@ namespace Lodě
             // mapa bude jen List políček
             // lodě budou ovlivňovat políčka
 
-            // Program
+            // prázdný - 0 = ~
+            // plný - 1 = ~
+            // prázdný zásah - 2 = O
+            // plný zásah - 3 = x
+            // zničená loď - 4 = X
 
+            // Program
+            
+                // vytvoření mapy
             List<Policko> polickos = new List<Policko>();
             for (int y = 1; y < 10; y++ )
             {
@@ -40,8 +47,9 @@ namespace Lodě
                 {
                     polickos.Add(new Policko()
                     {
-                        X=x,
-                        Y=y
+                        X = x,
+                        Y = y,
+                        Stav = 0
                     });
                 };  
             }
@@ -51,6 +59,7 @@ namespace Lodě
 
             };
 
+                // vykreslení mapy
             obalmapa.VypisMapu();
         }
     }

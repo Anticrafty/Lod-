@@ -16,11 +16,42 @@ namespace Lodě
             {
                 if(policko.X == 9)
                 {
-                    Console.WriteLine("~");
+                    if ( policko.Stav == 0 || policko.Stav == 1)
+                    {
+                        Console.WriteLine("~");
+                    } 
+                    else if ( policko.Stav == 2)
+                    {
+                        Console.WriteLine("O");
+                    }
+                    else if ( policko.Stav == 3)
+                    {
+                        Console.WriteLine("x");
+                    } 
+                    else if ( policko.Stav == 4 )
+                    {
+                        Console.WriteLine("X");
+                    }
+                        
                 }
                 else
                 {
-                    Console.Write("~");
+                    if (policko.Stav == 0 || policko.Stav == 1)
+                    {
+                        Console.Write("~");
+                    }
+                    else if (policko.Stav == 2)
+                    {
+                        Console.Write("O");
+                    }
+                    else if (policko.Stav == 3)
+                    {
+                        Console.Write("x");
+                    }
+                    else if (policko.Stav == 4)
+                    {
+                        Console.Write("X");
+                    }
                 }
                 
             }
