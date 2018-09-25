@@ -15,15 +15,15 @@ namespace Lodě
             /*
                123456789X
              ------------
-             A|~~~~~~~~~|
-             B|~~~~~~~~~|
-             C|~~~~~~~~~|
-             D|~~~~~~~~~|
-             E|~~~~~~~~~|
-             F|~~~~~~~~~|
-             G|~~~~~~~~~|
-             H|~~~~~~~~~|
-             I|~~~~~~~~~|
+             1|~~~~~~~~~|
+             2|~~~~~~~~~|
+             3|~~~~~~~~~|
+             4|~~~~~~~~~|
+             5|~~~~~~~~~|
+             6|~~~~~~~~~|
+             7|~~~~~~~~~|
+             8|~~~~~~~~~|
+             9|~~~~~~~~~|
              Y-----------
              */
 
@@ -108,8 +108,7 @@ namespace Lodě
                 return vybrany;
             }
 
-                // vykreslení mapy
-            obalmapa.VypisMapu();
+
             // postavení lodí
             List<Lod> postavenylode = new List<Lod>();
             List<int> druhylodi = new List<int>();
@@ -119,7 +118,8 @@ namespace Lodě
                 while (!trythat)
                 {
 
-                    string odpoved = Console.ReadLine();
+                    // vykreslení mapy
+                    obalmapa.VypisMapu();
                     // rohodovani druhu lodi
                     if (!druhylodi.Contains(1)) { 
                     Console.WriteLine("1 - ponorka");
@@ -140,7 +140,7 @@ namespace Lodě
                     {
                         Console.WriteLine("5 - letadlová loď");
                     }
-                    Console.WriteLine();
+                    string odpoved = Console.ReadLine();
                     // kontrola
                     trythat = int.TryParse(odpoved, out int bezpecnaodpoved);
                     if (trythat)
@@ -165,11 +165,12 @@ namespace Lodě
                                         foreach(Policko policko in obalmapa.Obal)
                                         {
                                             pocetkontrolovanych++;
-                                            Console.WriteLine("ID: {0}| X: {1} Y: {2} VS. X: {3} Y: {4} ", pocetkontrolovanych, policko.X,policko.Y, novasouradnice.X, novasouradnice.Y);
+                                            
                                             if (novasouradnice.X == policko.X && novasouradnice.Y == policko.Y)
                                             {
                                                 obalmapa.Obal[pocetkontrolovanych].Stav = 1;
                                                 Console.WriteLine("Do ID {0} se dal stav 1", pocetkontrolovanych);
+                                                novypolicka.Add(novasouradnice);
                                             }
                                         }
                                     }
@@ -180,8 +181,187 @@ namespace Lodě
                                     Console.ReadLine();
                                 }
                             }
+                            druhylodi.Add(bezpecnaodpoved);
                             postavenylode.Add(new Lod
                             {
+                                Kostra = novypolicka,
+                                Druh = bezpecnaodpoved
+
+                            });
+                        }
+                        if (bezpecnaodpoved == 2 && !druhylodi.Contains(2))
+                        {
+                            List<Policko> novypolicka = new List<Policko>();
+                            bool postavlod = true;
+                            while (postavlod)
+                            {
+                                List<int> urcenapozice = urcipozici();
+                                List<Policko> ListXYsouradnice = Lod.Vypocitejlod(bezpecnaodpoved, urcenapozice);
+                                if (ListXYsouradnice[0].X != 0)
+                                {
+                                    Console.WriteLine("GG");
+                                    Console.ReadLine();
+
+                                    foreach (Policko novasouradnice in ListXYsouradnice)
+                                    {
+                                        int pocetkontrolovanych = 0;
+                                        foreach (Policko policko in obalmapa.Obal)
+                                        {
+                                            pocetkontrolovanych++;
+                                            
+                                            if (novasouradnice.X == policko.X && novasouradnice.Y == policko.Y)
+                                            {
+                                                obalmapa.Obal[pocetkontrolovanych].Stav = 1;
+                                                Console.WriteLine("Do ID {0} se dal stav 1", pocetkontrolovanych);
+                                                novypolicka.Add(novasouradnice);
+                                            }
+                                        }
+                                    }
+                                    postavlod = false;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Loď by šla mimo mapu. Zadejte znovu opatrněji");
+                                    Console.ReadLine();
+                                }
+                            }
+                            druhylodi.Add(bezpecnaodpoved);
+                            postavenylode.Add(new Lod
+                            {
+                                Kostra = novypolicka,
+                                Druh = bezpecnaodpoved
+
+                            });
+                        }
+                        if (bezpecnaodpoved == 3 && !druhylodi.Contains(3))
+                        {
+                            List<Policko> novypolicka = new List<Policko>();
+                            bool postavlod = true;
+                            while (postavlod)
+                            {
+                                List<int> urcenapozice = urcipozici();
+                                List<Policko> ListXYsouradnice = Lod.Vypocitejlod(bezpecnaodpoved, urcenapozice);
+                                if (ListXYsouradnice[0].X != 0)
+                                {
+                                    Console.WriteLine("GG");
+                                    Console.ReadLine();
+
+                                    foreach (Policko novasouradnice in ListXYsouradnice)
+                                    {
+                                        int pocetkontrolovanych = 0;
+                                        foreach (Policko policko in obalmapa.Obal)
+                                        {
+                                            pocetkontrolovanych++;
+                                            
+                                            if (novasouradnice.X == policko.X && novasouradnice.Y == policko.Y)
+                                            {
+                                                obalmapa.Obal[pocetkontrolovanych].Stav = 1;
+                                                Console.WriteLine("Do ID {0} se dal stav 1", pocetkontrolovanych);
+                                                novypolicka.Add(novasouradnice);
+                                            }
+                                        }
+                                    }
+                                    postavlod = false;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Loď by šla mimo mapu. Zadejte znovu opatrněji");
+                                    Console.ReadLine();
+                                }
+                            }
+                            druhylodi.Add(bezpecnaodpoved);
+                            postavenylode.Add(new Lod
+                            {
+                                Kostra = novypolicka,
+                                Druh = bezpecnaodpoved
+
+                            });
+                        }
+                        if (bezpecnaodpoved == 4 && !druhylodi.Contains(4))
+                        {
+                            List<Policko> novypolicka = new List<Policko>();
+                            bool postavlod = true;
+                            while (postavlod)
+                            {
+                                List<int> urcenapozice = urcipozici();
+                                List<Policko> ListXYsouradnice = Lod.Vypocitejlod(bezpecnaodpoved, urcenapozice);
+                                if (ListXYsouradnice[0].X != 0)
+                                {
+                                    Console.WriteLine("GG");
+                                    Console.ReadLine();
+
+                                    foreach (Policko novasouradnice in ListXYsouradnice)
+                                    {
+                                        int pocetkontrolovanych = 0;
+                                        foreach (Policko policko in obalmapa.Obal)
+                                        {
+                                            pocetkontrolovanych++;
+                                            
+                                            if (novasouradnice.X == policko.X && novasouradnice.Y == policko.Y)
+                                            {
+                                                obalmapa.Obal[pocetkontrolovanych].Stav = 1;
+                                                Console.WriteLine("Do ID {0} se dal stav 1", pocetkontrolovanych);
+                                                novypolicka.Add(novasouradnice);
+                                            }
+                                        }
+                                    }
+                                    postavlod = false;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Loď by šla mimo mapu. Zadejte znovu opatrněji");
+                                    Console.ReadLine();
+                                }
+                            }
+                            druhylodi.Add(bezpecnaodpoved);
+                            postavenylode.Add(new Lod
+                            {
+                                Kostra = novypolicka,
+                                Druh = bezpecnaodpoved
+
+                            });
+                        }
+                        if (bezpecnaodpoved == 5 && !druhylodi.Contains(5))
+                        {
+                            List<Policko> novypolicka = new List<Policko>();
+                            bool postavlod = true;
+                            while (postavlod)
+                            {
+                                List<int> urcenapozice = urcipozici();
+                                List<Policko> ListXYsouradnice = Lod.Vypocitejlod(bezpecnaodpoved, urcenapozice);
+                                if (ListXYsouradnice[0].X != 0)
+                                {
+                                    Console.WriteLine("GG");
+                                    Console.ReadLine();
+
+                                    foreach (Policko novasouradnice in ListXYsouradnice)
+                                    {
+                                        int pocetkontrolovanych = 0;
+                                        foreach (Policko policko in obalmapa.Obal)
+                                        {
+                                            pocetkontrolovanych++;
+                                            
+                                            if (novasouradnice.X == policko.X && novasouradnice.Y == policko.Y)
+                                            {
+                                                obalmapa.Obal[pocetkontrolovanych].Stav = 1;
+                                                Console.WriteLine("Do ID {0} se dal stav 1", pocetkontrolovanych);
+                                                novypolicka.Add(novasouradnice);
+                                            }
+                                        }
+                                    }
+                                    postavlod = false;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Loď by šla mimo mapu. Zadejte znovu opatrněji");
+                                    Console.ReadLine();
+                                }
+                            }
+                            druhylodi.Add(bezpecnaodpoved);
+                            postavenylode.Add(new Lod
+                            {
+                                Kostra = novypolicka,
+                                Druh = bezpecnaodpoved
 
                             });
                         }

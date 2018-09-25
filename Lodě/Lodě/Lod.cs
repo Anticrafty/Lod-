@@ -18,14 +18,14 @@ namespace Lodě
             List<int> xs = new List<int>();
             List<int> ys = new List<int>();
             List<Policko> buck = new List<Policko>();
-            int odpovedi = odpoved - 1;
-            int x = pozice[0];
-            int y = pozice[1];
-            int rotace = pozice[2];
-            if (rotace == 1)
+            int odpovedi = odpoved - 1; //3-1=2
+            int x = pozice[0]; //5
+            int y = pozice[1]; //5
+            int rotace = pozice[2]; // 1
+            if (rotace == 1) // <
             {
-                 konecY = y - odpovedi;
-                 konecX = x;
+                 konecY = y - odpovedi; // 3
+                 konecX = x; //5
             }
             else if (rotace == 2)
             {
@@ -54,25 +54,26 @@ namespace Lodě
                     konecXs = x;
                 } else
                 {
-                    zacatekX = x;
-                    konecXs = konecX;
+                    zacatekX = x; //5
+                    konecXs = konecX; //5
                 }
                     //y
                 int konecYs = 0;
                 int zacatekY = 0;
-                if (y > konecX)
+                if (y > konecY)
                 {
-                    zacatekY = konecY;
-                    konecYs = y;
+                    zacatekY = konecY; //3
+                    konecYs = y; //5
                 }
                 else
                 {
-                    zacatekY = y;
-                    konecYs = konecY;
+                    zacatekY = y; 
+                    konecYs = konecY; 
                 }
-                for (;zacatekY < konecYs + 1;zacatekY++)
+                for (;zacatekY < konecYs + 1;zacatekY++)// 3 < 6=5+1 3 = 
                 {
-                    for (; zacatekX < konecXs + 1; zacatekX++)
+
+                    for (int zacatekXS = zacatekX  ; zacatekXS < konecXs + 1; zacatekXS++) // 5 < 6=5+1
                     {
                         buck.Add(new Policko
                         {
