@@ -13,7 +13,7 @@ namespace Lodě
             // myšlenky
             // mapa 9 * 9
             /*
-               123456789
+               123456789X
              ------------
              A|~~~~~~~~~|
              B|~~~~~~~~~|
@@ -24,7 +24,7 @@ namespace Lodě
              G|~~~~~~~~~|
              H|~~~~~~~~~|
              I|~~~~~~~~~|
-             ------------
+             Y-----------
              */
 
             // políčko bude základní třída
@@ -59,45 +59,53 @@ namespace Lodě
 
             };
             // funkce to aby si uživatel vybral pozici lodě a na jakou stranu se otočit
-            void urcipozici() {
-                bool urci = false;
-                while (!urci) {
-                    Console.Clear();
-                    obalmapa.VypisMapu();
-                    Console.Write("Pozice X chci: ");
-                    string zvolX = Console.ReadLine();
-                    Console.Clear();
-                    obalmapa.VypisMapu();
-                    Console.Write("Pozice Y chci: ");
-                    string zvolY = Console.ReadLine();
-                    Console.Clear();
-                    bool urci1 = int.TryParse(zvolX, out int zvolenyX);
-                    bool urci2 = int.TryParse(zvolY, out int zvolenyY);
-                    // nesmí jít mimo mapu
-                    if (urci1 && urci2) { 
-                        if ( zvolenyX > 0  && zvolenyX < 10 && zvolenyY > 0 && zvolenyY < 10)
-                        {
-                            obalmapa.VypisMapu();
-                            Console.WriteLine("1 - nahoru");
-                            Console.WriteLine("2 - doprava");
-                            Console.WriteLine("3 - dolu");
-                            Console.WriteLine("4 - doleva");
-                            Console.Write("Chci na stranu : ");
-                            string zvolstranu = Console.ReadLine();
-                            Console.Clear();
-                            urci = int.TryParse(zvolstranu, out int zvolenastrana);
-                            if (zvolenastrana < 1 || zvolenastrana > 5)
+              List<int> urcipozici() {
+                    List<int> vybrany = new List<int>();
+                    bool urci = false;
+                  while (!urci) {
+                        Console.Clear();
+                        obalmapa.VypisMapu();
+                        Console.Write("Pozice X chci: ");
+                        string zvolX = Console.ReadLine();
+                        Console.Clear();
+                        obalmapa.VypisMapu();
+                        Console.Write("Pozice Y chci: ");
+                        string zvolY = Console.ReadLine();
+                        Console.Clear();
+                        bool urci1 = int.TryParse(zvolX, out int zvolenyX);
+                        bool urci2 = int.TryParse(zvolY, out int zvolenyY);
+                        // nesmí jít mimo mapu
+                        if (urci1 && urci2) { 
+                            if ( zvolenyX > 0  && zvolenyX < 10 && zvolenyY > 0 && zvolenyY < 10)
+                            {
+                                obalmapa.VypisMapu();
+                                Console.WriteLine("1 - nahoru");
+                                Console.WriteLine("2 - doprava");
+                                Console.WriteLine("3 - dolu");
+                                Console.WriteLine("4 - doleva");
+                                Console.Write("Chci na stranu : ");
+                                string zvolstranu = Console.ReadLine();
+                                Console.Clear();
+                                urci = int.TryParse(zvolstranu, out int zvolenastrana);
+                                if (zvolenastrana < 1 || zvolenastrana > 5)
                                 {
                                     urci = false;
+                                } else
+                                {  
+                                    vybrany.Add(zvolenyX);
+                                    vybrany.Add(zvolenyY);
+                                    vybrany.Add(zvolenastrana);
                                 }
+                            }
+                            if (urci == false)
+                            {
+                                Console.WriteLine(" Něco si zadal špatně!!! Zadej znovu a pořádně!!!");
+                                Console.ReadLine();
+                            }
                         }
-                        if (urci == false)
-                        {
-                            Console.WriteLine(" Něco si zadal špatně!!! Zadej znovu a pořádně!!!");
-                            Console.ReadLine();
-                        }
-                    }
-                }
+                    
+                 }
+                return vybrany;
             }
 
                 // vykreslení mapy
@@ -140,8 +148,16 @@ namespace Lodě
                         // udělat vyběr
                         if (bezpecnaodpoved == 1 && !druhylodi.Contains(1))
                         {
-                            //List<int> urcenapozice = urcipozici();
-                            urcipozici();
+                            bool postavlod = true;
+                            while (postavlod)
+                            { 
+                                List<int> urcenapozice = urcipozici();
+                                List<Policko> ListXYsouradnice = Lod.vypocitejlod( bezpecnaodpoved, urcenapozice);
+                                if (ListXYsouradnice[0].X != 0 )
+                                {
+
+                                }
+                            }
                             postavenylode.Add(new Lod
                             {
 
