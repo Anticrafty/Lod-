@@ -10,10 +10,10 @@ namespace Lodě
     {
         static void Main(string[] args)
         {
-        // myšlenky
+            // myšlenky
             // mapa 9 * 9
             /*
-               123456789
+              123456789  
              ------------
              A|~~~~~~~~~|
              B|~~~~~~~~~|
@@ -25,44 +25,36 @@ namespace Lodě
              H|~~~~~~~~~|
              I|~~~~~~~~~|
              ------------
+
+            ^ = y
+            > = x
              */
 
             // políčko bude základní třída
+
             // mapa bude jen List políček
             // lodě budou ovlivňovat políčka
-           
-        // Program
+
+            // vytvopř nejdříve mapu
+            // Program
 
             // mapa
-                // od zhora dolů
-            List<List<int>> mapa = new List<List<int>>();
-                // od leva do prava
-            for (int pismeno = 0; pismeno < 9; pismeno++ )
+            List<Policko> polickos = new List<Policko>();
+            for (int x = 1; x < 10; x++)
             {
-                mapa.Add(new List<int>());
-                for (int cislo = 0; cislo < 9; cislo++)
+                for (int y = 1; y < 10; y++)
                 {
-                    mapa[pismeno].Add(0);
+                    polickos.Add(new Policko()
+                    {
+                        X = x,
+                        Y = y
+                    });
                 }
             }
+            Mapa mapa = new Mapa();
+            mapa.Policka = polickos;
+            mapa.VypisMapu();
 
-            foreach (List<int> pismeno in mapa)
-            {
-                int kolikaty = 0;
-                foreach (int cislo in pismeno)
-                {
-                    kolikaty++;
-                    if (kolikaty == 9)
-                    {
-                        Console.WriteLine("~");
-                    } else
-                    {
-                        Console.Write("~");
-                    }
-                }
-
-                // 
-            }
         }
     }
 }
