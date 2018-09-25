@@ -8,31 +8,59 @@ namespace Lodě
 {
     class Mapa
     {
-        public List<Policko> Policka = new List<Policko>();
+        public List<Policko> Obal = new List<Policko>();
+
         public void VypisMapu()
         {
-            // najdi v specifikacich políčku v "Listu<Policko> Policka"  policko s X = x a Y = y
-
-            // Najít v 
-            // mapě
-            //políčko
-            // !! které ma info X == x && Y == y !!
-            for (int x = 1; x < 10; x++)
-            {              
-                for (int y = 1; y < 10; y++)
+            Console.WriteLine("  123456789X");
+            Console.WriteLine(" -----------");
+            foreach ( Policko policko in Obal)
+            {
+                if(policko.X == 1)
                 {
-                    foreach (Policko PoloIcko in Policka)
+                    Console.Write("{0}|", policko.Y);
+                }
+                if(policko.X == 9)
+                {                   
+                    if ( policko.Stav == 0 || policko.Stav == 1)
                     {
-                        if (PoloIcko.X == x && PoloIcko.Y == y)
-                        {
-                            //Console.Write("{0}{1}", PoloIcko.X, PoloIcko.Y);
-                            Console.Write("~");
-                        }
+                        Console.WriteLine("~|");
+                    } 
+                    else if ( policko.Stav == 2)
+                    {
+                        Console.WriteLine("O|");
+                    }
+                    else if ( policko.Stav == 3)
+                    {
+                        Console.WriteLine("x|");
+                    } 
+                    else if ( policko.Stav == 4 )
+                    {
+                        Console.WriteLine("X|");
+                    }
+                        
+                }
+                else
+                {
+                    if (policko.Stav == 0 || policko.Stav == 1)
+                    {
+                        Console.Write("~");
+                    }
+                    else if (policko.Stav == 2)
+                    {
+                        Console.Write("O");
+                    }
+                    else if (policko.Stav == 3)
+                    {
+                        Console.Write("x");
+                    }
+                    else if (policko.Stav == 4)
+                    {
+                        Console.Write("X");
                     }
                 }
-                Console.WriteLine();
             }
+            Console.WriteLine("Y-----------");
         }
     }
-    
 }

@@ -8,9 +8,9 @@ namespace Lodě
 {
     class Policko
     {
-        public Lod LodDetekce;
+        public Lod Prvek;
         public int X;
         public int Y;
-        public int Stav = 0;
+        public int Stav;
     }
 }
