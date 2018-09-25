@@ -8,35 +8,80 @@ namespace Lodě
 {
     class Lod
     {
-        public List<Policko> kostra = new List<Policko>();
+        public List<Policko> Kostra = new List<Policko>();
         public int Druh;
         
-        public static List<Policko> vypocitejlod(int odpoved, List<int> pozice)
+        public static List<Policko> Vypocitejlod(int odpoved, List<int> pozice)
         {
-            int konec = 0;
+            int konecX = 0;
+            int konecY = 0;
+            List<int> xs = new List<int>();
+            List<int> ys = new List<int>();
             List<Policko> buck = new List<Policko>();
+            int odpovedi = odpoved - 1;
             int x = pozice[0];
             int y = pozice[1];
             int rotace = pozice[2];
             if (rotace == 1)
             {
-                 konec = y - odpoved;
+                 konecY = y - odpovedi;
+                 konecX = x;
             }
             else if (rotace == 2)
             {
-                 konec = x + odpoved;
+                 konecX = x + odpovedi;
+                 konecY = y;
             }
             else if (rotace == 3)
             {
-                 konec = y + odpoved;
+                 konecY = y + odpovedi;
+                 konecX = x;
             }
             else
             {
-                 konec = x - odpoved;
+                 konecX = x - odpovedi;
+                 konecY = y;
             }
-            if ( konec > 0 && konec < 10)
+            if ( konecY > 0 && konecY < 10 && konecX > 0 && konecX < 10)
             {
-
+                // pokud je začatek větší než konec musí to začít koncem a končit začátkem
+                    //x
+                int konecXs = 0;
+                int zacatekX = 0;
+                if (x > konecX)
+                {
+                    zacatekX = konecX;
+                    konecXs = x;
+                } else
+                {
+                    zacatekX = x;
+                    konecXs = konecX;
+                }
+                    //y
+                int konecYs = 0;
+                int zacatekY = 0;
+                if (y > konecX)
+                {
+                    zacatekY = konecY;
+                    konecYs = y;
+                }
+                else
+                {
+                    zacatekY = y;
+                    konecYs = konecY;
+                }
+                for (;zacatekY < konecYs + 1;zacatekY++)
+                {
+                    for (; zacatekX < konecXs + 1; zacatekX++)
+                    {
+                        buck.Add(new Policko
+                        {
+                            X = zacatekY,
+                            Y = zacatekX,
+                            Stav = 1
+                        });
+                    }
+                }
             }
             else
             {

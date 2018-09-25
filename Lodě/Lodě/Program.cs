@@ -152,10 +152,10 @@ namespace Lodě
                             while (postavlod)
                             { 
                                 List<int> urcenapozice = urcipozici();
-                                List<Policko> ListXYsouradnice = Lod.vypocitejlod( bezpecnaodpoved, urcenapozice);
+                                List<Policko> ListXYsouradnice = Lod.Vypocitejlod( bezpecnaodpoved, urcenapozice);
                                 if (ListXYsouradnice[0].X != 0 )
                                 {
-
+                                    Console.WriteLine("GG");
                                 }
                             }
                             postavenylode.Add(new Lod
