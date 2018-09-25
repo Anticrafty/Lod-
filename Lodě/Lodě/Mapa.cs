@@ -42,9 +42,13 @@ namespace Lodě
                 }
                 else
                 {
-                    if (policko.Stav == 0 || policko.Stav == 1)
+                    if (policko.Stav == 0 )
                     {
                         Console.Write("~");
+                    }
+                    else if ( policko.Stav == 1)
+                    {
+                        Console.Write("V");
                     }
                     else if (policko.Stav == 2)
                     {

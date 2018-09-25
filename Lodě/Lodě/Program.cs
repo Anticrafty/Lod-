@@ -148,6 +148,7 @@ namespace Lodě
                         // udělat vyběr
                         if (bezpecnaodpoved == 1 && !druhylodi.Contains(1))
                         {
+                            List<Policko> novypolicka = new List<Policko>();
                             bool postavlod = true;
                             while (postavlod)
                             { 
@@ -156,6 +157,27 @@ namespace Lodě
                                 if (ListXYsouradnice[0].X != 0 )
                                 {
                                     Console.WriteLine("GG");
+                                    Console.ReadLine();
+
+                                    foreach (Policko novasouradnice in ListXYsouradnice)
+                                    {     
+                                        int pocetkontrolovanych = 0;
+                                        foreach(Policko policko in obalmapa.Obal)
+                                        {
+                                            pocetkontrolovanych++;
+                                            Console.WriteLine("ID: {0}| X: {1} Y: {2} VS. X: {3} Y: {4} ", pocetkontrolovanych, policko.X,policko.Y, novasouradnice.X, novasouradnice.Y);
+                                            if (novasouradnice.X == policko.X && novasouradnice.Y == policko.Y)
+                                            {
+                                                obalmapa.Obal[pocetkontrolovanych].Stav = 1;
+                                                Console.WriteLine("Do ID {0} se dal stav 1", pocetkontrolovanych);
+                                            }
+                                        }
+                                    }
+                                    postavlod = false;
+                                } else
+                                {
+                                    Console.WriteLine("Loď by šla mimo mapu. Zadejte znovu opatrněji");
+                                    Console.ReadLine();
                                 }
                             }
                             postavenylode.Add(new Lod
