@@ -70,15 +70,14 @@ namespace Lodě
                     zacatekY = y; 
                     konecYs = konecY; 
                 }
-
                 for (;zacatekY < konecYs + 1;zacatekY++)// 3 < 6=5+1 
                 {
 
-                    for (; zacatekX < konecXs +1 ; zacatekX++) // 5 < 6=5+1 / 3×5,4×5,5×5
+                    for (int zacatekXs= zacatekX; zacatekXs < konecXs +1 ; zacatekXs++) // 5 < 6=5+1 / 3×5,4×5,5×5
                     {
                         buck.Add(new Policko
                         {
-                            X = zacatekX,
+                            X = zacatekXs,
                             Y = zacatekY,
                             Stav = 1
                         });

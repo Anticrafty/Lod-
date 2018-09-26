@@ -164,7 +164,7 @@ namespace Lodě
                                         int pocetkontrolovanych = 0;
                                         foreach(Policko policko in obalmapa.Obal)
                                         {
-                                            pocetkontrolovanych++;
+                                            
                                             
                                             if (novasouradnice.X == policko.X && novasouradnice.Y == policko.Y)
                                             {
@@ -172,6 +172,7 @@ namespace Lodě
                                                 Console.WriteLine("Do ID {0} se dal stav 1", pocetkontrolovanych);
                                                 novypolicka.Add(novasouradnice);
                                             }
+                                            pocetkontrolovanych++;
                                         }
                                     }
                                     postavlod = false;
@@ -207,7 +208,7 @@ namespace Lodě
                                         int pocetkontrolovanych = 0;
                                         foreach (Policko policko in obalmapa.Obal)
                                         {
-                                            pocetkontrolovanych++;
+                                            
                                             
                                             if (novasouradnice.X == policko.X && novasouradnice.Y == policko.Y)
                                             {
@@ -215,6 +216,7 @@ namespace Lodě
                                                 Console.WriteLine("Do ID {0} se dal stav 1", pocetkontrolovanych);
                                                 novypolicka.Add(novasouradnice);
                                             }
+                                            pocetkontrolovanych++;
                                         }
                                     }
                                     postavlod = false;
@@ -251,7 +253,7 @@ namespace Lodě
                                         int pocetkontrolovanych = 0;
                                         foreach (Policko policko in obalmapa.Obal)
                                         {
-                                            pocetkontrolovanych++;
+                                            
                                             
                                             if (novasouradnice.X == policko.X && novasouradnice.Y == policko.Y)
                                             {
@@ -259,6 +261,7 @@ namespace Lodě
                                                 Console.WriteLine("Do ID {0} se dal stav 1", pocetkontrolovanych);
                                                 novypolicka.Add(novasouradnice);
                                             }
+                                            pocetkontrolovanych++;
                                         }
                                     }
                                     postavlod = false;
@@ -295,7 +298,7 @@ namespace Lodě
                                         int pocetkontrolovanych = 0;
                                         foreach (Policko policko in obalmapa.Obal)
                                         {
-                                            pocetkontrolovanych++;
+                                            
                                             
                                             if (novasouradnice.X == policko.X && novasouradnice.Y == policko.Y)
                                             {
@@ -303,6 +306,7 @@ namespace Lodě
                                                 Console.WriteLine("Do ID {0} se dal stav 1", pocetkontrolovanych);
                                                 novypolicka.Add(novasouradnice);
                                             }
+                                            pocetkontrolovanych++;
                                         }
                                     }
                                     postavlod = false;
@@ -339,7 +343,7 @@ namespace Lodě
                                         int pocetkontrolovanych = 0;
                                         foreach (Policko policko in obalmapa.Obal)
                                         {
-                                            pocetkontrolovanych++;
+                                            
                                             
                                             if (novasouradnice.X == policko.X && novasouradnice.Y == policko.Y)
                                             {
@@ -347,6 +351,7 @@ namespace Lodě
                                                 Console.WriteLine("Do ID {0} se dal stav 1", pocetkontrolovanych);
                                                 novypolicka.Add(novasouradnice);
                                             }
+                                            pocetkontrolovanych++;
                                         }
                                     }
                                     postavlod = false;

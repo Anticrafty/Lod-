@@ -22,10 +22,14 @@ namespace Lodě
                 }
                 if(policko.X == 9)
                 {                   
-                    if ( policko.Stav == 0 || policko.Stav == 1)
+                    if ( policko.Stav == 0 )
                     {
                         Console.WriteLine("~|");
                     } 
+                    else if ( policko.Stav == 1)
+                    {
+                        Console.WriteLine("V|");
+                    }
                     else if ( policko.Stav == 2)
                     {
                         Console.WriteLine("O|");
