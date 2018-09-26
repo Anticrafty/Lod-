@@ -45,7 +45,7 @@ namespace Lodě
             if ( konecY > 0 && konecY < 10 && konecX > 0 && konecX < 10)
             {
                 // pokud je začatek větší než konec musí to začít koncem a končit začátkem
-                    //x
+                //x
                 int konecXs = 0;
                 int zacatekX = 0;
                 if (x > konecX)
@@ -57,7 +57,7 @@ namespace Lodě
                     zacatekX = x; //5
                     konecXs = konecX; //5
                 }
-                    //y
+                //y
                 int konecYs = 0;
                 int zacatekY = 0;
                 if (y > konecY)
@@ -70,17 +70,19 @@ namespace Lodě
                     zacatekY = y; 
                     konecYs = konecY; 
                 }
-                for (;zacatekY < konecYs + 1;zacatekY++)// 3 < 6=5+1 3 = 
+
+                for (;zacatekY < konecYs + 1;zacatekY++)// 3 < 6=5+1 
                 {
 
-                    for (int zacatekXS = zacatekX  ; zacatekXS < konecXs + 1; zacatekXS++) // 5 < 6=5+1
+                    for (; zacatekX < konecXs +1 ; zacatekX++) // 5 < 6=5+1 / 3×5,4×5,5×5
                     {
                         buck.Add(new Policko
                         {
-                            X = zacatekY,
-                            Y = zacatekX,
+                            X = zacatekX,
+                            Y = zacatekY,
                             Stav = 1
                         });
+                        
                     }
                 }
             }
