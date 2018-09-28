@@ -12,6 +12,7 @@ namespace Lodě
 
         public void VypisMapu()
         {
+
             Console.WriteLine("  123456789X");
             Console.WriteLine(" -----------");
             foreach ( Policko policko in Obal)
