@@ -9,7 +9,7 @@ namespace Lodě
     class Lod
     {
         public List<Policko> Kostra = new List<Policko>();
-        public int Druh;
+        public bool Stav;
         
         public static List<Policko> Vypocitejlod(int odpoved, List<int> pozice)
         {

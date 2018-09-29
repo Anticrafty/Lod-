@@ -63,22 +63,22 @@ namespace Lodě
                     Console.Clear();
                     if (hrac == 1)
                     {
-                        obalmapa1.VypisMapu();
+                        obalmapa1.VypisMapu(true);
                     }
                     else
                     {
-                        obalmapa2.VypisMapu();
+                        obalmapa2.VypisMapu(true);
                     }
                     Console.Write("Pozice X chci: ");
                     string zvolX = Console.ReadLine();
                     Console.Clear();
                     if (hrac == 1)
                     {
-                        obalmapa1.VypisMapu();
+                        obalmapa1.VypisMapu(true);
                     }
                     else
                     {
-                        obalmapa2.VypisMapu();
+                        obalmapa2.VypisMapu(true);
                     }
                     Console.Write("Pozice Y chci: ");
                     string zvolY = Console.ReadLine();
@@ -92,11 +92,11 @@ namespace Lodě
                         {
                             if (hrac == 1)
                             {
-                                obalmapa1.VypisMapu();
+                                obalmapa1.VypisMapu(true);
                             }
                             else
                             {
-                                obalmapa2.VypisMapu();
+                                obalmapa2.VypisMapu(true);
                             }
                             Console.WriteLine("1 - nahoru");
                             Console.WriteLine("2 - doprava");
@@ -245,11 +245,11 @@ namespace Lodě
                         // vykreslení mapy
                         if (hrac == 1)
                         {
-                            obalmapa1.VypisMapu();
+                            obalmapa1.VypisMapu(true);
                         }
                         else
                         {
-                            obalmapa2.VypisMapu();
+                            obalmapa2.VypisMapu(true);
                         }
                         // rohodovani druhu lodi
                         if (!druhylodi.Contains(1))
@@ -287,7 +287,7 @@ namespace Lodě
                                     postavenylode.Add(new Lod
                                     {
                                         Kostra = novypolicka,
-                                        Druh = bezpecnaodpoved
+                                        Stav = true
 
                                     });
                                 }
@@ -322,22 +322,22 @@ namespace Lodě
                 {
                     if (hrac == 2)
                     {
-                        obalmapa1.VypisMapu();
+                        obalmapa1.VypisMapu(false);
                     }
                     else
                     {
-                        obalmapa2.VypisMapu();
+                        obalmapa2.VypisMapu(false);
                     }
                     Console.Write("Pozice X chci: ");
                     string zvolX = Console.ReadLine();
                     Console.Clear();
                     if (hrac == 2)
                     {
-                        obalmapa1.VypisMapu();
+                        obalmapa1.VypisMapu(false);
                     }
                     else
                     {
-                        obalmapa2.VypisMapu();
+                        obalmapa2.VypisMapu(false);
                     }
                     Console.Write("Pozice Y chci: ");
                     string zvolY = Console.ReadLine();
@@ -366,12 +366,10 @@ namespace Lodě
                 if (hrac == 1)
                 {
                     Console.WriteLine("Útočí hráč 1.");
-                    hledanylode = postavenylodeP2;
                 }
                 else
                 {
                     Console.WriteLine("Útočí hráč 2.");
-                    hledanylode = postavenylodeP2;
 
                 }
                 List<int> pozice = urcipoziciutoku(hrac);
@@ -404,6 +402,41 @@ namespace Lodě
                                 }
                             }
                             pocetkontrolovanych++;
+
+                        }
+                        if (!nenitamlod)
+                        {
+                            int idlode = 0;
+                            foreach (Lod lod in postavenylodeP2)
+                            {
+                                bool bylnalezen = false;
+                                int idpolicka = 0;
+                                foreach (Policko policko in lod.Kostra)
+                                {
+                                    if (policko.X == pozice[0] && policko.Y == pozice[1])
+                                    {
+                                        postavenylodeP2[idlode].Kostra[idpolicka].Stav = 3;
+                                        bylnalezen = true;
+                                    }
+                                }
+                                
+                                if (bylnalezen)
+                                {
+                                    int pocetzasazenyc = 0;
+                                    foreach (Policko policko in lod.Kostra)
+                                    {
+                                        if (policko.Stav == 3)
+                                        {
+                                            pocetzasazenyc++;
+                                        }
+                                    }
+                                    if(pocetzasazenyc == lod.Kostra.Count())
+                                    {
+                                        postavenylodeP2[idlode].Stav = false;
+                                    }
+                                }
+                                idlode++;
+                        }
 
                         }
                     }
@@ -454,6 +487,35 @@ namespace Lodě
                 {
                     hracurtok = 1;
                 }
+                int pocetmrtvichlodiP1 = 0;
+                int pocetmrtvichlodiP2 = 0;
+                foreach (Lod lod in postavenylodeP1)
+                {
+                    if (!lod.Stav)
+                    {
+                        pocetmrtvichlodiP1++;
+                    }
+                }
+                if (pocetmrtvichlodiP1 == postavenylodeP1.Count())
+                {
+                    Console.Clear();
+                    Console.WriteLine("vyhrál hrac 2!!!");
+                    Console.ReadLine();
+                }
+                foreach (Lod lod in postavenylodeP2)
+                {
+                    if (!lod.Stav)
+                    {
+                        pocetmrtvichlodiP2++;
+                    }
+                }
+                if (pocetmrtvichlodiP2 == postavenylodeP2.Count())
+                {
+                    Console.Clear();
+                    Console.WriteLine("vyhrál hrac 1!!!");
+                    Console.ReadLine();
+                }
+
             }
         }
     }

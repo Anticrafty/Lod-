@@ -10,7 +10,7 @@ namespace Lodě
     {
         public List<Policko> Obal = new List<Policko>();
 
-        public void VypisMapu()
+        public void VypisMapu(bool mapa)
         {
 
             Console.WriteLine("  123456789X");
@@ -23,13 +23,17 @@ namespace Lodě
                 }
                 if(policko.X == 9)
                 {                   
-                    if ( policko.Stav == 0 )
+                    if ( policko.Stav == 0 && mapa )
                     {
                         Console.WriteLine("~|");
                     } 
-                    else if ( policko.Stav == 1)
+                    else if ( policko.Stav == 1 && mapa)
                     {
                         Console.WriteLine("V|");
+                    }
+                    else if ((policko.Stav == 0 || policko.Stav == 1) && !mapa)
+                    {
+                        Console.WriteLine("~|");
                     }
                     else if ( policko.Stav == 2)
                     {
@@ -47,13 +51,17 @@ namespace Lodě
                 }
                 else
                 {
-                    if (policko.Stav == 0 )
+                    if (policko.Stav == 0 && mapa)
                     {
                         Console.Write("~");
                     }
-                    else if ( policko.Stav == 1)
+                    else if ( policko.Stav == 1 && mapa)
                     {
                         Console.Write("V");
+                    }
+                    else if ((policko.Stav == 0 || policko.Stav == 1) && !mapa)
+                    {
+                        Console.Write("~");
                     }
                     else if (policko.Stav == 2)
                     {
