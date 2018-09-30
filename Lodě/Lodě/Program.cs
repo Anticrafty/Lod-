@@ -280,7 +280,7 @@ namespace Lodě
                             if (trythat)
                             {
                                 // udělat vyběr
-                                if (!druhylodi.Contains(bezpecnaodpoved))
+                                if (!druhylodi.Contains(bezpecnaodpoved) && bezpecnaodpoved<6 && bezpecnaodpoved > 0)
                                 {
                                     List<Policko> novypolicka = stavenilode(bezpecnaodpoved, hrac);
                                     druhylodi.Add(bezpecnaodpoved);
@@ -418,6 +418,7 @@ namespace Lodě
                                         postavenylodeP2[idlode].Kostra[idpolicka].Stav = 3;
                                         bylnalezen = true;
                                     }
+                                    idpolicka++;
                                 }
                                 
                                 if (bylnalezen)
@@ -432,6 +433,9 @@ namespace Lodě
                                     }
                                     if(pocetzasazenyc == lod.Kostra.Count())
                                     {
+                                        Console.Clear();
+                                        Console.WriteLine("Zničil jsi loď");
+                                        Console.ReadLine();
                                         postavenylodeP2[idlode].Stav = false;
                                     }
                                 }
@@ -471,8 +475,47 @@ namespace Lodě
                         }
 
                     }
+                    if (!nenitamlod)
+                    {
+                        int idlode = 0;
+                        foreach (Lod lod in postavenylodeP1)
+                        {
+                            bool bylnalezen = false;
+                            int idpolicka = 0;
+                            foreach (Policko policko in lod.Kostra)
+                            {
+                                if (policko.X == pozice[0] && policko.Y == pozice[1])
+                                {
+                                    postavenylodeP1[idlode].Kostra[idpolicka].Stav = 3;
+                                    bylnalezen = true;
+                                }
+                                idpolicka++;
+                            }
 
-             
+                            if (bylnalezen)
+                            {
+                                int pocetzasazenyc = 0;
+                                foreach (Policko policko in lod.Kostra)
+                                {
+                                    if (policko.Stav == 3)
+                                    {
+                                        pocetzasazenyc++;
+                                    }
+                                }
+                                if (pocetzasazenyc == lod.Kostra.Count())
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("Zničil jsi loď");
+                                    Console.ReadLine();
+                                    postavenylodeP1[idlode].Stav = false;
+                                }
+                            }
+                            idlode++;
+                    }
+
+                }
+
+
             }
 
                 bool hrajede = true;
@@ -501,6 +544,7 @@ namespace Lodě
                     Console.Clear();
                     Console.WriteLine("vyhrál hrac 2!!!");
                     Console.ReadLine();
+                    hrajede = false;
                 }
                 foreach (Lod lod in postavenylodeP2)
                 {
@@ -514,6 +558,7 @@ namespace Lodě
                     Console.Clear();
                     Console.WriteLine("vyhrál hrac 1!!!");
                     Console.ReadLine();
+                    hrajede = false;
                 }
 
             }
