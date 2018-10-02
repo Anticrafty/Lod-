@@ -272,15 +272,27 @@ namespace Lodě
                         {
                             Console.WriteLine("5 - letadlová loď");
                         }
+                        if (!druhylodi.Contains(6))
+                        {
+                            Console.WriteLine("6 - přistávací základna");
+                        }
+                        if (!druhylodi.Contains(7))
+                        {
+                            Console.WriteLine("7 - hydroplán");
+                        }
+                        if (!druhylodi.Contains(8))
+                        {
+                            Console.WriteLine("8 - křižník II");
+                        }
                         string odpoved = Console.ReadLine();
-                        if (!druhylodi.Contains(1) || !druhylodi.Contains(2) || !druhylodi.Contains(3) || !druhylodi.Contains(4) || !druhylodi.Contains(5))
+                        if (!druhylodi.Contains(1) || !druhylodi.Contains(2) || !druhylodi.Contains(3) || !druhylodi.Contains(4) || !druhylodi.Contains(5) || !druhylodi.Contains(6) || !druhylodi.Contains(7) || !druhylodi.Contains(8))
                         {
                             // kontrola
                             trythat = int.TryParse(odpoved, out int bezpecnaodpoved);
                             if (trythat)
                             {
                                 // udělat vyběr
-                                if (!druhylodi.Contains(bezpecnaodpoved) && bezpecnaodpoved<6 && bezpecnaodpoved > 0)
+                                if (!druhylodi.Contains(bezpecnaodpoved) && bezpecnaodpoved < 9 && bezpecnaodpoved > 0)
                                 {
                                     List<Policko> novypolicka = stavenilode(bezpecnaodpoved, hrac);
                                     druhylodi.Add(bezpecnaodpoved);
