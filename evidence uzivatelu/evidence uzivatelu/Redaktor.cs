@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace evidence_uzivatelu
+{
+    class Redaktor : User
+    {
+        public Redaktor()
+        {
+            Console.WriteLine("2. Mlem");
+        }
+
+
+    }
+}
