@@ -18,19 +18,23 @@ namespace evidence_uzivatelu
         {
             bool prihlasovaciproces = true;
             while (prihlasovaciproces)
-            Console.WriteLine(" 1 - se Přihlásit ");
-            Console.WriteLine(" 3 - Vypnout program");
-            Console.Write(" Chci : ");
-            String Chci = Console.ReadLine();
+                Console.WriteLine(" 1 - se Přihlásit ");
+                Console.WriteLine("  - Vypnout program");
+                Console.Write(" Chci : ");
+                String Chci = Console.ReadLine();
 
-            bool jevnabidce = int.TryParse(Chci, out int odpoved);
-            if (jevnabidce)
-            {
-                if (odpoved == 1)
+                bool jevnabidce = int.TryParse(Chci, out int odpoved);
+                if (jevnabidce)
                 {
-                    
+                    if (odpoved == 1)
+                    {
+                        Admin.AdminLogIn("", "", "");
+                    }
+                    else if (odpoved == 2)
+                    {
+                        prihlasovaciproces = false;
+                    }
                 }
-            }
         }
         static void Main(string[] args)
         {
@@ -59,8 +63,12 @@ namespace evidence_uzivatelu
             users.Add(Vlkodlacice);
             users.Add(Rex);
             // program
+            bool jeprihlasen = true;
+            while (jeprihlasen)
+            {
+                jeprihlasen = Prihlasovani();
 
-
+            }
         }
 
     }

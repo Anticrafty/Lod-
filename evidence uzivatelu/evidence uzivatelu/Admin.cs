@@ -19,7 +19,7 @@ namespace evidence_uzivatelu
             return true;
         }
 
-        public bool LogIn(string name, string pass, string adminpass)
+        public bool AdminLogIn(string name, string pass, string adminpass)
         {
             if (base.LogIn(name, pass))
             {
