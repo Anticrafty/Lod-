@@ -21,13 +21,10 @@ namespace evidence_uzivatelu
 
         public bool AdminLogIn(string name, string pass, string adminpass)
         {
-            if (base.LogIn(name, pass))
-            {
-                // specific for admin
-                Console.WriteLine(adminpass);
-                return true;
-            }
+            // specific for admin
+            Console.WriteLine(adminpass);
             return false;
         }
+
     }
 }

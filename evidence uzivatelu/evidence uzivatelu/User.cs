@@ -16,11 +16,5 @@ namespace evidence_uzivatelu
 
         public string Password { get; set; }
 
-        public virtual bool LogIn(string name, string pass)
-        {
-            //check
-
-            return true;
-        }
     }
 }
