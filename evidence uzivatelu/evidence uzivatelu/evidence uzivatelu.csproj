@@ -49,6 +49,7 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Autor.cs" />
     <Compile Include="Book.cs" />
+    <Compile Include="Booksies.cs" />
     <Compile Include="EBook.cs" />
     <Compile Include="Loginator.cs" />
     <Compile Include="PaperBook.cs" />

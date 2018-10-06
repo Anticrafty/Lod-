@@ -12,8 +12,24 @@ namespace evidence_uzivatelu
 
         public bool AddNewUSer(User newuser)
         {
-            Users.Add(newuser);
-            return true;
+            bool neninikdopodobny = true;
+            foreach (User user in Users)
+            {
+                if (newuser.Nickname == user.Nickname)
+                {
+                    neninikdopodobny = false;
+                }
+            }
+            if (neninikdopodobny)
+            {
+                Users.Add(newuser);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         public User LogIn(string name, string password)

@@ -15,21 +15,25 @@ namespace evidence_uzivatelu
 
         static Loginator prologin = new Loginator();
 
+        static Booksies books = new Booksies();
+
         // Vytvořte program pro evidenci uživatelů
         // uživatel se může přihlásit
 
         // Administrátor může mazat a vytvářet uživatele 
         // - aministrátor se ověřuje proti master hestli
         //   -> zadané 
-         static bool Prihlasovani()
+        static bool Prihlasovani()
         {
             bool prihlasovaciproces = true;
             while (prihlasovaciproces)
             {
+                Console.WriteLine(" ");
                 Console.WriteLine(" 1 - se Přihlásit ");
                 Console.WriteLine(" 2 - Vypnout program");
                 Console.Write(" Chci : ");
                 String Chci = Console.ReadLine();
+                Console.Clear();
 
                 bool jevnabidce = int.TryParse(Chci, out int odpoved);
                 if (jevnabidce)
@@ -56,7 +60,7 @@ namespace evidence_uzivatelu
                             User prihlaseny = prihlasenyuzivatel;
                             return true;
                         }
-                        
+                        Console.WriteLine("You wrote something wrong");
 
                     }
                     else if (odpoved == 2)
@@ -115,9 +119,8 @@ namespace evidence_uzivatelu
             Lord.URL = "https://en.wikipedia.org/wiki/Warcraft:_Lord_of_the_Clans";
             Lord.SizeMB = 300;
 
-            List<Book> books = new List<Book>();
-            books.Add(DenDraka);
-            books.Add(Lord);
+            books.AddBook(DenDraka);
+            books.AddBook(Lord);
 
             // program
             bool jeprihlasen = true;
