@@ -8,11 +8,6 @@ namespace evidence_uzivatelu
 {
     class Redaktor : User
     {
-        public Redaktor()
-        {
-            Console.WriteLine("2. Mlem");
-        }
-
 
     }
 }

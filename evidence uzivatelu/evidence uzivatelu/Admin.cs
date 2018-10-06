@@ -9,10 +9,7 @@ namespace evidence_uzivatelu
     class Admin : Redaktor
     {
         private string MasterHeslo = "Brony/FurryMemes";
-        public Admin()
-        {
-            Console.WriteLine("3. Profit");
-        }
+
         public bool DeleteUSer(User userToDelete)
         {
             //action 

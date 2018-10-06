@@ -10,14 +10,14 @@ namespace evidence_uzivatelu
     {
         public List<Book> Books = new List<Book>();
 
-        bool removebook(Book removedbook)
+        bool removebook(string removedName,int removedISBN)
         {
             bool neninikdopodobny = true;
             int IDknihy = 0;
             int nicenaknihaID;
             foreach (Book book in Books)
             {
-                if (removedbook.Name == book.Name && removedbook.ISBN == book.ISBN)
+                if (removedName == book.Name && removedISBN == book.ISBN)
                 {
                     neninikdopodobny = false;
 
@@ -27,6 +27,7 @@ namespace evidence_uzivatelu
             }
             if (neninikdopodobny)
             {
+                Console.WriteLine("Tato knížka v listu neni.");
                 return false;
             }
             else
@@ -54,6 +55,7 @@ namespace evidence_uzivatelu
             }
             else
             {
+                Console.WriteLine("Tato knížka už v listu je.");
                 return false;
             }
 
