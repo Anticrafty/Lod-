@@ -331,35 +331,59 @@ namespace Lodě
             }
             if (odpoved == 9)
             {
-                if 
-                for (; zacatekY < konecYs + 1; zacatekY++)// 3 < 6=5+1 
+                if (x > 1 && x < 9)
                 {
+                    int zacatekXA = x - 1;
+                    int konecXA = x + 1;
+                    int zacatekYA = y;
+                    int konecYA = y;
 
-                    for (int zacatekXs = zacatekX; zacatekXs < konecXs + 1; zacatekXs++) // 5 < 6=5+1 / 3×5,4×5,5×5
+                    for (; zacatekYA < konecYA + 1; zacatekYA++)// 3 < 6=5+1 
                     {
-                        buck.Add(new Policko
+                        Console.WriteLine("mlemA1");
+                        for (int zacatekXAs = zacatekXA; zacatekXAs < konecXA + 1; zacatekXAs++) 
                         {
-                            X = zacatekXs,
-                            Y = zacatekY,
-                            Stav = 1
-                        });
+                            Console.WriteLine("mlemA2");
+                            buck.Add(new Policko
+                            {
+                                X = zacatekXAs,
+                                Y = zacatekYA,
+                                Stav = 1
+                            });
 
+                        }
                     }
+
+                    int zacatekYB = x - 1;
+                    int konecYB = x + 1;
+                    int zacatekXB = y;
+                    int konecXB = y;
+                    for (; zacatekYB < konecYB + 1; zacatekYB++)
+                    {
+                        Console.WriteLine("mlemB1");
+                        for (int zacatekXBs = zacatekXB; zacatekXBs < konecXB + 1; zacatekXBs++) 
+                        {
+                            Console.WriteLine("mlemB");
+                            if (zacatekXBs != x || zacatekYB != y)
+                            {
+                                buck.Add(new Policko
+                                {
+                                    X = zacatekXBs,
+                                    Y = zacatekYB,
+                                    Stav = 1
+                                });
+                            }
+                        }
+                    }    
                 }
-
-                for (; zacatekY < konecYs + 1; zacatekY++)// 3 < 6=5+1 
+                else
                 {
-
-                    for (int zacatekXs = zacatekX; zacatekXs < konecXs + 1; zacatekXs++) // 5 < 6=5+1 / 3×5,4×5,5×5
+                    buck.Add(new Policko
                     {
-                        buck.Add(new Policko
-                        {
-                            X = zacatekXs,
-                            Y = zacatekY,
-                            Stav = 1
-                        });
-
-                    }
+                        X = 0,
+                        Y = 0,
+                        Stav = 0
+                    });
                 }
             }
             return buck;

@@ -21,7 +21,7 @@ namespace evidence_uzivatelu
         // Administrátor může mazat a vytvářet uživatele 
         // - aministrátor se ověřuje proti master hestli
         //   -> zadané 
-         static User Prihlasovani()
+         static bool Prihlasovani()
         {
             bool prihlasovaciproces = true;
             while (prihlasovaciproces)
@@ -41,16 +41,31 @@ namespace evidence_uzivatelu
                         Console.Write("Password: ");
                         string prihlasovacipass = Console.ReadLine();
                         User prihlasenyuzivatel = prologin.LogIn(prihlasovacinick, prihlasovacipass);
-                        return prihlasenyuzivatel;
+                        if (prihlasenyuzivatel != null)
+                        {
+                            if (prihlasenyuzivatel is Admin notpleb)
+                            {
+                                Console.Write("Admins Password: ");
+                                string prihlasovacipassAdmin = Console.ReadLine();
+                                bool jedmin = notpleb.AdminLogIn(prihlasovacipassAdmin);
+                                if (jedmin)
+                                {
+                                    return true;
+                                }
+                            }
+                            User prihlaseny = prihlasenyuzivatel;
+                            return true;
+                        }
+                        
 
                     }
                     else if (odpoved == 2)
                     {
-                        return null;
+                        return false;
                     }
                 }
             }
-            return null;
+            return false;
         }
         static void Main(string[] args)
         {
@@ -68,29 +83,16 @@ namespace evidence_uzivatelu
             Hanz.Password = "FragonsStinks";
 
             Redaktor Vlkodlacice = new Redaktor();
-            Vlkodlacice.Nickname = "Hanz";
-            Vlkodlacice.Password = "FragonsStinks";
+            Vlkodlacice.Nickname = "Vlkodlačice";
+            Vlkodlacice.Password = "ILoveRex";
             Redaktor Rex = new Redaktor();
-            Rex.Nickname = "Hanz";
-            Rex.Password = "FragonsStinks";
-
-            List<User> users = new List<User>();
+            Rex.Nickname = "Rex";
+            Rex.Password = "ILoveMyWoof";
             
             prologin.AddNewUSer(Anti);
             prologin.AddNewUSer(Hanz);
             prologin.AddNewUSer(Vlkodlacice);
             prologin.AddNewUSer(Rex);
-
-
-            Prihlasovani();
-
-
-
-
-
-
-
-
 
             // ňáký knížky
             PaperBook DenDraka = new PaperBook();
@@ -118,21 +120,23 @@ namespace evidence_uzivatelu
             books.Add(Lord);
 
             // program
-            /*bool jeprihlasen = true;
+            bool jeprihlasen = true;
             while (jeprihlasen)
             {
                 jeprihlasen = Prihlasovani();
+                ukazmenu();
 
-            }*/
+
+            }
             JsonSerializerSettings settings = new JsonSerializerSettings()
             {
                 TypeNameHandling = TypeNameHandling.All
             };
 
 
-            string json = JsonConvert.SerializeObject(books, settings);
+          /*   string json = JsonConvert.SerializeObject(books, settings);
 
-            File.WriteAllText(@"D:\novakja16\Github\evidence uzivatelu\jsonFile.json", json);
+           File.WriteAllText(@"D:\novakja16\Github\evidence uzivatelu\jsonFile.json", json);
 
             string jsonFromFile = File.ReadAllText((@"D:\novakja16\Github\evidence uzivatelu\jsonFile.json"));
 
@@ -141,7 +145,7 @@ namespace evidence_uzivatelu
             if (booksloaded[0] is Book loadedbook)
             {
                 Console.WriteLine(loadedbook);
-            }
+            } */
         }
 
     }

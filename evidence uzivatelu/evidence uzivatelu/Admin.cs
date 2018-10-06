@@ -19,10 +19,13 @@ namespace evidence_uzivatelu
             return true;
         }
 
-        public bool AdminLogIn(string name, string pass, string adminpass)
+        public bool AdminLogIn(string adminpass)
         {
             // specific for admin
-            Console.WriteLine(adminpass);
+            if (adminpass == MasterHeslo)
+            {
+                return true;
+            }
             return false;
         }
 

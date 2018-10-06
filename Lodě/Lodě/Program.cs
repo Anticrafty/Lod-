@@ -284,15 +284,19 @@ namespace Lodě
                         {
                             Console.WriteLine("8 - křižník II");
                         }
+                        if (!druhylodi.Contains(9))
+                        {
+                            Console.WriteLine("9 - těžký křižník");
+                        }
                         string odpoved = Console.ReadLine();
-                        if (!druhylodi.Contains(1) || !druhylodi.Contains(2) || !druhylodi.Contains(3) || !druhylodi.Contains(4) || !druhylodi.Contains(5) || !druhylodi.Contains(6) || !druhylodi.Contains(7) || !druhylodi.Contains(8))
+                        if (!druhylodi.Contains(1) || !druhylodi.Contains(2) || !druhylodi.Contains(3) || !druhylodi.Contains(4) || !druhylodi.Contains(5) || !druhylodi.Contains(6) || !druhylodi.Contains(7) || !druhylodi.Contains(8) || !druhylodi.Contains(9))
                         {
                             // kontrola
                             trythat = int.TryParse(odpoved, out int bezpecnaodpoved);
                             if (trythat)
                             {
                                 // udělat vyběr
-                                if (!druhylodi.Contains(bezpecnaodpoved) && bezpecnaodpoved < 9 && bezpecnaodpoved > 0)
+                                if (!druhylodi.Contains(bezpecnaodpoved) && bezpecnaodpoved < 10 && bezpecnaodpoved > 0)
                                 {
                                     List<Policko> novypolicka = stavenilode(bezpecnaodpoved, hrac);
                                     druhylodi.Add(bezpecnaodpoved);

@@ -18,9 +18,14 @@ namespace evidence_uzivatelu
 
         public User LogIn(string name, string password)
         {
+            int idUzivatele = 0;
             foreach ( User user in Users)
             {
-                // TODO
+                if (user.Nickname == name && user.Password == password)
+                {
+                    return Users[idUzivatele];
+                }
+                idUzivatele++;
             }
             return null;
         }
