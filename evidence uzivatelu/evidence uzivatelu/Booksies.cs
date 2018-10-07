@@ -10,7 +10,7 @@ namespace evidence_uzivatelu
     {
         public List<Book> Books = new List<Book>();
 
-        bool removebook(string removedName,int removedISBN)
+        bool RemoveBook(string removedName,int removedISBN)
         {
             bool neninikdopodobny = true;
             int IDknihy = 0;

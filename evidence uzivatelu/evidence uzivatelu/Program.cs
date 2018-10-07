@@ -38,11 +38,11 @@ namespace evidence_uzivatelu
 
                 if (prihlaseny is Admin)
                 {
-                    Console.WriteLine(" 5 - vytvořit nového uživatele");
+                    Console.WriteLine(" 4 - vytvořit nového uživatele");
                 }
                 if (prihlaseny is Admin)
                 {
-                    Console.WriteLine(" 6 - vymazat uživatele");
+                    Console.WriteLine(" 5 - vymazat uživatele");
                 }
                 Console.WriteLine(" 0 - odhlasit se");
                 Console.Write(" Chci : ");
@@ -61,6 +61,69 @@ namespace evidence_uzivatelu
                     if (odpoved == 1)
                     {
 
+                    }
+                    if (odpoved == 2 && prihlaseny is Redaktor)
+                    {
+                        Console.WriteLine(" 1 - Papírová kniha");
+                        Console.WriteLine(" 2 - Ekniha");
+                        Console.Write(" Chci : ");
+                        String Chci2 = Console.ReadLine();
+                        Console.Clear();
+
+                        //kontrola čísla
+                        bool jevnabidce2 = int.TryParse(Chci2, out int odpoved2);
+                        if (jevnabidce2)
+                        {
+                            if (odpoved2 == 1 || odpoved == 2)
+                            {
+                                Console.Write("Jmeno knížky: ");
+                                string jmenoknizky = Console.ReadLine();
+                                Console.Write("ISBN knížky: ");
+                                string ISBNknizky = Console.ReadLine();
+                                bool ISBNP = int.TryParse(ISBNknizky, out int ISBNknizkyV);
+                                if (ISBNP)
+                                {
+                                    odpoved2 = 0;
+                                }
+                                Autor newautor = new Autor();
+                                Console.Write("Jmeno Autora: ");
+                                newautor.jmeno = Console.ReadLine();
+                                Console.Write("Příjmení Autora: ");
+                                newautor.primeni = Console.ReadLine();
+                                if (odpoved2 == 1)
+                                {
+                                    PaperBook newbook = new PaperBook();
+                                    Console.Write("počet knih: ");
+                                    string newStock = Console.ReadLine();
+                                    bool isStock = int.TryParse(newStock, out int trueStock);                                    
+                                    Console.Write("hmotnost knihy: ");
+                                    string newWeight = Console.ReadLine();
+                                    bool isWeight = int.TryParse(newWeight, out int trueWeight);
+                                    if (isStock && isWeight)
+                                    {
+                                        Console.WriteLine("knižka byla vyložena");
+                                        books.AddBook(newbook);
+                                    }
+                                }
+                                else if (odpoved2 == 2)
+                                {
+                                    EBook newbook = new EBook();
+                                }
+                                
+                            }
+                        }
+                    }
+                    if (odpoved == 3 && prihlaseny is Redaktor)
+                    {
+                        //books.RemoveBook( removedName, removedISBN);
+                    }
+                    if (odpoved == 4 && prihlaseny is Admin)
+                    {
+                        //prologin.AddNewUSer(newuser);
+                    }
+                    if (odpoved == 5 && prihlaseny is Admin)
+                    {
+                       //prologin.RemoveUser(removedNick, adminspass, wrotenpass);
                     }
                 }
             }

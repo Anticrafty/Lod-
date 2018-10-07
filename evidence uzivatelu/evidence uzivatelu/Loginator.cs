@@ -32,6 +32,34 @@ namespace evidence_uzivatelu
 
         }
 
+        public bool RemoveUser(string removedNick, string adminspass, string wrotenpass)
+        {
+            bool neninikdopodobny = true;
+            int IDknihy = 0;
+            int nicenaknihaID;
+            foreach (User book in Users)
+            {
+                if (removedNick == book.Nickname && adminspass == wrotenpass)
+                {
+                    neninikdopodobny = false;
+
+                    nicenaknihaID = IDknihy;
+                }
+                IDknihy++;
+            }
+            if (neninikdopodobny)
+            {
+                Console.WriteLine("Tento uživatel v listu neni. Nebo jsi napsal špatné admin heslo. ");
+                return false;
+            }
+            else
+            {
+                Users.Remove(Users[IDknihy]);
+                return true;
+
+            }
+        }
+
         public User LogIn(string name, string password)
         {
             int idUzivatele = 0;
