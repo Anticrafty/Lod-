@@ -194,10 +194,13 @@ namespace evidence_uzivatelu
                             }
                         }       
                     }
-                    if (odpoved == 5 && prihlaseny is Admin)
+                    if (odpoved == 5 && prihlaseny is Admin aminoviczcz)
                     {
-                        Console.WriteLine("Ještě je ve vývoji");
-                        //prologin.RemoveUser(removedNick, adminspass, wrotenpass);
+                        Console.Write("Jmeno uživatele: ");
+                        string removedNick = Console.ReadLine();
+                        Console.Write("Admins Password: ");
+                        string adminspass = Console.ReadLine();
+                        prologin.RemoveUser(removedNick, adminspass, aminoviczcz.GetMasterHeslo());
                     }
                 }
             }

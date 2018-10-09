@@ -37,7 +37,7 @@ namespace evidence_uzivatelu
         {
             bool neninikdopodobny = true;
             int IDknihy = 0;
-            int nicenaknihaID;
+            int nicenaknihaID = 0;
             foreach (User book in Users)
             {
                 if (removedNick == book.Nickname && adminspass == wrotenpass)
@@ -48,13 +48,13 @@ namespace evidence_uzivatelu
                 }
                 IDknihy++;
             }
-            if (neninikdopodobny)
+            if (neninikdopodobny || Users[nicenaknihaID] is Admin)
             {
-                Console.WriteLine("Tento uživatel v listu neni. Nebo jsi napsal špatné admin heslo. ");
+                Console.WriteLine("Tento uživatel v listu neni, nebo jsi napsal špatné admin heslo, nebo jsi se pokusil vymazat Admina. ");
             }
             else
             {                
-                Users.Remove(Users[IDknihy]);
+                Users.Remove(Users[nicenaknihaID]);
                 Console.WriteLine("Uživatel je vymazán");
             }
         }
