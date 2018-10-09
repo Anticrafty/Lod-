@@ -25,6 +25,10 @@ namespace evidence_uzivatelu
             }
             return false;
         }
+        public string GetMasterHeslo()
+        {
+            return MasterHeslo;
+        }
 
     }
 }

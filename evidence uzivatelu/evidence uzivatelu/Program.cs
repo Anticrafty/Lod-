@@ -74,14 +74,14 @@ namespace evidence_uzivatelu
                         bool jevnabidce2 = int.TryParse(Chci2, out int odpoved2);
                         if (jevnabidce2)
                         {
-                            if (odpoved2 == 1 || odpoved == 2)
+                            if (odpoved2 == 1 || odpoved2 == 2)
                             {
                                 Console.Write("Jmeno knížky: ");
                                 string jmenoknizky = Console.ReadLine();
                                 Console.Write("ISBN knížky: ");
                                 string ISBNknizky = Console.ReadLine();
                                 bool ISBNP = int.TryParse(ISBNknizky, out int ISBNknizkyV);
-                                if (ISBNP)
+                                if (!ISBNP)
                                 {
                                     odpoved2 = 0;
                                 }
@@ -110,7 +110,6 @@ namespace evidence_uzivatelu
 
                                         };                                        
                                         books.AddBook(newbook);
-                                        Console.WriteLine("knižka byla vyložena");
                                     }
                                 }
                                 else if (odpoved2 == 2)
@@ -129,14 +128,14 @@ namespace evidence_uzivatelu
                                         SizeMB = trueSize
                                     };
                                     books.AddBook(newbook);
-                                    Console.WriteLine("knižka byla vyložena");
-                                }
+                                    }
                                 
                             }
                         }
                     }
                     if (odpoved == 3 && prihlaseny is Redaktor)
                     {
+
                         Console.Write("Jmeno knížky: ");
                         string removedName = Console.ReadLine();
                         Console.Write("ISBN knížky: ");
@@ -147,10 +146,53 @@ namespace evidence_uzivatelu
                             books.RemoveBook( removedName, removedISBN);
                         }
                     }
-                    if (odpoved == 4 && prihlaseny is Admin)
+                    if (odpoved == 4 && prihlaseny is Admin aminovicz)
                     {
-                        Console.WriteLine("Ještě je ve vývoji");
-                        //prologin.AddNewUSer(newuser);
+                        Console.WriteLine(" 1 - Uživatel");
+                        Console.WriteLine(" 2 - Redaktor");
+                        Console.Write(" Chci : ");
+                        String Chci2 = Console.ReadLine();
+                        Console.Clear();
+
+                        //kontrola čísla
+                        bool jevnabidce2 = int.TryParse(Chci2, out int odpoved2);
+                        if (jevnabidce2)
+                        {
+                            if (odpoved2 == 1 || odpoved2 == 2)
+                            {
+                                Console.Write("Nickname noveho uživatele: ");
+                                string newName = Console.ReadLine();
+                                Console.Write("Password noveho uživatele: ");
+                                string newpass = Console.ReadLine();
+                                if (odpoved2 == 1)
+                                {
+                                    User newUser = new User()
+                                    {
+                                        Nickname = newName,
+                                        Password = newpass
+                                    };
+                                    prologin.AddNewUSer(newUser);
+                                }
+                                else
+                                {
+                                    Console.Write("Admins Password: ");
+                                    string prihlasovacipassAdmin = Console.ReadLine();
+                                    if (prihlasovacipassAdmin == aminovicz.GetMasterHeslo())
+                                    {
+                                        Redaktor newUser = new Redaktor()
+                                        {
+                                            Nickname = newName,
+                                            Password = newpass
+                                        };
+                                        prologin.AddNewUSer(newUser);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Špatný Admin Passwod");
+                                    }
+                                }
+                            }
+                        }       
                     }
                     if (odpoved == 5 && prihlaseny is Admin)
                     {
@@ -260,17 +302,18 @@ namespace evidence_uzivatelu
             DenDraka.Weight = 300;
 
             EBook Lord = new EBook();
-            Lord.Name = "Warcraft: Day of the Dragon";
+            Lord.Name = "Warcraft: Lords of Chaos ";
             Lord.ISBN = 0671041525;
             Autor Christie = new Autor();
-            Christie.jmeno = "Richard";
-            Christie.primeni = "Knaak";
+            Christie.jmeno = "Christe";
+            Christie.primeni = "Eh?";
             Lord.Autorknihy = Richard;
             Lord.URL = "https://en.wikipedia.org/wiki/Warcraft:_Lord_of_the_Clans";
             Lord.SizeMB = 300;
 
             books.AddBook(DenDraka);
             books.AddBook(Lord);
+            Console.Clear();
 
             // program
             bool jeprihlasen = true;
