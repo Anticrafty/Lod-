@@ -10,6 +10,12 @@ namespace evidence_uzivatelu
 {
     class Program
     {
+
+        static JsonSerializerSettings settings = new JsonSerializerSettings()
+        {
+            TypeNameHandling = TypeNameHandling.All
+        };
+
         // prihlasený uživatl pro všechny funkce
         static User prihlaseny;
 
@@ -18,6 +24,24 @@ namespace evidence_uzivatelu
 
         // list všech knížek
         static Booksies books = new Booksies();
+
+        /* 
+            // Save
+        string json = JsonConvert.SerializeObject(books, settings);
+
+        File.WriteAllText(@"D:\novakja16\Github\evidence uzivatelu\jsonFile.json", json);
+           */
+        static void LoadJson()
+        { 
+            string UserFromFile = File.ReadAllText((@"D:\novakja16\Github\evidence uzivatelu\Users.json"));
+            string BooksFromFile = File.ReadAllText((@"D:\novakja16\Github\evidence uzivatelu\Books.json"));
+
+            List<User> usersloaded = JsonConvert.DeserializeObject<List<User>>(UserFromFile, settings);
+
+            List<Book> booksloaded = JsonConvert.DeserializeObject<List<Book>>(BooksFromFile, settings);
+
+            
+        }
 
         // menu funkce
         static void ukazmenu()
@@ -107,7 +131,6 @@ namespace evidence_uzivatelu
                                             Autorknihy = newautor,
                                             Stock = trueStock,
                                             Weight = trueWeight
-
                                         };                                        
                                         books.AddBook(newbook);
                                     }
@@ -330,24 +353,7 @@ namespace evidence_uzivatelu
                     ukazmenu();
                 }
             }
-            JsonSerializerSettings settings = new JsonSerializerSettings()
-            {
-                TypeNameHandling = TypeNameHandling.All
-            };
-
-
-          /*   string json = JsonConvert.SerializeObject(books, settings);
-
-           File.WriteAllText(@"D:\novakja16\Github\evidence uzivatelu\jsonFile.json", json);
-
-            string jsonFromFile = File.ReadAllText((@"D:\novakja16\Github\evidence uzivatelu\jsonFile.json"));
-
-            List<Book> booksloaded = JsonConvert.DeserializeObject<List<Book>>(jsonFromFile, settings);
-
-            if (booksloaded[0] is Book loadedbook)
-            {
-                Console.WriteLine(loadedbook);
-            } */
+           
         }
 
     }

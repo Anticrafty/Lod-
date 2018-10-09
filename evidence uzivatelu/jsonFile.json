@@ -1,1 +1,0 @@
-{"$type":"System.Collections.Generic.List`1[[evidence_uzivatelu.Book, evidence uzivatelu]], mscorlib","$values":[{"$type":"evidence_uzivatelu.PaperBook, evidence uzivatelu","Weight":300,"Stock":2,"Name":"Warcraft: Day of the Dragon","ISBN":671041525,"Autorknihy":{"$type":"evidence_uzivatelu.Autor, evidence uzivatelu","jmeno":"Richard","primeni":"Knaak"}}]}
