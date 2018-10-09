@@ -60,7 +60,7 @@ namespace evidence_uzivatelu
                     }
                     if (odpoved == 1)
                     {
-
+                        Console.WriteLine("Ještě je ve vývoji");
                     }
                     if (odpoved == 2 && prihlaseny is Redaktor)
                     {
@@ -91,8 +91,7 @@ namespace evidence_uzivatelu
                                 Console.Write("Příjmení Autora: ");
                                 newautor.primeni = Console.ReadLine();
                                 if (odpoved2 == 1)
-                                {
-                                    PaperBook newbook = new PaperBook();
+                                {                                    
                                     Console.Write("počet knih: ");
                                     string newStock = Console.ReadLine();
                                     bool isStock = int.TryParse(newStock, out int trueStock);                                    
@@ -101,13 +100,36 @@ namespace evidence_uzivatelu
                                     bool isWeight = int.TryParse(newWeight, out int trueWeight);
                                     if (isStock && isWeight)
                                     {
-                                        Console.WriteLine("knižka byla vyložena");
+                                        PaperBook newbook = new PaperBook()
+                                        {
+                                            Name = jmenoknizky,
+                                            ISBN = ISBNknizkyV,
+                                            Autorknihy = newautor,
+                                            Stock = trueStock,
+                                            Weight = trueWeight
+
+                                        };                                        
                                         books.AddBook(newbook);
+                                        Console.WriteLine("knižka byla vyložena");
                                     }
                                 }
                                 else if (odpoved2 == 2)
                                 {
-                                    EBook newbook = new EBook();
+                                    Console.Write("URL knihy: ");
+                                    string newURL = Console.ReadLine();
+                                    Console.Write("MB knihy: ");
+                                    string newSize = Console.ReadLine();
+                                    bool isStock = int.TryParse(newSize, out int trueSize);
+                                    EBook newbook = new EBook()
+                                    {
+                                        Name = jmenoknizky,
+                                        ISBN = ISBNknizkyV,
+                                        Autorknihy = newautor,
+                                        URL = newURL,
+                                        SizeMB = trueSize
+                                    };
+                                    books.AddBook(newbook);
+                                    Console.WriteLine("knižka byla vyložena");
                                 }
                                 
                             }
@@ -115,15 +137,25 @@ namespace evidence_uzivatelu
                     }
                     if (odpoved == 3 && prihlaseny is Redaktor)
                     {
-                        //books.RemoveBook( removedName, removedISBN);
+                        Console.Write("Jmeno knížky: ");
+                        string removedName = Console.ReadLine();
+                        Console.Write("ISBN knížky: ");
+                        string ISBNknizky = Console.ReadLine();
+                        bool ISBNP = int.TryParse(ISBNknizky, out int removedISBN);
+                        if (ISBNP)
+                        {
+                            books.RemoveBook( removedName, removedISBN);
+                        }
                     }
                     if (odpoved == 4 && prihlaseny is Admin)
                     {
+                        Console.WriteLine("Ještě je ve vývoji");
                         //prologin.AddNewUSer(newuser);
                     }
                     if (odpoved == 5 && prihlaseny is Admin)
                     {
-                       //prologin.RemoveUser(removedNick, adminspass, wrotenpass);
+                        Console.WriteLine("Ještě je ve vývoji");
+                        //prologin.RemoveUser(removedNick, adminspass, wrotenpass);
                     }
                 }
             }
