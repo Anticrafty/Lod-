@@ -25,30 +25,12 @@ namespace evidence_uzivatelu
         // list všech knížek
         static Booksies books = new Booksies();
 
-        /* 
-            // Save
-        string json = JsonConvert.SerializeObject(books, settings);
-
-        File.WriteAllText(@"D:\novakja16\Github\evidence uzivatelu\jsonFile.json", json);
-           */
-        static void LoadJson()
-        { 
-            string UserFromFile = File.ReadAllText((@"D:\novakja16\Github\evidence uzivatelu\Users.json"));
-            string BooksFromFile = File.ReadAllText((@"D:\novakja16\Github\evidence uzivatelu\Books.json"));
-
-            List<User> usersloaded = JsonConvert.DeserializeObject<List<User>>(UserFromFile, settings);
-
-            List<Book> booksloaded = JsonConvert.DeserializeObject<List<Book>>(BooksFromFile, settings);
-
-            
-        }
-
         // menu funkce
         static void ukazmenu()
         {
             bool jedeprogram = true;
             while (jedeprogram)
-            { 
+            {
                 Console.WriteLine(" ");
                 Console.WriteLine(" 1 - vyčíst všechny ");
                 if(prihlaseny is Redaktor)
@@ -226,12 +208,16 @@ namespace evidence_uzivatelu
                         prologin.RemoveUser(removedNick, adminspass, aminoviczcz.GetMasterHeslo());
                     }
                 }
+                prologin.SaveUsers();
+                books.SaveBooks();
             }
         }
 
         // přihlašovací funkce
         static bool Prihlasovani()
         {
+            prologin.LoadUsers();
+            books.LoadBooks();
             bool prihlasovaciproces = true;
             while (prihlasovaciproces)
             {
@@ -294,53 +280,6 @@ namespace evidence_uzivatelu
             // stavající uživatele (Později se smaže)
             
 
-            Admin Anti = new Admin();
-            Anti.Nickname = "Anti";
-            Anti.Password = "FragonsAreBest";
-
-
-
-            User Hanz = new User();
-            Hanz.Nickname = "Hanz";
-            Hanz.Password = "FragonsStinks";
-
-            Redaktor Vlkodlacice = new Redaktor();
-            Vlkodlacice.Nickname = "Vlkodlačice";
-            Vlkodlacice.Password = "ILoveRex";
-            Redaktor Rex = new Redaktor();
-            Rex.Nickname = "Rex";
-            Rex.Password = "ILoveMyWoof";
-            
-            prologin.AddNewUSer(Anti);
-            prologin.AddNewUSer(Hanz);
-            prologin.AddNewUSer(Vlkodlacice);
-            prologin.AddNewUSer(Rex);
-
-            // ňáký knížky (Později se smaže)
-            PaperBook DenDraka = new PaperBook();
-            DenDraka.Name = "Warcraft: Day of the Dragon";
-            DenDraka.ISBN = 0671041525;
-                Autor Richard = new Autor();
-                Richard.jmeno = "Richard";
-                Richard.primeni = "Knaak";
-            DenDraka.Autorknihy = Richard;
-            DenDraka.Stock = 2;
-            DenDraka.Weight = 300;
-
-            EBook Lord = new EBook();
-            Lord.Name = "Warcraft: Lords of Chaos ";
-            Lord.ISBN = 0671041525;
-            Autor Christie = new Autor();
-            Christie.jmeno = "Christe";
-            Christie.primeni = "Eh?";
-            Lord.Autorknihy = Richard;
-            Lord.URL = "https://en.wikipedia.org/wiki/Warcraft:_Lord_of_the_Clans";
-            Lord.SizeMB = 300;
-
-            books.AddBook(DenDraka);
-            books.AddBook(Lord);
-            Console.Clear();
-
             // program
             bool jeprihlasen = true;
             while (jeprihlasen)
@@ -351,7 +290,7 @@ namespace evidence_uzivatelu
                 if (jeprihlasen)
                 {
                     ukazmenu();
-                }
+                }                
             }
            
         }

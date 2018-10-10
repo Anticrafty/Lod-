@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace evidence_uzivatelu
 {
     class Loginator
     {
         private List<User> Users = new List<User>();
+
+        static JsonSerializerSettings settings = new JsonSerializerSettings()
+        {
+            TypeNameHandling = TypeNameHandling.All
+        };
 
         public void AddNewUSer(User newuser)
         {
@@ -71,6 +78,53 @@ namespace evidence_uzivatelu
                 idUzivatele++;
             }
             return null;
+        }
+
+        public void SaveUsers()
+        {
+            string jsonUsers = JsonConvert.SerializeObject(Users, settings);
+
+            File.WriteAllText(@"D:\novakja16\Github\evidence uzivatelu\Users.json", jsonUsers);
+        }
+        public void LoadUsers()
+        {
+            try
+            {
+                string UserFromFile = File.ReadAllText((@"D:\novakja16\Github\evidence uzivatelu\Users.json"));
+
+                Users = JsonConvert.DeserializeObject<List<User>>(UserFromFile, settings);
+            }
+
+            catch (FileNotFoundException e)
+            {
+                Console.WriteLine("Nebyl nalezen záznam. Načtu improvizované uživatele.");
+                Console.ReadLine();
+
+
+                Admin Anti = new Admin();
+                Anti.Nickname = "Anti";
+                Anti.Password = "FragonsAreBest";
+
+
+
+                User Hanz = new User();
+                Hanz.Nickname = "Hanz";
+                Hanz.Password = "FragonsStinks";
+
+                Redaktor Vlkodlacice = new Redaktor();
+                Vlkodlacice.Nickname = "Vlkodlačice";
+                Vlkodlacice.Password = "ILoveRex";
+                Redaktor Rex = new Redaktor();
+                Rex.Nickname = "Rex";
+                Rex.Password = "ILoveMyWoof";
+
+                this.AddNewUSer(Anti);
+                this.AddNewUSer(Hanz);
+                this.AddNewUSer(Vlkodlacice);
+                this.AddNewUSer(Rex);
+                Console.Clear();
+               
+            }
         }
 
     }

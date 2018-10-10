@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace evidence_uzivatelu
 {
@@ -10,6 +12,11 @@ namespace evidence_uzivatelu
     {
         public List<Book> Books = new List<Book>();
 
+
+        static JsonSerializerSettings settings = new JsonSerializerSettings()
+        {
+            TypeNameHandling = TypeNameHandling.All
+        };
         public bool RemoveBook(string removedName,int removedISBN)
         {
             bool neninikdopodobny = true;
@@ -63,5 +70,50 @@ namespace evidence_uzivatelu
 
         }
 
+        public void SaveBooks()
+        {
+            string jsonBooks = JsonConvert.SerializeObject(Books, settings);
+
+            File.WriteAllText(@"D:\novakja16\Github\evidence uzivatelu\Books.json", jsonBooks);
+        }
+        public void LoadBooks()
+        {
+            try
+            {
+                string UserFromBooks = File.ReadAllText((@"D:\novakja16\Github\evidence uzivatelu\Books.json"));
+
+                Books = JsonConvert.DeserializeObject<List<Book>>(UserFromBooks, settings);
+            }
+
+            catch (FileNotFoundException e)
+            {
+                Console.WriteLine("Nebyl nalezen záznam. Načtu improvizované knížky.");
+                Console.ReadLine();
+
+                PaperBook DenDraka = new PaperBook();
+                DenDraka.Name = "Warcraft: Day of the Dragon";
+                DenDraka.ISBN = 0671041525;
+                Autor Richard = new Autor();
+                Richard.jmeno = "Richard";
+                Richard.primeni = "Knaak";
+                DenDraka.Autorknihy = Richard;
+                DenDraka.Stock = 2;
+                DenDraka.Weight = 300;
+
+                EBook Lord = new EBook();
+                Lord.Name = "Warcraft: Lords of Chaos ";
+                Lord.ISBN = 0671041525;
+                Autor Christie = new Autor();
+                Christie.jmeno = "Christe";
+                Christie.primeni = "Eh?";
+                Lord.Autorknihy = Richard;
+                Lord.URL = "https://en.wikipedia.org/wiki/Warcraft:_Lord_of_the_Clans";
+                Lord.SizeMB = 300;
+
+                this.AddBook(DenDraka);
+                this.AddBook(Lord);
+                Console.Clear();
+            }
+        }
     }
 }
