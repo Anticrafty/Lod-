@@ -115,7 +115,40 @@ namespace evidence_uzivatelu
            
             if (file.Exists)
             {
+                using (var newExel = new ExcelPackage(file))
+                {
+                    ExcelWorksheet stranka = newExel.Workbook.Worksheets["Cars"];
+                    for (int sloupec = 2; sloupec != 0; sloupec++)
+                    {
+                        var blbost = stranka.Cells[1, sloupec].Value;
+                        if (stranka.Cells[1,sloupec].Value != null)
+                        {
+                            var znackaneopravena = stranka.Cells[2, sloupec].Value;
+                            string znacka = znackaneopravena.ToString();
+                            var SPZneopravena = stranka.Cells[3, sloupec].Value;
+                            string spz = SPZneopravena.ToString();
+                            var cenaneopravena = stranka.Cells[4, sloupec].Value;
+                            string stringcena = cenaneopravena.ToString();
+                            int cena = int.Parse(stringcena);
+                            var kmneopravena = stranka.Cells[5, sloupec].Value;
+                            int km = int.Parse(kmneopravena.ToString());
+                            Car newcar = new Car()
+                            {
+                                Znacka = znacka,
+                                SPZ = spz,
+                                Cena = cena,
+                                NajeteKM = km
 
+                            };
+                            this.AddCar(newcar);
+                        }
+                        else
+                        {
+                            sloupec = 0;
+                        }
+                       
+                    }
+                }
             }
             else
             {
