@@ -84,13 +84,26 @@ namespace evidence_uzivatelu
         {
             string jsonUsers = JsonConvert.SerializeObject(Users, settings);
 
-            File.WriteAllText(@"D:\novakja16\Github\evidence uzivatelu\Users.json", jsonUsers);
+            // ŠKOLNÍ
+            //File.WriteAllText(@"D:\novakja16\Github\evidence uzivatelu\Users.json", jsonUsers);
+
+            // NORMAND
+            File.WriteAllText(@"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\evidence uzivatelu\Users.json", jsonUsers);
+
+            // EMIL
+            
         }
         public void LoadUsers()
         {
             try
             {
-                string UserFromFile = File.ReadAllText((@"D:\novakja16\Github\evidence uzivatelu\Users.json"));
+                // ŠKOLNÍ
+                //string UserFromFile = File.ReadAllText((@"D:\novakja16\Github\evidence uzivatelu\Users.json"));
+
+                // NORMAND
+                string UserFromFile = File.ReadAllText((@"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\evidence uzivatelu\Users.json"));
+
+                // EMIL
 
                 Users = JsonConvert.DeserializeObject<List<User>>(UserFromFile, settings);
             }

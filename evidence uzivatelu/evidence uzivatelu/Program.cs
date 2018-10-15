@@ -46,11 +46,11 @@ namespace evidence_uzivatelu
                 }
                 if (prihlaseny is Redaktor)
                 {
-                    Console.WriteLine(" 4 - zapsat novou knihu");
+                    Console.WriteLine(" 4 - zapsat nové auto");
                 }
                 if (prihlaseny is Redaktor)
                 {
-                    Console.WriteLine(" 5 - vymazat knihu");
+                    Console.WriteLine(" 5 - vymazat auto");
                 }
                 if (prihlaseny is Admin)
                 {
