@@ -11,6 +11,6 @@ namespace evidence_uzivatelu
         public string Znacka;
         public string SPZ;
         public int Cena;
-        public int NajetéKM;
+        public int NajeteKM;
     }
 }

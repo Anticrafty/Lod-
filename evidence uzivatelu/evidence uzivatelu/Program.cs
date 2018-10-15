@@ -25,6 +25,9 @@ namespace evidence_uzivatelu
         // list všech knížek
         static Booksies books = new Booksies();
 
+        // list všech aut
+        static Carsies cars = new Carsies();
+
         // menu funkce
         static void ukazmenu()
         {
@@ -41,14 +44,21 @@ namespace evidence_uzivatelu
                 {
                     Console.WriteLine(" 3 - vymazat knihu");
                 }
-
-                if (prihlaseny is Admin)
+                if (prihlaseny is Redaktor)
                 {
-                    Console.WriteLine(" 4 - vytvořit nového uživatele");
+                    Console.WriteLine(" 4 - zapsat novou knihu");
+                }
+                if (prihlaseny is Redaktor)
+                {
+                    Console.WriteLine(" 5 - vymazat knihu");
                 }
                 if (prihlaseny is Admin)
                 {
-                    Console.WriteLine(" 5 - vymazat uživatele");
+                    Console.WriteLine(" 6 - vytvořit nového uživatele");
+                }
+                if (prihlaseny is Admin)
+                {
+                    Console.WriteLine(" 7 - vymazat uživatele");
                 }
                 Console.WriteLine(" 0 - odhlasit se");
                 Console.Write(" Chci : ");
@@ -151,7 +161,46 @@ namespace evidence_uzivatelu
                             books.RemoveBook( removedName, removedISBN);
                         }
                     }
-                    if (odpoved == 4 && prihlaseny is Admin aminovicz)
+                    if (odpoved == 4 && prihlaseny is Redaktor)
+                    {
+                        int odpoved2 = 1;
+                        Console.Write("Značku Auta: ");
+                        string znackaauta = Console.ReadLine();
+                        Console.Write("SPZ Auta: ");
+                        string SPZAuta = Console.ReadLine();
+                        Console.Write("Cena Auta: ");
+                        string cena = Console.ReadLine();
+                        bool ISBNP = int.TryParse(cena, out int cenaAuta);
+                        if (!ISBNP)
+                        {
+                            odpoved2 = 0;
+                        }
+                        Console.Write("Najeté KM Auta: ");
+                        string KM = Console.ReadLine();
+                        bool ISKM = int.TryParse(KM, out int KMAuta);
+                        if (!ISKM)
+                        {
+                            odpoved2 = 0;
+                        }
+                        if (odpoved2 == 1)
+                        {                            
+                            Car newcar = new Car()
+                            {
+                                Znacka = znackaauta,
+                                SPZ = SPZAuta,
+                                Cena = cenaAuta,
+                                NajeteKM = KMAuta
+                            };
+                            cars.AddCar(newcar);                        
+                        }
+                    }
+                    if (odpoved == 5 && prihlaseny is Redaktor)
+                    {
+                        Console.Write("SPZ Auta: ");
+                        string SPZAuta = Console.ReadLine();
+                        cars.RemoveCar(SPZAuta);                        
+                    }
+                    if (odpoved == 6 && prihlaseny is Admin aminovicz)
                     {
                         Console.WriteLine(" 1 - Uživatel");
                         Console.WriteLine(" 2 - Redaktor");
@@ -199,7 +248,7 @@ namespace evidence_uzivatelu
                             }
                         }       
                     }
-                    if (odpoved == 5 && prihlaseny is Admin aminoviczcz)
+                    if (odpoved == 7 && prihlaseny is Admin aminoviczcz)
                     {
                         Console.Write("Jmeno uživatele: ");
                         string removedNick = Console.ReadLine();
