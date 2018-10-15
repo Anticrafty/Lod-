@@ -259,6 +259,7 @@ namespace evidence_uzivatelu
                 }
                 prologin.SaveUsers();
                 books.SaveBooks();
+                cars.SaveCars();
             }
         }
 
@@ -267,6 +268,7 @@ namespace evidence_uzivatelu
         {
             prologin.LoadUsers();
             books.LoadBooks();
+            cars.LoadCars();
             bool prihlasovaciproces = true;
             while (prihlasovaciproces)
             {
