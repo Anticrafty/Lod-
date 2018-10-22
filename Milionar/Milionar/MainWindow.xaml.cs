@@ -20,9 +20,37 @@ namespace Milionar
     /// </summary>
     public partial class MainWindow : Window
     {
+        // nepoužito?
+        bool padenapadenepouzitej = true;
+        bool jinaotazkanepouzitej = true;
+        bool publikumnepouzitej = true;
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void start_Click(object sender, RoutedEventArgs e)
+        {
+            start.Visibility = Visibility.Collapsed;
+
+            if (padenapadenepouzitej)
+            {
+                rada1.Visibility = Visibility.Visible;
+            }
+            if (publikumnepouzitej)
+            {
+
+                rada2.Visibility = Visibility.Visible;
+            }
+            if (jinaotazkanepouzitej)
+            {
+                rada3.Visibility = Visibility.Visible;
+            }
+
+            odpoved.Visibility = Visibility.Visible;
+            
+
         }
     }
 }

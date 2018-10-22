@@ -5,9 +5,173 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Milionar"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="MainWindow" Height="469.2" Width="800">
     <Grid>
-        <TextBox HorizontalAlignment="Center" Height="97" Margin="46,39,0,0" TextWrapping="Wrap" Text="Vítejte v: Chcete se stát milionářem?" VerticalAlignment="Top" Width="694" FontSize="36"/>
+        <ProgressBar x:Name="penize" HorizontalAlignment="Left" Height="183" Margin="4,0,0,0" VerticalAlignment="Top" Width="780" Value="-2" Maximum="15" Background="White"/>
+
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="-37,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.5,0.5" FontSize="36">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.696"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="1000"/><Run Text=" "/><Run Text="-"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="13,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.5,0.5" FontSize="36">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.696"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="2000"/><Run Text=" "/><Run Text="-"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="70,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.5,0.5" FontSize="36">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.696"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="3"/><Run Text="000"/><Run Text=" "/><Run Text="-"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="125,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.5,0.5" FontSize="36">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.696"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="5"/><Run Text="000"/><Run Text=" "/><Run Text="-"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="171,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.5,0.5" FontSize="36">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.696"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="10"/><Run Text="000"/><Run Text=" "/><Run Text="-"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="228,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.5,0.5" FontSize="36">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.696"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="2"/><Run Text="0"/><Run Text="000"/><Run Text=" "/><Run Text="-"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="278,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.466,0.587" FontSize="36">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.696"/>
+                    <TranslateTransform X="0.787" Y="-7.739"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="4"/><Run Text="0"/><Run Text="000"/><Run Text=" "/><Run Text="-"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="330,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.5,0.5" FontSize="36">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.696"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="8"/><Run Text="0"/><Run Text="000"/><Run Text=" "/><Run Text="-"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="375,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.5,0.5" FontSize="36">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.696"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="1"/><Run Text="6"/><Run Text="0"/><Run Text="000"/><Run Text=" "/><Run Text="-"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="426,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.5,0.5" FontSize="36">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.696"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="32"/><Run Text="0"/><Run Text="000"/><Run Text=" "/><Run Text="-"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="484,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.5,0.5" FontSize="36">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.696"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="64"/><Run Text="0"/><Run Text="000"/><Run Text=" "/><Run Text="-"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="531,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" RenderTransformOrigin="0.5,0.5" FontSize="36">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.696"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="125"/><Run Text="0"/><Run Text="000"/><Run Text=" "/><Run Text="-"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="583,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" RenderTransformOrigin="0.5,0.5" FontSize="36">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.696"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="25"/><Run Text="0"/><Run Text="0"/><Run Text="000"/><Run Text=" "/><Run Text="-"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="635,61,-4.4,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" RenderTransformOrigin="0.5,0.5" FontSize="36">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.696"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="5"/><Run Text="00"/><Run Text="0"/><Run Text="000"/><Run Text=" "/><Run Text="-"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="668,72,-66.4,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" RenderTransformOrigin="0.5,0.5" FontSize="36">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.696"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="1"/><Run Text="000"/><Run Text="0"/><Run Text="000"/><Run Text=" "/><Run Text="-"/></TextBlock>
+
+        <TextBox HorizontalAlignment="Center" Height="119" Margin="54,146,45.6,0"  Text="Vítejte v: Chcete být milionářem?" VerticalAlignment="Top" Width="694" FontSize="48"/>
+        <StackPanel x:Name="odpoved" HorizontalAlignment="Center" Height="140" Margin="166,280,137.6,0" VerticalAlignment="Top" Width="490" Orientation="Horizontal" Visibility="Collapsed">
+            <StackPanel Margin="0,10" Width="245
+">
+                <Button x:Name="odpoved1" Content="" d:LayoutOverrides="Height" Height="60" />
+                <Button x:Name="odpoved2" Content="" d:LayoutOverrides="Height" Height="60" />
+            </StackPanel>
+            <StackPanel Width="245" Margin="0,10" RenderTransformOrigin="0.494,0.519">
+                <Button x:Name="odpoved3" Content="" d:LayoutOverrides="Height" Height="60" />
+                <Button x:Name="odpoved4" Content="" d:LayoutOverrides="Height" Height="60" />
+            </StackPanel>
+
+
+        </StackPanel>
+
+        <Button x:Name="rada1" Content="50:50" HorizontalAlignment="Left" Height="45" Margin="679,322,0,0" VerticalAlignment="Top" Width="87" Visibility="Hidden" />
+        <Button x:Name="rada2" Content="publikum" HorizontalAlignment="Left" Height="45" Margin="31,298,0,0" VerticalAlignment="Top" Width="114" Visibility="Hidden" />
+        <Button x:Name="rada3" Content="jina otazka" HorizontalAlignment="Left" Height="45" Margin="31,348,0,0" VerticalAlignment="Top" Width="114" Visibility="Hidden" />
+        <Button x:Name="start" Content="Nová otázka" HorizontalAlignment="Left" Height="95" Margin="198,298,0,0" VerticalAlignment="Top" Width="458" FontSize="48" Visibility="Visible" Click="start_Click"  />
 
     </Grid>
 </Window>
