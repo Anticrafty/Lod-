@@ -1,0 +1,15 @@
+﻿<Page x:Class="Matematicka_hra.Nový_priklad"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Matematicka_hra"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1054.403"
+      Title="Nový_priklad">
+
+    <Grid>
+        <Button Content="Start hry" HorizontalAlignment="Left" Height="63" Margin="412,212,0,0" VerticalAlignment="Top" Width="202" Visibility="Visible" x:Name="Start_Butt" Click="Tlacitko_Start"/>
+        <Button Content="Load game" HorizontalAlignment="Left" Height="67" Margin="412,296,0,0" VerticalAlignment="Top" Width="202" x:Name="save" Visibility="Visible" Click="save_Click" />
+    </Grid>
+</Page>

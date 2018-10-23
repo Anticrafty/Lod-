@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Milionar.Properties
+namespace Matematicka_hra.Properties
 {
 
 

@@ -1,0 +1,17 @@
+﻿<Page x:Class="Matematicka_hra.Priklad"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Matematicka_hra"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1054.403"
+      Title="Priklad">
+
+    <Grid>
+
+        <Button Content="Button" HorizontalAlignment="Left" Height="90" Margin="207,254,0,0" VerticalAlignment="Top" Width="200" x:Name="Butt_1" Click="Tlacitko_1"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="90" Margin="619,254,0,0" VerticalAlignment="Top" Width="200" x:Name="Butt_2" Click="Tlacitko_2"/>
+        
+    </Grid>
+</Page>

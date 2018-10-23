@@ -1,0 +1,26 @@
+﻿<Window x:Class="Matematicka_hra.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Matematicka_hra"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="MainWindow" Height="450" Width="1054.403">
+    <Grid>
+        
+        <Label Content="Matematická hra" HorizontalAlignment="Left" Margin="462,115,0,0" VerticalAlignment="Top" x:Name="mlem"/>
+        
+        <ProgressBar HorizontalAlignment="Left" Height="20" Margin="23,386,0,0" VerticalAlignment="Top" Width="1000" x:Name="progresswxp" Maximum="10" />
+
+        <Frame x:Name="myframe"></Frame>
+    </Grid>
+
+</Window>

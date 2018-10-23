@@ -69,10 +69,10 @@ namespace evidence_uzivatelu
         public void SaveCars()
         {
             // ŠKOLNÍ
-            //var file = new FileInfo(@"D:\novakja16\Github\evidence uzivatelu\Cars.xlsx");
+            var file = new FileInfo(@"D:\novakja16\Github\evidence uzivatelu\Cars.xlsx");
 
             // NORMAND
-            var file = new FileInfo(@"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\evidence uzivatelu\Cars.xlsx");
+            //var file = new FileInfo(@"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\evidence uzivatelu\Cars.xlsx");
 
             // EMIL
             using (var newExel = new ExcelPackage(file))
@@ -93,23 +93,17 @@ namespace evidence_uzivatelu
                     IDAuta++;
                 }
                 stranka.Cells[1, IDAuta + 1, 5, IDAuta + 1].Style.Border.Right.Style = ExcelBorderStyle.Thick;
-                // ŠKOLNÍ
-                //var newExel.Save();
-
-                // NORMAND
                 newExel.Save();
-
-                // EMIL
             }
         }
 
         public void LoadCars()
         {
             // ŠKOLNÍ
-            //var file = new FileInfo(@"D:\novakja16\Github\evidence uzivatelu\Cars.xlsx");
+            var file = new FileInfo(@"D:\novakja16\Github\evidence uzivatelu\Cars.xlsx");
 
             // NORMAND
-            var file = new FileInfo(@"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\evidence uzivatelu\Cars.xlsx");
+            //var file = new FileInfo(@"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\evidence uzivatelu\Cars.xlsx");
 
             // EMIL
            
@@ -120,7 +114,7 @@ namespace evidence_uzivatelu
                     ExcelWorksheet stranka = newExel.Workbook.Worksheets["Cars"];
                     for (int sloupec = 2; sloupec != 0; sloupec++)
                     {
-                        var blbost = stranka.Cells[1, sloupec].Value;
+                        var b = stranka.Cells[1, sloupec].Value;
                         if (stranka.Cells[1,sloupec].Value != null)
                         {
                             var znackaneopravena = stranka.Cells[2, sloupec].Value;
@@ -144,7 +138,7 @@ namespace evidence_uzivatelu
                         }
                         else
                         {
-                            sloupec = 0;
+                            sloupec = -1;
                         }
                        
                     }

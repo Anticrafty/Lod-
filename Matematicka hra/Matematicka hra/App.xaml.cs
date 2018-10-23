@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Milionar
+namespace Matematicka_hra
 {
     /// <summary>
     /// Interakční logika pro App.xaml

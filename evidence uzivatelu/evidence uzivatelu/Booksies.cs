@@ -75,10 +75,10 @@ namespace evidence_uzivatelu
             string jsonBooks = JsonConvert.SerializeObject(Books, settings);
 
             // ŠKOLNÍ
-            //File.WriteAllText(@"D:\novakja16\Github\evidence uzivatelu\Books.json", jsonBooks);
+            File.WriteAllText(@"D:\novakja16\Github\evidence uzivatelu\Books.json", jsonBooks);
 
             // NORMAND
-            File.WriteAllText(@"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\evidence uzivatelu\Books.json", jsonBooks);
+            //File.WriteAllText(@"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\evidence uzivatelu\Books.json", jsonBooks);
 
             // EMIL
 
@@ -89,10 +89,10 @@ namespace evidence_uzivatelu
             try
             {
                 // ŠKOLNÍ
-                //string UserFromBooks = File.ReadAllText((@"D:\novakja16\Github\evidence uzivatelu\Books.json"));
+                string UserFromBooks = File.ReadAllText((@"D:\novakja16\Github\evidence uzivatelu\Books.json"));
 
                 // NORMAND
-                string UserFromBooks = File.ReadAllText((@"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\evidence uzivatelu\Books.json"));
+                // string UserFromBooks = File.ReadAllText((@"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\evidence uzivatelu\Books.json"));
 
                 // EMIL
 
