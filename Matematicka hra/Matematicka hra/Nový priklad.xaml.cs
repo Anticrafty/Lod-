@@ -23,23 +23,32 @@ namespace Matematicka_hra
     public partial class Nový_priklad : Page
     {
         private Frame parentFrame;
+        private static Button pristup_savebutt;
+        private static Button pristup_StartButt;
+
 
         public Nový_priklad()
         {
             InitializeComponent();
+            pristup_savebutt = save ;
+            pristup_StartButt = Start_Butt;
         }
         public Nový_priklad(Frame parentframe) : this()
         {
             this.parentFrame = parentframe;
         }
+        static public void ToButt_Save(string vysledek)
+        {
+            pristup_savebutt.Content = vysledek;
+        }
+        static public void ToButt_Start(string vysledek)
+        {
+            pristup_StartButt.Content = vysledek;
+        }
         private void Tlacitko_Start(object sender, RoutedEventArgs e)
         {
+            parentFrame.Navigate(new Priklad(parentFrame));
             
-            save.Content = "Save";
-            Start_Butt.Content = "pokracovat";
-
-            parentFrame.Navigate(new Priklad());
-
             int lvlec = 10 * MainWindow.lvl;
 
             int cast1 = MainWindow.rn.Next(1, lvlec);
@@ -133,7 +142,6 @@ namespace Matematicka_hra
                 }
                 MainWindow.exp = expLoaded - alredydidwxp;
                 MainWindow.mlemaz("Loaded");
-                parentFrame.Navigate(new Priklad());
                 MainWindow.NewProgress(MainWindow.exp);
 
             }

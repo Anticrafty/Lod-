@@ -59,8 +59,10 @@ namespace Matematicka_hra
             {
                 MainWindow.mlemaz("Špatná odpověď");
             }
-            parentFrame.Navigate(new Nový_priklad());
+            parentFrame.Navigate(new Nový_priklad(parentFrame));
 
+            Nový_priklad.ToButt_Save("Save");
+            Nový_priklad.ToButt_Start("pokracovat");
 
         }
 
@@ -78,7 +80,10 @@ namespace Matematicka_hra
             {
                 MainWindow.mlemaz("Špatná odpověď");
             }
-            parentFrame.Navigate(new Nový_priklad());
+            parentFrame.Navigate(new Nový_priklad(parentFrame));
+
+            Nový_priklad.ToButt_Save("Save");
+            Nový_priklad.ToButt_Start("pokracovat");
         }
     }
 }
