@@ -67,21 +67,18 @@ namespace Matematicka_hra
         private void Tlacitko_2(object sender, RoutedEventArgs e)
         {
             int tip = Convert.ToInt32(Butt_2.Content);
-            if (tip == vysledek)
+            if (tip == MainWindow.vysledek)
             {
-                exp++;
-                progresswxp.Value = exp;
-                calculateexp();
-                mlem.Content = "Správná odpoved";
+                MainWindow.exp++;
+                MainWindow.NewProgress(MainWindow.exp);
+                MainWindow.calculateexp();
+                MainWindow.mlemaz("Správná odpoved");
             }
             else
             {
-                mlem.Content = "Špatná odpověď";
+                MainWindow.mlemaz("Špatná odpověď");
             }
-            Butt_1.Visibility = Visibility.Hidden;
-            Butt_2.Visibility = Visibility.Hidden;
-            Start_Butt.Visibility = Visibility.Visible;
-            save.Visibility = Visibility.Visible;
+            parentFrame.Navigate(new Nový_priklad());
         }
     }
 }

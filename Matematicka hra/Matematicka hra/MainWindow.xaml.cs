@@ -71,62 +71,6 @@ namespace Matematicka_hra
         // 210 - 60 = 150 - 50 = 100 - 40 = 60 -30 = 30 - 20 = 10 = 10
         // 6,5,4,3,2,1
 
-        private void save_Click(object sender, RoutedEventArgs e)
-        {
-            string saveOrLoad = save.Content.ToString();
-
-            if(saveOrLoad == "Save")
-            {
-                int vypocitaneExp = 0;
-
-                int pocitanylvl = lvl;
-
-                int theNeed = expneed;
-
-                while (pocitanylvl != 0 )
-                {
-                    int odpocitavani = theNeed - (pocitanylvl * 10);
-                    // 60 - (3 *10) = 60 -30 = 30 | 30 - (2 * 10) = 30 - 20 = 10 | 10 - (1 * 10) = 10 - 10 = 0
-                    vypocitaneExp = vypocitaneExp + odpocitavani;
-                    // 0 + 30 = 30 | 30 + 10 = 40  | 40 + 0 = 40
-                    theNeed = odpocitavani;
-                    // 30 | 10 | 0
-                    pocitanylvl = pocitanylvl - 1;
-                    // 2 | 1 | 0
-                }
-
-                int infoexp = exp + vypocitaneExp;
-
-                string jsonEXP = JsonConvert.SerializeObject(infoexp);
-
-                File.WriteAllText(@"D:\novakja16\Matematicka hra\Ulozena hra.json", jsonEXP);
-
-                mlem.Content = "Uloženo";
-            }
-            else if (saveOrLoad == "Load game")
-            {
-
-                string UserFromFile = File.ReadAllText((@"D:\novakja16\Matematicka hra\Ulozena hra.json"));
-                int expLoaded = JsonConvert.DeserializeObject<int>(UserFromFile);
-
-                int alredydidwxp = 0;
-                int expused = 0;
-                while (expLoaded > expused)
-                { 
-                   
-                    lvl++;
-                    alredydidwxp = expused;
-                    expused = expused + expneed;
-                    expneed = expused + (lvl * 10);
-                    progresswxp.Maximum = expneed;
-                    progresswxp.Value = 0;
-                }
-                exp = expLoaded - alredydidwxp;
-                mlem.Content = "Loaded";
-                save.Visibility = Visibility.Hidden;
-                progresswxp.Value = exp;
-
-            }
-        }
+        
     }
 }

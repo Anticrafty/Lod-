@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,14 +72,71 @@ namespace Matematicka_hra
             if (jakybutt == 1)
             {
                 Priklad.ToButt_1(MainWindow.vysledek);
-                Priklad.ToButt_1(MainWindow.rn.Next(MainWindow.vysledek - (10 * MainWindow.lvl), MainWindow.vysledek + (10 * MainWindow.lvl)));
+                Priklad.ToButt_2(MainWindow.rn.Next(MainWindow.vysledek - (10 * MainWindow.lvl), MainWindow.vysledek + (10 * MainWindow.lvl)));
             }
             else
             {
-                Priklad.ToButt_1(MainWindow.vysledek);
+                Priklad.ToButt_2(MainWindow.vysledek);
                 Priklad.ToButt_1(MainWindow.rn.Next(MainWindow.vysledek - (10 * MainWindow.lvl), MainWindow.vysledek + (10 * MainWindow.lvl)));
             }
 
+        }
+        private void save_Click(object sender, RoutedEventArgs e)
+        {
+            string saveOrLoad = save.Content.ToString();
+
+            if (saveOrLoad == "Save")
+            {
+                int vypocitaneExp = 0;
+
+                int pocitanylvl = MainWindow.lvl;
+
+                int theNeed = MainWindow.expneed;
+
+                while (pocitanylvl != 0)
+                {
+                    int odpocitavani = theNeed - (pocitanylvl * 10);
+                    // 60 - (3 *10) = 60 -30 = 30 | 30 - (2 * 10) = 30 - 20 = 10 | 10 - (1 * 10) = 10 - 10 = 0
+                    vypocitaneExp = vypocitaneExp + odpocitavani;
+                    // 0 + 30 = 30 | 30 + 10 = 40  | 40 + 0 = 40
+                    theNeed = odpocitavani;
+                    // 30 | 10 | 0
+                    pocitanylvl = pocitanylvl - 1;
+                    // 2 | 1 | 0
+                }
+
+                int infoexp = MainWindow.exp + vypocitaneExp;
+
+                string jsonEXP = JsonConvert.SerializeObject(infoexp);
+
+                File.WriteAllText(@"D:\novakja16\Matematicka hra\Ulozena hra.json", jsonEXP);
+
+                MainWindow.mlemaz("Uloženo");
+            }
+            else if (saveOrLoad == "Load game")
+            {
+
+                string UserFromFile = File.ReadAllText((@"D:\novakja16\Matematicka hra\Ulozena hra.json"));
+                int expLoaded = JsonConvert.DeserializeObject<int>(UserFromFile);
+
+                int alredydidwxp = 0;
+                int expused = 0;
+                while (expLoaded > expused)
+                {
+
+                    MainWindow.lvl++;
+                    alredydidwxp = expused;
+                    expused = expused + MainWindow.expneed;
+                    MainWindow.expneed = expused + (MainWindow.lvl * 10);
+                    MainWindow.NewProgress(MainWindow.expneed);
+                    MainWindow.NewProgress(0);
+                }
+                MainWindow.exp = expLoaded - alredydidwxp;
+                MainWindow.mlemaz("Loaded");
+                parentFrame.Navigate(new Priklad());
+                MainWindow.NewProgress(MainWindow.exp);
+
+            }
         }
     }
 }
