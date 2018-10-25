@@ -16,19 +16,18 @@ using System.Windows.Shapes;
 namespace Milionar
 {
     /// <summary>
-    /// Interakční logika pro MainWindow.xaml
+    /// Interakční logika pro otazka.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class otazka : Page
     {
-        public MainWindow()
+        private Frame pretchoziFrame;
+        public otazka()
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public otazka(Frame predchozistranka) : this()
         {
-            stranka.Navigate(new otazka(stranka));
-            start.Visibility = Visibility.Collapsed;
+            this.pretchoziFrame = predchozistranka;
         }
     }
 }
