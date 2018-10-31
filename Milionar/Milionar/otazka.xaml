@@ -11,9 +11,9 @@
     <Grid>
         <StackPanel HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" Width="734" Height="156">
             <StackPanel Height="39" Margin="10" Orientation="Horizontal" >
-                <Button Content="Button" d:LayoutOverrides="Height" Margin="0,0,10,0" Width="231"/>
-                <Button Content="Button" d:LayoutOverrides="Height" Margin="0,0,10,0" Width="232" />
-                <Button Content="Button" d:LayoutOverrides="Height" Width="231" />
+                <Button Content="50:50" d:LayoutOverrides="Height" Margin="0,0,10,0" Width="231"/>
+                <Button Content="nova otazka" d:LayoutOverrides="Height" Margin="0,0,10,0" Width="232" />
+                <Button Content="publikum" d:LayoutOverrides="Height" Width="231" />
             </StackPanel>
             <StackPanel Height="87" Margin="10,0" Orientation="Horizontal">
                 <StackPanel Height="87" Width="357">

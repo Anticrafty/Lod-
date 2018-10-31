@@ -16,25 +16,21 @@ using System.Windows.Shapes;
 namespace Milionar
 {
     /// <summary>
-    /// Interakční logika pro MainWindow.xaml
+    /// Interakční logika pro pokracovani.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class pokracovani : Page
     {
-        public static ProgressBar ukazator;
-        public MainWindow()
+        private Frame pretchoziFrame;
+        public static int uhadnuty = 2;
+        public pokracovani()
         {
             InitializeComponent();
-            ukazator = Streser;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public pokracovani( Frame predchozistranka) : this()
         {
-            stranka.Navigate(new otazka(stranka));
-            start.Visibility = Visibility.Collapsed;
+            this.pretchoziFrame = predchozistranka;
+            MainWindow.ZmenStreser(uhadnuty);
         }
-        static public void ZmenStreser(int cislo)
-        {
-            ukazator.Value = cislo;
-        }
-    }
+}
 }
