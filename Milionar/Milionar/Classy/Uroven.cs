@@ -8,6 +8,6 @@ namespace Milionar.Classy
 {
     class Uroven
     {
-        List<Otazka> Otazky = new List<Otazka>();
+        public List<Otazka> Otazky = new List<Otazka>();
     }
 }

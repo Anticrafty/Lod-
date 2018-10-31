@@ -19,13 +19,19 @@ namespace Milionar
     /// <summary>
     /// Interakční logika pro otazka.xaml
     /// </summary>
+    
     public partial class otazka : Page
     {
+        private Random rn = new Random();
         private Frame pretchoziFrame;
+        private int odpovezenych = 0;
+        private Otaznikovec otazky;
         public otazka()
         {
             InitializeComponent();
-            Otaznikovec x;
+            Otaznikovec otasky = new Otaznikovec();
+            otasky.PriStartuLoad();
+            otazky = otasky;
         }
         public otazka(Frame predchozistranka) : this()
         {
@@ -34,11 +40,14 @@ namespace Milionar
         }
         public void otaznikovec()
         {
-            MainWindow.HappyFox("Kolikata je toto otazka?");
-            Butt1.Content = "1";
-            Butt2.Content = "2";
-            Butt3.Content = "3";
-            Butt4.Content = "4";
+            Otazka otaska = otazky.Urovne[odpovezenych].Otazky[rn.Next(0,otazky.Urovne[odpovezenych].Otazky.Count())];
+            string text = otaska.zneni;
+            MainWindow.HappyFox(text);
+            
+            Butt1.Content = otaska.moznosti[0].zneni;
+            Butt2.Content = otaska.moznosti[1].zneni;
+            Butt3.Content = otaska.moznosti[2].zneni;
+            Butt4.Content = otaska.moznosti[3].zneni;
         }
     }
 }
