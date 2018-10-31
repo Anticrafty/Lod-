@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Milionar.Classy;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,10 +25,20 @@ namespace Milionar
         public otazka()
         {
             InitializeComponent();
+            Otaznikovec x;
         }
         public otazka(Frame predchozistranka) : this()
         {
             this.pretchoziFrame = predchozistranka;
+            otaznikovec();
+        }
+        public void otaznikovec()
+        {
+            MainWindow.HappyFox("Kolikata je toto otazka?");
+            Butt1.Content = "1";
+            Butt2.Content = "2";
+            Butt3.Content = "3";
+            Butt4.Content = "4";
         }
     }
 }

@@ -18,7 +18,7 @@
        
         <ProgressBar x:Name="Streser" HorizontalAlignment="Left" Height="120" Margin="10,10,0,0" VerticalAlignment="Top" Width="735" Maximum="15" Value="0" />
        
-        <TextBox HorizontalAlignment="Left" Height="100" Margin="10,135,0,0" TextWrapping="Wrap" Text=" Vítejte v: Chcete být milionářem?" VerticalAlignment="Top" Width="734" BorderBrush="Black" BorderThickness="3" FontSize="48" />
+        <TextBox x:Name="tuls" HorizontalAlignment="Left" Height="100" Margin="10,135,0,0" TextWrapping="Wrap" Text=" Vítejte v: Chcete být milionářem?" VerticalAlignment="Top" Width="734" BorderBrush="Black" BorderThickness="3" FontSize="48" />
         <Button x:Name="start" Content="Ano Chci!" HorizontalAlignment="Left" Margin="10,254,0,0" VerticalAlignment="Top" Width="734" Height="156" FontSize="72" Visibility="Visible" Click="Button_Click"/>
         <Frame x:Name="stranka" ></Frame>
 

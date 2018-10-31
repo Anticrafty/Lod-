@@ -21,16 +21,16 @@ namespace Milionar
     public partial class pokracovani : Page
     {
         private Frame pretchoziFrame;
-        public static int uhadnuty = 2;
+        public static int uhadnuty = 0;
         public pokracovani()
         {
             InitializeComponent();
         }
 
-        public pokracovani( Frame predchozistranka) : this()
+        public pokracovani(Frame predchozistranka) : this()
         {
             this.pretchoziFrame = predchozistranka;
             MainWindow.ZmenStreser(uhadnuty);
         }
-}
+    }
 }

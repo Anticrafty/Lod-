@@ -64,6 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classy\Odpoved.cs" />
+    <Compile Include="Classy\Otazka.cs" />
+    <Compile Include="Classy\Uroven.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -89,6 +92,7 @@
     <Compile Include="otazka.xaml.cs">
       <DependentUpon>otazka.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classy\Otaznikovec.cs" />
     <Compile Include="pokracovani.xaml.cs">
       <DependentUpon>pokracovani.xaml</DependentUpon>
     </Compile>

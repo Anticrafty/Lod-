@@ -21,20 +21,28 @@ namespace Milionar
     public partial class MainWindow : Window
     {
         public static ProgressBar ukazator;
+        public static TextBox Tuls;
         public MainWindow()
         {
             InitializeComponent();
             ukazator = Streser;
+            Tuls = tuls;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             stranka.Navigate(new otazka(stranka));
             start.Visibility = Visibility.Collapsed;
+
         }
         static public void ZmenStreser(int cislo)
         {
             ukazator.Value = cislo;
+        }
+        static public void HappyFox(string reward)
+        {
+            Tuls.Text = reward;
+            Tuls.FontSize = 24; 
         }
     }
 }

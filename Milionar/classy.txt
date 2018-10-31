@@ -1,0 +1,18 @@
+otázky
+----------------------------------------------------------------------------------
+Uroven :  List<Otazka> otazky;
+ 		|
+ 		V
+	     Otazka : string zneni; List<Odpoved> odpovedi;
+ 					 |
+					 V
+					Odpoved : string zneni; bool prvdivost;
+-----------------------------------------------------------------------------------------------------------------------------
+pø: 
+Uroven: otazky[0];
+
+otazky[0] : zneni = "Kolikata je toto otazka?"; odpovedi
+
+odpoved = [0: zneni = 1; pravda = True ,1: zneni = 2; pravda = False ,2: zneni = 3; pravda = False ,3: zneni = 4; pravda = False]
+-----------------------------------------------------------------------------------------------------------------------------
+
