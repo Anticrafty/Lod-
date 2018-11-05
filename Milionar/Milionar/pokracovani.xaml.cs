@@ -29,8 +29,15 @@ namespace Milionar
 
         public pokracovani(Frame predchozistranka) : this()
         {
+            uhadnuty++;
             this.pretchoziFrame = predchozistranka;
             MainWindow.ZmenStreser(uhadnuty);
+            
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            pretchoziFrame.Navigate(new otazka(pretchoziFrame));
         }
     }
 }

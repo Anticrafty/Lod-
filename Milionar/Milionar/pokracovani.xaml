@@ -9,8 +9,8 @@
       Title="pokracovani">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Height="120" Margin="10,10,0,0" VerticalAlignment="Top" Width="736" Orientation="Horizontal">
-            <TextBox TextWrapping="Wrap" Text="1 000" Height="50" Width="120" FontSize="22" Margin="50,0,0,71" BorderBrush="Black" BorderThickness="1">
+        <StackPanel HorizontalAlignment="Left" Height="120" Margin="10,0,0,0" VerticalAlignment="Top" Width="736" Orientation="Horizontal">
+            <TextBox TextWrapping="Wrap" Text="1 000" Height="50" Width="110" FontSize="22" Margin="50,0,0,71" BorderBrush="Black" BorderThickness="1">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -20,7 +20,7 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <TextBox TextWrapping="Wrap" Text="2 000" Height="50" Width="120" FontSize="22" Margin="-71,0,0,70" BorderBrush="Black" BorderThickness="1">
+            <TextBox TextWrapping="Wrap" Text="2 000" Height="50" Width="110" FontSize="22" Margin="-61,0,0,70" BorderBrush="Black" BorderThickness="1">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -30,7 +30,7 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <TextBox TextWrapping="Wrap" Text="3 000" Height="50" Width="120" FontSize="22" Margin="-71,0,0,70" BorderBrush="Black" BorderThickness="1">
+            <TextBox TextWrapping="Wrap" Text="3 000" Height="50" Width="110" FontSize="22" Margin="-61,0,0,70" BorderBrush="Black" BorderThickness="1">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -40,7 +40,7 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <TextBox TextWrapping="Wrap" Text="5 000" Height="50" Width="120" FontSize="22" Margin="-71,0,0,70" BorderBrush="Black" BorderThickness="1">
+            <TextBox TextWrapping="Wrap" Text="5 000" Height="50" Width="110" FontSize="22" Margin="-61,0,0,70" BorderBrush="Black" BorderThickness="1">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -50,7 +50,7 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <TextBox TextWrapping="Wrap" Text="10 000" Height="50" Width="120" FontSize="22" Margin="-71,0,0,70" BorderBrush="Black" BorderThickness="1">
+            <TextBox TextWrapping="Wrap" Text="10 000" Height="50" Width="110" FontSize="22" Margin="-61,0,0,70" BorderBrush="Black" BorderThickness="1">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -60,7 +60,7 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <TextBox TextWrapping="Wrap" Text="20 000" Height="50" Width="120" FontSize="22" Margin="-71,0,0,70" BorderBrush="Black" BorderThickness="1">
+            <TextBox TextWrapping="Wrap" Text="20 000" Height="50" Width="110" FontSize="22" Margin="-61,0,0,70" BorderBrush="Black" BorderThickness="1">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -70,7 +70,7 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <TextBox TextWrapping="Wrap" Text="30 000" Height="50" Width="120" FontSize="22" Margin="-71,0,0,70" BorderBrush="Black" BorderThickness="1">
+            <TextBox TextWrapping="Wrap" Text="30 000" Height="50" Width="110" FontSize="22" Margin="-61,0,0,70" BorderBrush="Black" BorderThickness="1">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -80,7 +80,7 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <TextBox TextWrapping="Wrap" Text="40 000" Height="50" Width="120" FontSize="22" Margin="-71,0,0,70" BorderBrush="Black" BorderThickness="1">
+            <TextBox TextWrapping="Wrap" Text="40 000" Height="50" Width="110" FontSize="22" Margin="-61,0,0,70" BorderBrush="Black" BorderThickness="1">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -90,7 +90,7 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <TextBox TextWrapping="Wrap" Text="50 000" Height="50" Width="120" FontSize="22" Margin="-71,0,0,70" BorderBrush="Black" BorderThickness="1">
+            <TextBox TextWrapping="Wrap" Text="50 000" Height="50" Width="110" FontSize="22" Margin="-61,0,0,70" BorderBrush="Black" BorderThickness="1">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -100,7 +100,7 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <TextBox TextWrapping="Wrap" Text="80 000" Height="50" Width="120" FontSize="22" Margin="-71,0,0,70" BorderBrush="Black" BorderThickness="1">
+            <TextBox TextWrapping="Wrap" Text="80 000" Height="50" Width="110" FontSize="22" Margin="-61,0,0,70" BorderBrush="Black" BorderThickness="1">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -110,7 +110,7 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <TextBox TextWrapping="Wrap" Text="160 000" Height="50" Width="120" FontSize="22" Margin="-71,0,0,70" BorderBrush="Black" BorderThickness="1">
+            <TextBox TextWrapping="Wrap" Text="160 000" Height="50" Width="110" FontSize="22" Margin="-61,0,0,70" BorderBrush="Black" BorderThickness="1">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -120,7 +120,7 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <TextBox TextWrapping="Wrap" Text="300 000" Height="50" Width="120" FontSize="22" Margin="-71,0,0,70" BorderBrush="Black" BorderThickness="1">
+            <TextBox TextWrapping="Wrap" Text="300 000" Height="50" Width="110" FontSize="22" Margin="-61,0,0,70" BorderBrush="Black" BorderThickness="1">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -130,7 +130,7 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <TextBox TextWrapping="Wrap" Text="500 000" Height="50" Width="120" FontSize="22" Margin="-71,0,0,70" BorderBrush="Black" BorderThickness="1">
+            <TextBox TextWrapping="Wrap" Text="500 000" Height="50" Width="110" FontSize="22" Margin="-61,0,0,70" BorderBrush="Black" BorderThickness="1">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -140,7 +140,7 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <TextBox TextWrapping="Wrap" Text="1 000 000" Height="50" Width="120" FontSize="22" Margin="-71,0,0,70" BorderBrush="Black" BorderThickness="1">
+            <TextBox TextWrapping="Wrap" Text="1 000 000" Height="50" Width="110" FontSize="22" Margin="-61,0,0,70" BorderBrush="Black" BorderThickness="1">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -150,7 +150,7 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <TextBox TextWrapping="Wrap" Text="2 000 000" Height="50" Width="120" FontSize="22" Margin="-71,0,0,70" BorderBrush="Black" BorderThickness="1">
+            <TextBox TextWrapping="Wrap" Text="2 000 000" Width="110" FontSize="22" Margin="-61,0,0,70" BorderBrush="Black" BorderThickness="1">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -163,7 +163,7 @@
 
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" Width="734" Height="156" Orientation="Horizontal">
-            <Button Content="pokračovat" Height="136" Width="353" Margin="10" FontSize="36" />
+            <Button Content="pokračovat" Height="136" Width="353" Margin="10" FontSize="36" Click="Button_Click" />
             <Button Content="Nechat si výhru" d:LayoutOverrides="Height" Height="136" Width="353" FontSize="36" />
         </StackPanel>
     </Grid>

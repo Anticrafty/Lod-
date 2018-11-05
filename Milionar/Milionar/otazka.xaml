@@ -17,12 +17,12 @@
             </StackPanel>
             <StackPanel Height="87" Margin="10,0" Orientation="Horizontal">
                 <StackPanel Height="87" Width="357">
-                    <Button x:Name="Butt1" Content="Button" d:LayoutOverrides="Height" Margin="10,10,5,5"/>
-                    <Button x:Name="Butt2"  Content="Button" d:LayoutOverrides="Height" Margin="10,5,5,10"/>
+                    <Button x:Name="Butt1" Content="Button" d:LayoutOverrides="Height" Margin="10,10,5,5" Click="Butt_Click"/>
+                    <Button x:Name="Butt2"  Content="Button" d:LayoutOverrides="Height" Margin="10,5,5,10" Click="Butt_Click"/>
                 </StackPanel>
                 <StackPanel Height="87" Width="357">
-                    <Button x:Name="Butt3"  Content="Button" d:LayoutOverrides="Height" Margin="5,10,10,5"/>
-                    <Button x:Name="Butt4"  Content="Button" d:LayoutOverrides="Height" Margin="5,5,10,5"/>
+                    <Button x:Name="Butt3"  Content="Button" d:LayoutOverrides="Height" Margin="5,10,10,5" Click="Butt_Click"/>
+                    <Button x:Name="Butt4"  Content="Button" d:LayoutOverrides="Height" Margin="5,5,10,5" Click="Butt_Click"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
