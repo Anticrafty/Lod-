@@ -13,16 +13,29 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Milionar.Classy
+namespace Milionar
 {
     /// <summary>
     /// Interakční logika pro Konec.xaml
     /// </summary>
     public partial class Konec : Page
     {
+
+        private Frame pretchoziFrame;
+
         public Konec()
         {
             InitializeComponent();
+        }
+        public Konec(Frame predchozistranka) : this()
+        {
+
+            this.pretchoziFrame = predchozistranka;
+
+        }
+        private void OK_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

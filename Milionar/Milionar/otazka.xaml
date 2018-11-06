@@ -10,7 +10,7 @@
 
     <Grid>
         <StackPanel HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" Width="734" Height="156">
-            <StackPanel Height="39" Margin="10" Orientation="Horizontal" >
+            <StackPanel Height="39" Margin="10" Orientation="Horizontal" Visibility="Collapsed" >
                 <Button Content="50:50" d:LayoutOverrides="Height" Margin="0,0,10,0" Width="231"/>
                 <Button Content="nova otazka" d:LayoutOverrides="Height" Margin="0,0,10,0" Width="232" />
                 <Button Content="publikum" d:LayoutOverrides="Height" Width="231" />

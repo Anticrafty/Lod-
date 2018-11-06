@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +12,12 @@ namespace Milionar.Classy
     {
         public List<Uroven> Urovne = new List<Uroven>();
 
+        static JsonSerializerSettings settings = new JsonSerializerSettings()
+        {
+            TypeNameHandling = TypeNameHandling.All
+        };
+
+
         public void PriStartuLoad()
         {
             for (int Uroven = 1; Uroven < 16; Uroven++)
@@ -18,8 +26,33 @@ namespace Milionar.Classy
                 this.Urovne.Add(uroven);
             }
 
-            //1
-            Otazka otazka1 = new Otazka()
+            try
+            {
+                // ŠKOLNÍ
+                //string UserFromFile = File.ReadAllText((@"D:\novakja16\Github\Milionar\Otazky.json"));
+
+                // NORMAND
+                string UserFromFile = File.ReadAllText((@"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\Milionar\Otazky.json"));
+
+                // EMIL
+
+                Otaznikovec thisis = JsonConvert.DeserializeObject<Otaznikovec>(UserFromFile, settings);
+
+                int pocitanauroven = 0;
+                foreach (Uroven uroven in thisis.Urovne)
+                {
+                    this.Urovne[pocitanauroven] = uroven;
+                    pocitanauroven++;
+                }
+            }
+
+            catch (FileNotFoundException e)
+            {
+                Console.WriteLine("Nebyl nalezen záznam.");
+            }
+
+             /*   //1
+                Otazka otazka1 = new Otazka()
             {
                 zneni = "Kolikata je toto otazka?",
                 moznosti = new List<Odpoved>(),
@@ -526,7 +559,15 @@ namespace Milionar.Classy
                 pravdive = false
             };
             otazka1.moznosti.Add(ctyri);
-            this.Urovne[14].Otazky.Add(otazka1);
+            this.Urovne[14].Otazky.Add(otazka1);*/
+
+            string jsonUsers = JsonConvert.SerializeObject(this, settings);
+
+            // ŠKOLNÍ
+            //File.WriteAllText(@"D:\novakja16\Github\Milionar\Otazky.json", jsonUsers);
+
+            // NORMAND
+            File.WriteAllText(@"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\Milionar\Otazky.json", jsonUsers);
         }
     }
 }

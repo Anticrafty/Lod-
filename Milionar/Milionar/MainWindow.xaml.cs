@@ -38,7 +38,25 @@ namespace Milionar
         static public void ZmenStreser(int cislo)
         {
             ukazator.Value = cislo;
+            ukazator.Maximum = 15;
         }
+
+        static public bool TickTock()
+        {
+            if (ukazator.Maximum != 30)
+            {
+                ukazator.Maximum = 30;
+                ukazator.Value = 0;
+            }
+            ukazator.Value++;
+            if (ukazator.Value == 30)
+            {
+                return true;
+            }
+            return false;
+
+        }
+
         static public void HappyFox(string reward)
         {
             Tuls.Text = reward;

@@ -164,7 +164,7 @@
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" Width="734" Height="156" Orientation="Horizontal">
             <Button Content="pokračovat" Height="136" Width="353" Margin="10" FontSize="36" Click="Button_Click" />
-            <Button Content="Nechat si výhru" d:LayoutOverrides="Height" Height="136" Width="353" FontSize="36" />
+            <Button Content="Nechat si výhru" d:LayoutOverrides="Height" Height="136" Width="353" FontSize="36" Visibility="Collapsed"/>
         </StackPanel>
     </Grid>
 </Page>

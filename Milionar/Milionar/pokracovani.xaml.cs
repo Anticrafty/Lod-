@@ -24,16 +24,14 @@ namespace Milionar
         public static int uhadnuty = 0;
         public pokracovani()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         public pokracovani(Frame predchozistranka) : this()
         {
+
             uhadnuty++;
-            if (uhadnuty == 15)
-            {
-                pretchoziFrame.Navigate(new Konec(pretchoziFrame));
-            }
+           
             this.pretchoziFrame = predchozistranka;
             MainWindow.ZmenStreser(uhadnuty);
             
@@ -41,7 +39,15 @@ namespace Milionar
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            pretchoziFrame.Navigate(new otazka(pretchoziFrame));
+            if (uhadnuty == 15)
+            {
+                pretchoziFrame.Navigate(new Konec(pretchoziFrame));
+                MainWindow.HappyFox("Vyhrál jsi maximální výhru 2 000 000!!!");
+            }
+            else
+            {
+                pretchoziFrame.Navigate(new otazka(pretchoziFrame));
+            }
         }
     }
 }
