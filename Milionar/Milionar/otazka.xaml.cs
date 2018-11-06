@@ -30,6 +30,7 @@ namespace Milionar
         static int cisloOtazky;
         public bool timer = false;
         public bool vyhrano = false;
+        //public bool next = false;
 
         private void TimerKonec_Tick()
         {
@@ -52,6 +53,13 @@ namespace Milionar
                 blem.Stop();
                 done();
             }
+            /*else if(next)
+            {
+                blem.Stop();
+                pretchoziFrame.Navigate(new otazka(pretchoziFrame));
+                MainWindow.ZmenStreser(0);
+                nova.Visibility = Visibility.Hidden;
+            }*/
 
         }
 
@@ -148,5 +156,12 @@ namespace Milionar
                 MainWindow.HappyFox("Špatná odpoved. Prohrál jste již vyhraný peníze.");
             }
         }
+
+        /*private void Button_new_otazka_Click(object sender, RoutedEventArgs e)
+        {
+            next = true;
+            nova.Visibility = Visibility.Hidden;
+
+        }*/
     }
 }

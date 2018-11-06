@@ -11,18 +11,18 @@
     <Grid>
         <StackPanel HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" Width="734" Height="156">
             <StackPanel Height="39" Margin="10" Orientation="Horizontal" Visibility="Collapsed" >
-                <Button Content="50:50" d:LayoutOverrides="Height" Margin="0,0,10,0" Width="231"/>
-                <Button Content="nova otazka" d:LayoutOverrides="Height" Margin="0,0,10,0" Width="232" />
-                <Button Content="publikum" d:LayoutOverrides="Height" Width="231" />
+                <Button Content="50:50" d:LayoutOverrides="Height" Margin="0,0,10,0" Width="231"  Visibility="Visible" />
+                <Button x:Name="nova" Content="nova otazka" d:LayoutOverrides="Height" Margin="0,0,10,0" Width="232"  Visibility="Visible" Click="Button_new_otazka_Click" />
+                <Button Content="publikum" d:LayoutOverrides="Height" Width="231"  Visibility="Visible" />
             </StackPanel>
             <StackPanel Height="87" Margin="10,0" Orientation="Horizontal">
                 <StackPanel Height="87" Width="357">
-                    <Button x:Name="Butt1" Content="Button" d:LayoutOverrides="Height" Margin="10,10,5,5" Click="Butt_Click"/>
-                    <Button x:Name="Butt2"  Content="Button" d:LayoutOverrides="Height" Margin="10,5,5,10" Click="Butt_Click"/>
+                    <Button x:Name="Butt1" Content="Button" d:LayoutOverrides="Height" Margin="10,10,5,5" Click="Butt_Click"  Visibility="Visible"/>
+                    <Button x:Name="Butt2"  Content="Button" d:LayoutOverrides="Height" Margin="10,5,5,10" Click="Butt_Click"  Visibility="Visible"/>
                 </StackPanel>
                 <StackPanel Height="87" Width="357">
-                    <Button x:Name="Butt3"  Content="Button" d:LayoutOverrides="Height" Margin="5,10,10,5" Click="Butt_Click"/>
-                    <Button x:Name="Butt4"  Content="Button" d:LayoutOverrides="Height" Margin="5,5,10,5" Click="Butt_Click"/>
+                    <Button x:Name="Butt3"  Content="Button" d:LayoutOverrides="Height" Margin="5,10,10,5" Click="Butt_Click"  Visibility="Visible"/>
+                    <Button x:Name="Butt4"  Content="Button" d:LayoutOverrides="Height" Margin="5,5,10,5" Click="Butt_Click"  Visibility="Visible"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
