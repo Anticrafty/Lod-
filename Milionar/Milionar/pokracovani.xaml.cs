@@ -30,6 +30,10 @@ namespace Milionar
         public pokracovani(Frame predchozistranka) : this()
         {
             uhadnuty++;
+            if (uhadnuty == 15)
+            {
+                pretchoziFrame.Navigate(new Konec(pretchoziFrame));
+            }
             this.pretchoziFrame = predchozistranka;
             MainWindow.ZmenStreser(uhadnuty);
             

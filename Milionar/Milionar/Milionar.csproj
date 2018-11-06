@@ -64,9 +64,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classy\Konec.xaml.cs">
+      <DependentUpon>Konec.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Classy\Odpoved.cs" />
     <Compile Include="Classy\Otazka.cs" />
     <Compile Include="Classy\Uroven.cs" />
+    <Page Include="Classy\Konec.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
