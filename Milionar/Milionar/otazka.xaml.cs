@@ -158,6 +158,7 @@ namespace Milionar
         }
 
         /*private void Button_new_otazka_Click(object sender, RoutedEventArgs e)
+         Click="Button_new_otazka_Click"
         {
             next = true;
             nova.Visibility = Visibility.Hidden;
