@@ -20,17 +20,12 @@ namespace ApplikaceKod
     /// </summary>
     public partial class MainWindow : Window
     {
-        string panacek =
-            "    O  \n" +
-            "   /|\\ \n" +
-            " /_|_\\\n" +
-            "° |  |  °\n" +
-            "  |  | \n" +
-            " ^ ^ \n";
+        Panacek panacek = new Panacek();
+
         public MainWindow()
         {
             InitializeComponent();
-            Panacek.Text = panacek;
+            Panacek.Text = panacek.panacek_slozeny;
         }
 
         private void Tancuj_Click(object sender, RoutedEventArgs e)
