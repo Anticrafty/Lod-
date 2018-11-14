@@ -10,8 +10,18 @@ namespace postavus_modulus
     {
         public List<string> postava = new List<string>();
         public string panacek;
+
+        public string helma = "   none";
+        public string telo = "   none";
+        public string stit = "   none";
+        public string mec = "   none";
+        public string nohy = "   none";
+        public string boty = "   none";
+
+
          public Panacek()
         {
+            postava.Add("                   ");
             postava.Add("              _      ");
             postava.Add("            /O\\    ");
             postava.Add("               |        |");
@@ -22,8 +32,8 @@ namespace postavus_modulus
             postava.Add("            ||  ||   ");
             postava.Add("            ||  ||   ");
             postava.Add("            ||  ||   ");
-            postava.Add("        ---     ---  ");
-            postava.Add("                   ");
+            postava.Add("   ×xX     Xx×  ");
+            
             panacek = postava[0] + "\n" +
                       postava[1] + "\n" +
                       postava[2] + "\n" +
