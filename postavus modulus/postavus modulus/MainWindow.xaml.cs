@@ -20,9 +20,11 @@ namespace postavus_modulus
     /// </summary>
     public partial class MainWindow : Window
     {
+        Panacek panacek_in = new Panacek();
         public MainWindow()
         {
             InitializeComponent();
+            Panacek.Text = panacek_in.panacek;
         }
     }
 }

@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TextBlock x:Name="Panacek" HorizontalAlignment="Right" Height="250" Margin="355,75,355,0" TextWrapping="Wrap" Text="Načítá se" VerticalAlignment="Top" Width="80" FontFamily="Adobe Gothic Std B" FontWeight="Bold" Background="#FFD19063"/>
+
     </Grid>
 </Window>
