@@ -8,13 +8,6 @@ namespace ApplikaceKod
 {
     class Panacek
     {
-        public string panacek =
-            "  _O_  \n" +
-            " |  |  |  \n" +
-            " |_|_ |  \n" +
-            "°|    |°  \n" +
-            " |    |   \n" +
-            "^   ^     \n";
         public static string hlava_panacek  = "   _O_   ";
         public static string paze_panacek   = "  |  |  |   ";
         public static string ruce_panacek   = "  |_|_ |   ";
@@ -28,6 +21,5 @@ namespace ApplikaceKod
                                         noha_v_panacek + "\n" +
                                         noha_s_panacek +"\n" +
                                         chodid_panacek + "\n";
-        //panacek_slozeny = " ^ ^ \n";
     }
 }

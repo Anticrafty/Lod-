@@ -13,24 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ApplikaceKod
+namespace postavus_modulus
 {
     /// <summary>
     /// Interakční logika pro MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        Panacek panacek = new Panacek();
-
         public MainWindow()
         {
             InitializeComponent();
-            Panacek.Text = panacek.panacek_slozeny;
-        }
-
-        private void Leva_Horni_Ruka_Click(object sender, RoutedEventArgs e)
-        {
-            panacek.Leva_Horni_Ruka_Up
         }
     }
 }
