@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace postavus_modulus
 {
-    public class Nohy : Equip
+    public class Globals
     {
-        
+        public Panacek Panacek;
+
+        public Globals(Panacek panacek)
+        {
+            this.Panacek = panacek;
+        }
     }
 }

@@ -20,17 +20,28 @@ namespace postavus_modulus
     /// </summary>
     public partial class MainWindow : Window
     {
-        Panacek panacek_in = new Panacek();
+        static Panacek panacek_in = new Panacek();
+        Globals globals = new Globals(panacek_in);
         public MainWindow()
         {
             InitializeComponent();
-            Panacek.Text = panacek_in.panacek;
-            Helma.Text = panacek_in.helma;
-            Stit.Text = panacek_in.stit;
-            Boty.Text = panacek_in.boty;
-            Telo.Text = panacek_in.telo;
-            Zbran.Text = panacek_in.mec;
-            Nohy.Text = panacek_in.nohy;
+
+            Panacek.Text = globals.Panacek.panacek;
+
+            Helma.Text = globals.Panacek.helma.obrazek;
+            Stit.Text = globals.Panacek.stit.obrazek;
+            Boty.Text = globals.Panacek.boty.obrazek;
+            Telo.Text = globals.Panacek.telo.obrazek;
+            Zbran.Text = globals.Panacek.mec.obrazek;
+            Nohy.Text = globals.Panacek.nohy.obrazek;
+
+            Zivot.Maximum = globals.Panacek.Max_Health.velikost;
+            Zivot.Value = globals.Panacek.Health.velikost;
+            Mana.Maximum = globals.Panacek.Max_Mana.velikost;
+            Mana.Value = globals.Panacek.Mana.velikost;
+            Energie.Maximum = globals.Panacek.Max_Energie.velikost;
+            Energie.Value = globals.Panacek.Energie.velikost;
         }
+
     }
 }

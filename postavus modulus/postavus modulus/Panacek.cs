@@ -6,10 +6,42 @@ using System.Threading.Tasks;
 
 namespace postavus_modulus
 {
-    class Panacek
+    public class Panacek
     {
         public List<string> postava = new List<string>();
         public string panacek;
+
+        public Stats Health = new Stats()
+        {
+            velikost = 8,
+            stat = Statistika.Život
+        };
+        public Stats Max_Health = new Stats()
+        {
+            velikost = 10,
+            stat = Statistika.Život
+        };
+        public Stats Mana = new Stats()
+        {
+            velikost = 3,
+            stat = Statistika.Mana
+        };
+        public Stats Max_Mana = new Stats()
+        {
+            velikost = 10,
+            stat = Statistika.Život
+        };
+        public Stats Energie = new Stats()
+        {
+            velikost = 6,
+            stat = Statistika.Energie
+        };
+        public Stats Max_Energie = new Stats()
+        {
+            velikost = 10,
+            stat = Statistika.Energie
+        };
+
 
         public Helma helma = new Helma();
         public Telo telo = new Telo();

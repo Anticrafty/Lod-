@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock x:Name="Panacek" HorizontalAlignment="Right" Height="300" Margin="355,50,355,0" TextWrapping="Wrap" Text="Načítá se" VerticalAlignment="Top" Width="80" FontFamily="Adobe Gothic Std B" FontWeight="Bold" Background="#FFD19063"/>
+        <TextBlock x:Name="Panacek" HorizontalAlignment="Right" Height="300" Margin="355,100,355,0" TextWrapping="Wrap" Text="Načítá se" VerticalAlignment="Top" Width="80" FontFamily="Adobe Gothic Std B" FontWeight="Bold" Background="#FFD19063"/>
 
         <TextBlock x:Name="Helma" HorizontalAlignment="Left" Height="50" Margin="60,50,0,0" TextWrapping="Wrap" Text="Načítá se" VerticalAlignment="Top" Width="50" FontFamily="Adobe Gothic Std B" FontWeight="Bold" Background="#FFD65252" />
         <TextBlock x:Name="Boty" HorizontalAlignment="Left" Height="50" Margin="60,300,0,0" TextWrapping="Wrap" Text="Načítá se" VerticalAlignment="Top" Width="50" FontFamily="Adobe Gothic Std B" FontWeight="Bold" Background="#FFD65252" />
@@ -24,6 +24,14 @@
         <TextBlock HorizontalAlignment="Right" Height="21" Margin="660,104,55,0" TextWrapping="Wrap" Text="Tělo" VerticalAlignment="Top" Width="59" FontWeight="Bold" FontSize="18"/>
         <TextBlock HorizontalAlignment="Right" Height="21" Margin="660,232,55,0" TextWrapping="Wrap" Text="Zbraň" VerticalAlignment="Top" Width="59" FontWeight="Bold" FontSize="18"/>
         <TextBlock HorizontalAlignment="Right" Height="21" Margin="660,352,55,0" TextWrapping="Wrap" Text="Nohy" VerticalAlignment="Top" Width="59" FontWeight="Bold" FontSize="18"/>
+        
+        <ProgressBar x:Name="Zivot" HorizontalAlignment="Left" Height="20" Margin="244,10,0,0" VerticalAlignment="Top" Width="300" Value="50"/>
+        <ProgressBar x:Name="Mana" HorizontalAlignment="Left" Height="20" Margin="244,40,0,0" VerticalAlignment="Top" Width="300" Value="50" Foreground="#FF0778FF"/>
+        <ProgressBar x:Name="Energie" HorizontalAlignment="Left" Height="20" Margin="244,70,0,0" VerticalAlignment="Top" Width="300" Value="50" Foreground="#FFFF8000"/>
+
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="244,10,0,0" VerticalAlignment="Top" Width="300" Text="Život" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="244,40,0,0" VerticalAlignment="Top" Width="300" Text="Mana" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="244,70,0,0" VerticalAlignment="Top" Width="300" Text="Energie" TextAlignment="Center"/>
 
     </Grid>
 </Window>

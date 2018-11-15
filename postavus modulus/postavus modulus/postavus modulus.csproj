@@ -56,8 +56,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Boty.cs" />
+    <Compile Include="Equip.cs" />
+    <Compile Include="Globals.cs" />
     <Compile Include="Mec.cs" />
     <Compile Include="Nohy.cs" />
+    <Compile Include="Stats.cs" />
     <Compile Include="Stit.cs" />
     <Compile Include="Telo.cs" />
     <Page Include="MainWindow.xaml">
