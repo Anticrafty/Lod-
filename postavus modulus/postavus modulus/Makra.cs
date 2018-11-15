@@ -8,5 +8,6 @@ namespace postavus_modulus
 {
     class Makra
     {
+        List<string> code = new List<string>();
     }
 }

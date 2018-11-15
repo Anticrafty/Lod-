@@ -22,10 +22,16 @@ namespace postavus_modulus
     {
         static Panacek panacek_in = new Panacek();
         Globals globals = new Globals(panacek_in);
+        Makra loaded = new Makra();
         public MainWindow()
         {
             InitializeComponent();
+            UpdateWindow();
 
+
+        }
+        public void UpdateWindow()
+        {
             Panacek.Text = globals.Panacek.panacek;
 
             Helma.Text = globals.Panacek.helma.obrazek;
