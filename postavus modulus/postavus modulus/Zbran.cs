@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace postavus_modulus
 {
-    public class Boty : Equip
+    public class Zbran : Equip
     {
-        public Boty()
+        public Zbran()
         {
 
-            if(jmeno == null)
+            if (jmeno == null)
             {
-                jmeno = "Boty";
+                jmeno = "Zbraň";
             }
         }
     }

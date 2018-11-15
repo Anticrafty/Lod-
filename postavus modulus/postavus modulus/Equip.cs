@@ -8,7 +8,7 @@ namespace postavus_modulus
 {
     public class Equip
     {
-        public string jmeno = "none";
+        public string jmeno;
         public int hodnota = 0;
         public string obrazek = "   none";
         // později třeba nova classa Skill

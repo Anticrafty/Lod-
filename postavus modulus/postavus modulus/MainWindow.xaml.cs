@@ -29,11 +29,17 @@ namespace postavus_modulus
             Panacek.Text = globals.Panacek.panacek;
 
             Helma.Text = globals.Panacek.helma.obrazek;
+            Helma_jmeno.Text = globals.Panacek.helma.jmeno;
             Stit.Text = globals.Panacek.stit.obrazek;
+            Stit_jmeno.Text = globals.Panacek.stit.jmeno;
             Boty.Text = globals.Panacek.boty.obrazek;
+            Boty_jmeno.Text = globals.Panacek.boty.jmeno;
             Telo.Text = globals.Panacek.telo.obrazek;
-            Zbran.Text = globals.Panacek.mec.obrazek;
+            Telo_jmeno.Text = globals.Panacek.telo.jmeno;
+            Zbran.Text = globals.Panacek.zbran.obrazek;
+            Zbran_jmeno.Text = globals.Panacek.zbran.jmeno;
             Nohy.Text = globals.Panacek.nohy.obrazek;
+            Nohy_jmeno.Text = globals.Panacek.nohy.jmeno;
 
             Zivot.Maximum = globals.Panacek.Max_Health.velikost;
             Zivot.Value = globals.Panacek.Health.velikost;

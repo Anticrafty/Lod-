@@ -8,6 +8,13 @@ namespace postavus_modulus
 {
     public class Nohy : Equip
     {
-        
+        public Nohy()
+        {
+
+            if (jmeno == null)
+            {
+                jmeno = "Nohy";
+            }
+        }
     }
 }

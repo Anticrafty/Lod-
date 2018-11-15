@@ -8,6 +8,13 @@ namespace postavus_modulus
 {
     public class Helma : Equip
     {
-       
+        public Helma()
+        {
+
+            if (jmeno == null)
+            {
+                jmeno = "Helma";
+            }
+        }
     }
 }

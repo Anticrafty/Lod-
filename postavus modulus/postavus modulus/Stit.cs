@@ -8,6 +8,13 @@ namespace postavus_modulus
 {
     public class Stit : Equip
     {
-       
+        public Stit()
+        {
+
+            if (jmeno == null)
+            {
+                jmeno = "Štít";
+            }
+        }
     }
 }

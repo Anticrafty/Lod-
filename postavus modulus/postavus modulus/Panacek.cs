@@ -46,7 +46,7 @@ namespace postavus_modulus
         public Helma helma = new Helma();
         public Telo telo = new Telo();
         public Stit stit = new Stit();
-        public Mec mec = new Mec();
+        public Zbran zbran = new Zbran();
         public Nohy nohy = new Nohy();
         public Boty boty = new Boty();
 
@@ -56,15 +56,15 @@ namespace postavus_modulus
             postava.Add("                   ");
             postava.Add("              _      ");
             postava.Add("            /O\\    ");
-            postava.Add("               |        |");
+            postava.Add("              |       |");
             postava.Add("          /XXX\\  |");
             postava.Add("     ---  ||X||   _");
             postava.Add("     |S|-((X))--3");
             postava.Add("      V   -----   ");
-            postava.Add("            ||  ||   ");
-            postava.Add("            ||  ||   ");
-            postava.Add("            ||  ||   ");
-            postava.Add("   ×xX     Xx×  ");
+            postava.Add("           ||   ||   ");
+            postava.Add("           ||   ||   ");
+            postava.Add("           ||   ||   ");
+            postava.Add("      ×xX    Xx×  ");
             
             panacek = postava[0] + "\n" +
                       postava[1] + "\n" +

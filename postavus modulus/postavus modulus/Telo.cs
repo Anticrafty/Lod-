@@ -8,6 +8,13 @@ namespace postavus_modulus
 {
     public class Telo : Equip
     {
-       
+        public Telo()
+        {
+
+            if (jmeno == null)
+            {
+                jmeno = "Tělo";
+            }
+        }
     }
 }
