@@ -27,8 +27,7 @@ namespace postavus_modulus
         {
             InitializeComponent();
             UpdateWindow();
-
-
+            loaded.LoadMacros();
         }
         public void UpdateWindow()
         {
