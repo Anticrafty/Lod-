@@ -11,12 +11,12 @@ namespace postavus_modulus
         public List<string> postava = new List<string>();
         public string panacek;
 
-        public string helma = "   none";
-        public string telo = "   none";
-        public string stit = "   none";
-        public string mec = "   none";
-        public string nohy = "   none";
-        public string boty = "   none";
+        public Helma helma = new Helma();
+        public Telo telo = new Telo();
+        public Stit stit = new Stit();
+        public Mec mec = new Mec();
+        public Nohy nohy = new Nohy();
+        public Boty boty = new Boty();
 
 
          public Panacek()
