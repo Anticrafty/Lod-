@@ -24,7 +24,7 @@
         <TextBlock x:Name="Telo_jmeno" HorizontalAlignment="Right" Height="21" Margin="660,104,55,0" TextWrapping="Wrap" Text="Tělo" VerticalAlignment="Top" Width="59" FontWeight="Bold" FontSize="18"/>
         <TextBlock x:Name="Zbran_jmeno" HorizontalAlignment="Right" Height="21" Margin="660,232,55,0" TextWrapping="Wrap" Text="Zbraň" VerticalAlignment="Top" Width="59" FontWeight="Bold" FontSize="18"/>
         <TextBlock x:Name="Nohy_jmeno" HorizontalAlignment="Right" Height="21" Margin="660,352,55,0" TextWrapping="Wrap" Text="Nohy" VerticalAlignment="Top" Width="59" FontWeight="Bold" FontSize="18"/>
-        
+
         <ProgressBar x:Name="Zivot" HorizontalAlignment="Left" Height="20" Margin="244,10,0,0" VerticalAlignment="Top" Width="300" Value="50"/>
         <ProgressBar x:Name="Mana" HorizontalAlignment="Left" Height="20" Margin="244,40,0,0" VerticalAlignment="Top" Width="300" Value="50" Foreground="#FF0778FF"/>
         <ProgressBar x:Name="Energie" HorizontalAlignment="Left" Height="20" Margin="244,70,0,0" VerticalAlignment="Top" Width="300" Value="50" Foreground="#FFFF8000"/>
@@ -32,6 +32,26 @@
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="244,10,0,0" VerticalAlignment="Top" Width="300" Text="Život" TextAlignment="Center"/>
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="244,40,0,0" VerticalAlignment="Top" Width="300" Text="Mana" TextAlignment="Center"/>
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="244,70,0,0" VerticalAlignment="Top" Width="300" Text="Energie" TextAlignment="Center"/>
+        
+        
+        <StackPanel HorizontalAlignment="Left" Height="300" Margin="139,100,0,0" VerticalAlignment="Top" Width="186">
+            <Button Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button Content="Další" Margin="1" Visibility="Hidden"/>
+        </StackPanel>
+
+
 
     </Grid>
 </Window>

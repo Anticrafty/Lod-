@@ -58,6 +58,7 @@
     <Compile Include="Boty.cs" />
     <Compile Include="Equip.cs" />
     <Compile Include="Globals.cs" />
+    <Compile Include="Makra.cs" />
     <Compile Include="Zbran.cs" />
     <Compile Include="Nohy.cs" />
     <Compile Include="Stats.cs" />
