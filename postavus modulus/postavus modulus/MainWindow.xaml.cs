@@ -23,11 +23,30 @@ namespace postavus_modulus
         static Panacek panacek_in = new Panacek();
         Globals globals = new Globals(panacek_in);
         Makra loaded = new Makra();
+        List<Button> ukazatele = new List<Button>();
+        public int kolikrat_vic = 1;
         public MainWindow()
         {
             InitializeComponent();
             UpdateWindow();
             loaded.LoadMacros();
+
+            ukazatele.Add(Butt_Pretchozi);
+            ukazatele.Add(Butt_1);
+            ukazatele.Add(Butt_2);
+            ukazatele.Add(Butt_3);
+            ukazatele.Add(Butt_4);
+            ukazatele.Add(Butt_5);
+            ukazatele.Add(Butt_6);
+            ukazatele.Add(Butt_7);
+            ukazatele.Add(Butt_8);
+            ukazatele.Add(Butt_9);
+            ukazatele.Add(Butt_10);
+            ukazatele.Add(Butt_11);
+            ukazatele.Add(Butt_12);
+            ukazatele.Add(Butt_Dalsi);
+
+            UkazMacra();
         }
         public void UpdateWindow()
         {
@@ -53,6 +72,54 @@ namespace postavus_modulus
             Energie.Maximum = globals.Panacek.Max_Energie.velikost;
             Energie.Value = globals.Panacek.Energie.velikost;
         }
+        public void UkazMacra()
+        {
 
+            int macro = 12*(kolikrat_vic-1);
+            int povoleno = 0;
+            if (loaded.codes.Count() < (12*kolikrat_vic) + 1)
+            {
+                povoleno = loaded.codes.Count();
+                ukazatele[13].Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                povoleno = 12 * kolikrat_vic;
+                ukazatele[13].Visibility = Visibility.Visible;
+            }
+
+
+            for (; macro < povoleno; macro++)
+            {
+
+                ukazatele[(macro - (12 * (kolikrat_vic - 1))) + 1].Visibility = Visibility.Visible;
+                string kolikaty = (macro+1).ToString();
+                ukazatele[(macro - (12 * (kolikrat_vic - 1))) + 1].Content = kolikaty;
+            }
+            for (; macro < 12 * kolikrat_vic;macro++)
+            {
+                ukazatele[(macro - (12 * (kolikrat_vic - 1))) + 1].Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void Butt_Posuvnik_Click(object sender, RoutedEventArgs e)
+        {
+            Button zmacknuty = sender as Button;
+            if(zmacknuty.Name == "Butt_Pretchozi")
+            {
+                kolikrat_vic--;
+                if (kolikrat_vic == 1)
+                {
+                    ukazatele[0].Visibility = Visibility.Hidden;
+                }
+                UkazMacra();
+            }
+            else
+            {
+                kolikrat_vic++;
+                ukazatele[0].Visibility = Visibility.Visible;
+                UkazMacra();
+            }
+        }
     }
 }

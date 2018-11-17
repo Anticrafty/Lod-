@@ -35,20 +35,20 @@
         
         
         <StackPanel HorizontalAlignment="Left" Height="300" Margin="139,100,0,0" VerticalAlignment="Top" Width="186">
-            <Button Content="Předchozí" Margin="1" Visibility="Hidden"/>
-            <Button Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button Content="Další" Margin="1" Visibility="Hidden"/>
+            <Button x:Name="Butt_Pretchozi" Content="Předchozí" Margin="1" Visibility="Hidden" Click="Butt_Posuvnik_Click" />
+            <Button x:Name="Butt_1" Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button x:Name="Butt_2" Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button x:Name="Butt_3" Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button x:Name="Butt_4" Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button x:Name="Butt_5" Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button x:Name="Butt_6" Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button x:Name="Butt_7" Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button x:Name="Butt_8" Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button x:Name="Butt_9" Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button x:Name="Butt_10" Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button x:Name="Butt_11" Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button x:Name="Butt_12" Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button x:Name="Butt_Dalsi" Content="Další" Margin="1" Visibility="Hidden" Click="Butt_Posuvnik_Click" />
         </StackPanel>
 
 

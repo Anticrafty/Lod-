@@ -9,25 +9,29 @@ namespace postavus_modulus
 {
     class Makra
     {
-        List<string> code = new List<string>();
+        public List<string> codes = new List<string>();
 
         public void LoadMacros()
         {
             bool load = true;
-            for (int x = 0;load; x++ )
+            for (int x = 1;load; x++ )
             { 
                 string X = x.ToString();
 
                 try
-                { 
-                // ŠKOLNÍ
-                    //string UserFromFile = File.ReadAllText(@"D:\novakja16\Github\postavus moduslust\Macro ("+X+").txt");
+                {
+
+
+                    // ŠKOLNÍ
+                    //string souradnice = @"D:\novakja16\Github\postavus modulus\Macra\Macro ("+X+").txt";
 
                     // NORMAND
-                    string UserFromFile = File.ReadAllText((@"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\postavus moduslust\Macro ("+X+").txt"));
-                    code.Add(UserFromFile);
+
+                    string souradnice = @"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\postavus modulus\Macra\Macro (" + X + ").txt";
+                    string UserFromFile = File.ReadAllText(souradnice);
+                    codes.Add(UserFromFile);
                 }
-                catch (DirectoryNotFoundException)
+                catch (FileNotFoundException)
                 {
                     load = false;
                 }
