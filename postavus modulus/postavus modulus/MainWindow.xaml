@@ -5,25 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:postavus_modulus"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="800">
     <Grid>
         <TextBlock x:Name="Panacek" HorizontalAlignment="Center" Height="300" Margin="350,100,350,0" TextWrapping="Wrap" Text="Načítá se" VerticalAlignment="Top" Width="90" FontFamily="Adobe Gothic Std B" FontWeight="Bold" Background="#FFD19063"/>
 
-        <TextBlock x:Name="Helma" HorizontalAlignment="Left" Height="50" Margin="60,50,0,0" TextWrapping="Wrap" Text="Načítá se" VerticalAlignment="Top" Width="50" FontFamily="Adobe Gothic Std B" FontWeight="Bold" Background="#FFD65252" />
-        <TextBlock x:Name="Boty" HorizontalAlignment="Left" Height="50" Margin="60,300,0,0" TextWrapping="Wrap" Text="Načítá se" VerticalAlignment="Top" Width="50" FontFamily="Adobe Gothic Std B" FontWeight="Bold" Background="#FFD65252" />
-        <TextBlock x:Name="Stit" HorizontalAlignment="Left" Height="50" Margin="60,178,0,0" TextWrapping="Wrap" Text="Načítá se" VerticalAlignment="Top" Width="50" FontFamily="Adobe Gothic Std B" FontWeight="Bold" Background="#FFD65252" />
+        <TextBlock x:Name="Helma" HorizontalAlignment="Left" Height="100" Margin="30,50,0,0" TextWrapping="Wrap" Text="Načítá se" VerticalAlignment="Top" Width="100" FontFamily="Adobe Gothic Std B" FontWeight="Bold" Background="#FFD65252" />
+        <TextBlock x:Name="Boty" HorizontalAlignment="Left" Height="100" Margin="30,300,0,0" TextWrapping="Wrap" Text="Načítá se" VerticalAlignment="Top" Width="100" FontFamily="Adobe Gothic Std B" FontWeight="Bold" Background="#FFD65252" />
+        <TextBlock x:Name="Stit" HorizontalAlignment="Left" Height="100" Margin="30,178,0,0" TextWrapping="Wrap" Text="Načítá se" VerticalAlignment="Top" Width="100" FontFamily="Adobe Gothic Std B" FontWeight="Bold" Background="#FFD65252" />
 
-        <TextBlock x:Name="Telo" HorizontalAlignment="Right" Height="50" Margin="664,52,55,0" TextWrapping="Wrap" Text="Načítá se" VerticalAlignment="Top" Width="50" FontFamily="Adobe Gothic Std B" FontWeight="Bold" Background="#FFD65252" />
-        <TextBlock x:Name="Nohy" HorizontalAlignment="Right" Height="50" Margin="664,302,55,0" TextWrapping="Wrap" Text="Načítá se" VerticalAlignment="Top" Width="50" FontFamily="Adobe Gothic Std B" FontWeight="Bold" Background="#FFD65252" />
-        <TextBlock x:Name="Zbran" HorizontalAlignment="Right" Height="50" Margin="664,180,55,0" TextWrapping="Wrap" Text="Načítá se" VerticalAlignment="Top" Width="50" FontFamily="Adobe Gothic Std B" FontWeight="Bold" Background="#FFD65252" />
+        <TextBlock x:Name="Telo" HorizontalAlignment="Right" Height="100" Margin="0,52,30,0" TextWrapping="Wrap" Text="Načítá se" VerticalAlignment="Top" Width="100" FontFamily="Adobe Gothic Std B" FontWeight="Bold" Background="#FFD65252" />
+        <TextBlock x:Name="Nohy" HorizontalAlignment="Right" Height="100" Margin="0,302,30,0" TextWrapping="Wrap" Text="Načítá se" VerticalAlignment="Top" Width="100" FontFamily="Adobe Gothic Std B" FontWeight="Bold" Background="#FFD65252" />
+        <TextBlock x:Name="Zbran" HorizontalAlignment="Right" Height="100" Margin="0,180,30,0" TextWrapping="Wrap" Text="Načítá se" VerticalAlignment="Top" Width="100" FontFamily="Adobe Gothic Std B" FontWeight="Bold" Background="#FFD65252" />
 
-        <TextBlock x:Name="Helma_jmeno" HorizontalAlignment="Left" Height="21" Margin="55,100,0,0" TextWrapping="Wrap" Text="Helma" VerticalAlignment="Top" Width="59" FontWeight="Bold" FontSize="18"/>
-        <TextBlock x:Name="Stit_jmeno" HorizontalAlignment="Left" Height="21" Margin="55,228,0,0" TextWrapping="Wrap" Text="Štít" VerticalAlignment="Top" Width="59" FontWeight="Bold" FontSize="18"/>
-        <TextBlock x:Name="Boty_jmeno" HorizontalAlignment="Left" Height="21" Margin="55,350,0,0" TextWrapping="Wrap" Text="Boty" VerticalAlignment="Top" Width="59" FontWeight="Bold" FontSize="18"/>
+        <TextBlock x:Name="Helma_jmeno" HorizontalAlignment="Left" Height="21" Margin="55,150,0,0" TextWrapping="Wrap" Text="Helma" VerticalAlignment="Top" Width="59" FontWeight="Bold" FontSize="18"/>
+        <TextBlock x:Name="Stit_jmeno" HorizontalAlignment="Left" Height="21" Margin="55,278,0,0" TextWrapping="Wrap" Text="Štít" VerticalAlignment="Top" Width="59" FontWeight="Bold" FontSize="18"/>
+        <TextBlock x:Name="Boty_jmeno" HorizontalAlignment="Left" Height="21" Margin="55,400,0,0" TextWrapping="Wrap" Text="Boty" VerticalAlignment="Top" Width="59" FontWeight="Bold" FontSize="18"/>
 
-        <TextBlock x:Name="Telo_jmeno" HorizontalAlignment="Right" Height="21" Margin="660,104,55,0" TextWrapping="Wrap" Text="Tělo" VerticalAlignment="Top" Width="59" FontWeight="Bold" FontSize="18"/>
-        <TextBlock x:Name="Zbran_jmeno" HorizontalAlignment="Right" Height="21" Margin="660,232,55,0" TextWrapping="Wrap" Text="Zbraň" VerticalAlignment="Top" Width="59" FontWeight="Bold" FontSize="18"/>
-        <TextBlock x:Name="Nohy_jmeno" HorizontalAlignment="Right" Height="21" Margin="660,352,55,0" TextWrapping="Wrap" Text="Nohy" VerticalAlignment="Top" Width="59" FontWeight="Bold" FontSize="18"/>
+        <TextBlock x:Name="Telo_jmeno" HorizontalAlignment="Right" Height="21" Margin="660,152,55,0" TextWrapping="Wrap" Text="Tělo" VerticalAlignment="Top" Width="59" FontWeight="Bold" FontSize="18"/>
+        <TextBlock x:Name="Zbran_jmeno" HorizontalAlignment="Right" Height="21" Margin="660,280,55,0" TextWrapping="Wrap" Text="Zbraň" VerticalAlignment="Top" Width="59" FontWeight="Bold" FontSize="18"/>
+        <TextBlock x:Name="Nohy_jmeno" HorizontalAlignment="Right" Height="21" Margin="660,402,55,0" TextWrapping="Wrap" Text="Nohy" VerticalAlignment="Top" Width="59" FontWeight="Bold" FontSize="18"/>
 
         <ProgressBar x:Name="Zivot" HorizontalAlignment="Left" Height="20" Margin="244,10,0,0" VerticalAlignment="Top" Width="300" Value="50"/>
         <ProgressBar x:Name="Mana" HorizontalAlignment="Left" Height="20" Margin="244,40,0,0" VerticalAlignment="Top" Width="300" Value="50" Foreground="#FF0778FF"/>

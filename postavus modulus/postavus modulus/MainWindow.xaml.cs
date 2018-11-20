@@ -23,8 +23,7 @@ namespace postavus_modulus
     /// </summary>
     public partial class MainWindow : Window
     {
-        static Panacek panacek_in = new Panacek();
-        Globals globals = new Globals(panacek_in);
+        Panacek panacek_in = new Panacek();
         Makra loaded = new Makra();
         List<Button> ukazatele = new List<Button>();
         public int kolikrat_vic = 1;
@@ -53,27 +52,27 @@ namespace postavus_modulus
         }
         public void UpdateWindow()
         {
-            Panacek.Text = globals.Panacek.panacek;
+            Panacek.Text = panacek_in.panacek;
 
-            Helma.Text = globals.Panacek.helma.obrazek;
-            Helma_jmeno.Text = globals.Panacek.helma.jmeno;
-            Stit.Text = globals.Panacek.stit.obrazek;
-            Stit_jmeno.Text = globals.Panacek.stit.jmeno;
-            Boty.Text = globals.Panacek.boty.obrazek;
-            Boty_jmeno.Text = globals.Panacek.boty.jmeno;
-            Telo.Text = globals.Panacek.telo.obrazek;
-            Telo_jmeno.Text = globals.Panacek.telo.jmeno;
-            Zbran.Text = globals.Panacek.zbran.obrazek;
-            Zbran_jmeno.Text = globals.Panacek.zbran.jmeno;
-            Nohy.Text = globals.Panacek.nohy.obrazek;
-            Nohy_jmeno.Text = globals.Panacek.nohy.jmeno;
+            Helma.Text = panacek_in.helma.obrazek;
+            Helma_jmeno.Text = panacek_in.helma.jmeno;
+            Stit.Text = panacek_in.stit.obrazek;
+            Stit_jmeno.Text = panacek_in.stit.jmeno;
+            Boty.Text = panacek_in.boty.obrazek;
+            Boty_jmeno.Text = panacek_in.boty.jmeno;
+            Telo.Text = panacek_in.telo.obrazek;
+            Telo_jmeno.Text = panacek_in.telo.jmeno;
+            Zbran.Text = panacek_in.zbran.obrazek;
+            Zbran_jmeno.Text = panacek_in.zbran.jmeno;
+            Nohy.Text = panacek_in.nohy.obrazek;
+            Nohy_jmeno.Text = panacek_in.nohy.jmeno;
 
-            Zivot.Maximum = globals.Panacek.Max_Health.velikost;
-            Zivot.Value = globals.Panacek.Health.velikost;
-            Mana.Maximum = globals.Panacek.Max_Mana.velikost;
-            Mana.Value = globals.Panacek.Mana.velikost;
-            Energie.Maximum = globals.Panacek.Max_Energie.velikost;
-            Energie.Value = globals.Panacek.Energie.velikost;
+            Zivot.Maximum = panacek_in.Max_Health.velikost;
+            Zivot.Value = panacek_in.Health.velikost;
+            Mana.Maximum = panacek_in.Max_Mana.velikost;
+            Mana.Value = panacek_in.Mana.velikost;
+            Energie.Maximum = panacek_in.Max_Energie.velikost;
+            Energie.Value = panacek_in.Energie.velikost;
         }
         public void UkazMacra()
         {
@@ -140,6 +139,8 @@ namespace postavus_modulus
         }
         private async void Udelej_macro()
         {
+
+            Globals globals = new Globals(panacek_in);
             string vstup = Editor_Macra.Text;
             var metadata = MetadataReference.CreateFromFile(typeof(Panacek).Assembly.Location);
 
@@ -148,14 +149,17 @@ namespace postavus_modulus
                 await CSharpScript.RunAsync(
                 vstup,
                 options: ScriptOptions.Default.WithReferences(metadata),
-                globals: loaded
+                globals: globals
                 );
-
+                Errors.Text = "Proces proběhl v pořádku. Zde se budou zobrazovat případné Errory.";
 
             } catch (CompilationErrorException e)
             {
                 Errors.Text = string.Join(Environment.NewLine, e.Diagnostics);
             }
+            panacek_in = globals.Panacek;
+            UpdateWindow();
+            
         }
     }
 }

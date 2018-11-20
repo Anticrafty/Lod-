@@ -9,17 +9,10 @@ namespace postavus_modulus
     public class Equip
     {
         public string jmeno;
-        public int hodnota = 0;
+        public double hodnota = 0;
         public string obrazek = "   none";
         // později třeba nova classa Skill
-        public List<string> vylepsovany_staty = new List<string>();
-        public List<int> velikost_vylepseni = new List<int>();
+        public Stats vylepsovany = new Stats();
         public string poznamky = null;
-
-        public void pridej_vylepseni(string stat, int velikost)
-        {
-            vylepsovany_staty.Add(stat);
-            velikost_vylepseni.Add(velikost);
-        }
     }
 }
