@@ -23,11 +23,11 @@ namespace postavus_modulus
 
 
                     // ŠKOLNÍ
-                    //string souradnice = @"D:\novakja16\Github\postavus modulus\Macra\Macro ("+X+").txt";
+                    string souradnice = @"D:\novakja16\Github\postavus modulus\Macra\Macro ("+X+").txt";
 
                     // NORMAND
 
-                    string souradnice = @"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\postavus modulus\Macra\Macro (" + X + ").txt";
+                    //string souradnice = @"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\postavus modulus\Macra\Macro (" + X + ").txt";
                     string UserFromFile = File.ReadAllText(souradnice);
                     codes.Add(UserFromFile);
                 }

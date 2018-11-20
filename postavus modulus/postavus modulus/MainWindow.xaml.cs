@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.Scripting;
+using Microsoft.CodeAnalysis.CSharp.Scripting;
 
 namespace postavus_modulus
 {
@@ -75,9 +78,9 @@ namespace postavus_modulus
         public void UkazMacra()
         {
 
-            int macro = 12*(kolikrat_vic-1);
+            int macro = 12 * (kolikrat_vic - 1);
             int povoleno = 0;
-            if (loaded.codes.Count() < (12*kolikrat_vic) + 1)
+            if (loaded.codes.Count() < (12 * kolikrat_vic) + 1)
             {
                 povoleno = loaded.codes.Count();
                 ukazatele[13].Visibility = Visibility.Hidden;
@@ -93,10 +96,10 @@ namespace postavus_modulus
             {
 
                 ukazatele[(macro - (12 * (kolikrat_vic - 1))) + 1].Visibility = Visibility.Visible;
-                string kolikaty = (macro+1).ToString();
+                string kolikaty = (macro + 1).ToString();
                 ukazatele[(macro - (12 * (kolikrat_vic - 1))) + 1].Content = kolikaty;
             }
-            for (; macro < 12 * kolikrat_vic;macro++)
+            for (; macro < 12 * kolikrat_vic; macro++)
             {
                 ukazatele[(macro - (12 * (kolikrat_vic - 1))) + 1].Visibility = Visibility.Hidden;
             }
@@ -105,7 +108,7 @@ namespace postavus_modulus
         private void Butt_Posuvnik_Click(object sender, RoutedEventArgs e)
         {
             Button zmacknuty = sender as Button;
-            if(zmacknuty.Name == "Butt_Pretchozi")
+            if (zmacknuty.Name == "Butt_Pretchozi")
             {
                 kolikrat_vic--;
                 if (kolikrat_vic == 1)
@@ -130,6 +133,29 @@ namespace postavus_modulus
             int kolikaty = cislo - 1;
             Editor_Macra.Text = loaded.codes[kolikaty];
             Start_Butt.Visibility = Visibility.Visible;
+        }
+        private async void Start_macro(object sender, RoutedEventArgs e)
+        {
+            Udelej_macro();
+        }
+        private async void Udelej_macro()
+        {
+            string vstup = Editor_Macra.Text;
+            var metadata = MetadataReference.CreateFromFile(typeof(Panacek).Assembly.Location);
+
+            try
+            {
+                await CSharpScript.RunAsync(
+                vstup,
+                options: ScriptOptions.Default.WithReferences(metadata),
+                globals: loaded
+                );
+
+
+            } catch (CompilationErrorException e)
+            {
+                Errors.Text = string.Join(Environment.NewLine, e.Diagnostics);
+            }
         }
     }
 }
