@@ -34,23 +34,27 @@
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="244,70,0,0" VerticalAlignment="Top" Width="300" Text="Energie" TextAlignment="Center"/>
         
         
-        <StackPanel HorizontalAlignment="Left" Height="300" Margin="139,100,0,0" VerticalAlignment="Top" Width="186">
+        <StackPanel HorizontalAlignment="Left" Height="300" Margin="140,100,0,0" VerticalAlignment="Top" Width="186">
             <Button x:Name="Butt_Pretchozi" Content="Předchozí" Margin="1" Visibility="Hidden" Click="Butt_Posuvnik_Click" />
-            <Button x:Name="Butt_1" Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button x:Name="Butt_2" Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button x:Name="Butt_3" Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button x:Name="Butt_4" Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button x:Name="Butt_5" Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button x:Name="Butt_6" Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button x:Name="Butt_7" Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button x:Name="Butt_8" Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button x:Name="Butt_9" Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button x:Name="Butt_10" Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button x:Name="Butt_11" Content="Button" Margin="1" Visibility="Hidden"/>
-            <Button x:Name="Butt_12" Content="Button" Margin="1" Visibility="Hidden"/>
+            <Button x:Name="Butt_1" Content="Button" Margin="1" Visibility="Hidden" Click="Rohodnute_macro"/>
+            <Button x:Name="Butt_2" Content="Button" Margin="1" Visibility="Hidden" Click="Rohodnute_macro"/>
+            <Button x:Name="Butt_3" Content="Button" Margin="1" Visibility="Hidden" Click="Rohodnute_macro"/>
+            <Button x:Name="Butt_4" Content="Button" Margin="1" Visibility="Hidden" Click="Rohodnute_macro"/>
+            <Button x:Name="Butt_5" Content="Button" Margin="1" Visibility="Hidden" Click="Rohodnute_macro"/>
+            <Button x:Name="Butt_6" Content="Button" Margin="1" Visibility="Hidden" Click="Rohodnute_macro"/>
+            <Button x:Name="Butt_7" Content="Button" Margin="1" Visibility="Hidden" Click="Rohodnute_macro"/>
+            <Button x:Name="Butt_8" Content="Button" Margin="1" Visibility="Hidden" Click="Rohodnute_macro"/>
+            <Button x:Name="Butt_9" Content="Button" Margin="1" Visibility="Hidden" Click="Rohodnute_macro"/>
+            <Button x:Name="Butt_10" Content="Button" Margin="1" Visibility="Hidden" Click="Rohodnute_macro"/>
+            <Button x:Name="Butt_11" Content="Button" Margin="1" Visibility="Hidden" Click="Rohodnute_macro"/>
+            <Button x:Name="Butt_12" Content="Button" Margin="1" Visibility="Hidden" Click="Rohodnute_macro"/>
             <Button x:Name="Butt_Dalsi" Content="Další" Margin="1" Visibility="Hidden" Click="Butt_Posuvnik_Click" />
         </StackPanel>
-
+        <StackPanel HorizontalAlignment="Left" Height="300" Margin="470,100,0,0" VerticalAlignment="Top" Width="186">
+            <TextBox x:Name="Editor_Macra" Height="200" Margin="5"  TextWrapping="Wrap" Text="Zde se bude zobrazovat nakliknuté macro."/>
+            <TextBlock x:Name="Errors" TextWrapping="Wrap" Height="50" Margin="5" Text="Zde se budou zobrazovat případné Errory."/>
+            <Button x:Name="Start_Butt" Content="Start" Margin="5" Visibility="Hidden"/>
+        </StackPanel>
 
 
     </Grid>

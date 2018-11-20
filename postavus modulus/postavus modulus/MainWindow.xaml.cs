@@ -121,5 +121,15 @@ namespace postavus_modulus
                 UkazMacra();
             }
         }
+
+        private void Rohodnute_macro(object sender, RoutedEventArgs e)
+        {
+            Button zmacknuty = sender as Button;
+            string vzaty = zmacknuty.Content.ToString();
+            int cislo = int.Parse(vzaty);
+            int kolikaty = cislo - 1;
+            Editor_Macra.Text = loaded.codes[kolikaty];
+            Start_Butt.Visibility = Visibility.Visible;
+        }
     }
 }
