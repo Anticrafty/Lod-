@@ -21,17 +21,16 @@ namespace Formular_Osoby
     /// </summary>
     public partial class MainWindow : Window
     {
+        static List<Skola> skoly = new List<Skola>();
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Osoba_Click(object sender, RoutedEventArgs e)
         {
-            Osoba ososba = new Osoba()
-            {
-                jmeno = 
-            }
+            NactenaStranka.Navigate(new StrankaOsoba(NactenaStranka));
+
         }
     }
 

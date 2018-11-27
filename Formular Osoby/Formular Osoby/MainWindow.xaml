@@ -5,26 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Formular_Osoby"
         mc:Ignorable="d"
-        Title="MainWindow" Height="440" Width="300" Background="LightGreen">
+        Title="MainWindow" Height="470" Width="300" Background="LightGreen">
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Height="389" Margin="10,10,0,0" VerticalAlignment="Top" Width="270">
-            <TextBlock TextWrapping="Wrap" Text="Jmeno" Margin="5" />
-            <TextBox  x:Name="Jmeno" Height="23" TextWrapping="Wrap" Text="" Margin="5"  BorderBrush="DarkGreen" Foreground="White" Background="Green" BorderThickness="2" SelectionBrush="Red" />
-            <TextBlock x:Name="JmenoError" TextWrapping="Wrap" Text="Errors" Margin="5" Foreground="Red" />
-
-            <TextBlock TextWrapping="Wrap" Text="Přijmení" Margin="5"/>
-            <TextBox x:Name="Primeni"  Height="23" TextWrapping="Wrap" Text="" Margin="5" BorderBrush="DarkGreen" Foreground="White" Background="Green" BorderThickness="2" />
-            <TextBlock x:Name="PrimeniError"  TextWrapping="Wrap" Text="Errors" Margin="5"  Foreground="Red" />
-
-            <TextBlock TextWrapping="Wrap" Text="E-mail" Margin="5"/>
-            <TextBox x:Name="Email" Height="23" TextWrapping="Wrap" Text="" Margin="5"  BorderBrush="DarkGreen" Foreground="White" Background="Green" BorderThickness="2"/>
-            <TextBlock x:Name="EmailError" TextWrapping="Wrap" Text="Errors" Margin="5"  Foreground="Red" />
-
-            <TextBlock TextWrapping="Wrap" Text="Datum Narozrní" Margin="5"/>
-            <TextBox x:Name="Datum" Height="23" TextWrapping="Wrap" Text="" Margin="5" BorderBrush="DarkGreen" Foreground="White" Background="Green" BorderThickness="2" />
-            <TextBlock x:Name="DatumError" TextWrapping="Wrap" Text="Errors" Margin="5"  Foreground="Red" />
-
-            <Button Content="OK" Margin="20" BorderBrush="DarkGreen" Foreground="White" Background="Green" BorderThickness="5" Click="Button_Click"/>
+        <Frame x:Name="NactenaStranka" ></Frame>
+        <StackPanel HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" VerticalAlignment="Top" Width="270" Orientation="Horizontal">
+            <Button Content="Žák" Margin="5,0" Width="80" Background="LightGray" Click="Osoba_Click"/>
         </StackPanel>
 
     </Grid>

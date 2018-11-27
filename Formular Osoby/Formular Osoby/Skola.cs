@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Formular_Osoby
 {
-    class Osoba
+    class Skola
     {
-        public string Jmeno;
-        public string Primeni;
-        public string Email;
-        public DateTime DatumNarozeni;
+        string jmeno;
+        List<Trida> Tridy;
     }
 }
