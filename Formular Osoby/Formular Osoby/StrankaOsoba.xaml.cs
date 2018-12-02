@@ -21,13 +21,15 @@ namespace Formular_Osoby
     public partial class StrankaOsoba : Page
     {
         private Frame pretchoziFrame;
+        public Trida trida = null; 
         public StrankaOsoba()
         {
             InitializeComponent();
         }
-        public StrankaOsoba(Frame predchozistranka) : this()
+        public StrankaOsoba(Frame predchozistranka, Trida postaveni) : this()
         {
             this.pretchoziFrame = predchozistranka;
+            trida = postaveni;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -62,7 +64,16 @@ namespace Formular_Osoby
                 Primeni.Background = Brushes.Blue;
                 Email.Background = Brushes.Blue;
                 Datum.Background = Brushes.Blue;
-                //ulož
+                
+                if (trida == null)
+                {
+                    //ulož
+                }
+                else
+                {
+                    trida.TridniUcitel = ososba;
+                    pretchoziFrame.Navigate(new StrankaTrida(pretchoziFrame, trida));
+                }
             }
             else
             {

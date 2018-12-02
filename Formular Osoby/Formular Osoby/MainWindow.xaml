@@ -9,9 +9,9 @@
     <Grid>
         <Frame x:Name="NactenaStranka" ></Frame>
         <StackPanel HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" VerticalAlignment="Top" Width="270" Orientation="Horizontal">
-            <Button Content="Žák" Margin="5,0" Width="80" Background="LightGray" Click="Osoba_Click"/>
-            <Button Content="Třída" Margin="5,0" Width="80" Background="LightGray" Click="Osoba_Click"/>
-            <Button Content="Škola" Margin="5,0" Width="80" Background="LightGray" Click="Osoba_Click"/>
+            <Button x:Name="Zak" Content="Žák" Margin="5,0" Width="80" Background="LightGray" Click="Osoba_Click"/>
+            <Button x:Name="Trida" Content="Třída" Margin="5,0" Width="80" Background="LightGray" Click="Trida_Click"/>
+            <Button x:Name="Skola" Content="Škola" Margin="5,0" Width="80" Background="LightGray" Click="Skola_Click"/>
         </StackPanel>
 
     </Grid>
