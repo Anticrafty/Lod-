@@ -54,6 +54,8 @@ namespace Formular_Osoby
 
         private void Skola_Click(object sender, RoutedEventArgs e)
         {
+            NactenaStranka.Navigate(new StrankaSkola(NactenaStranka));
+
             Skola.Background = Brushes.Gray;
             Skola.BorderBrush = Brushes.LightGray;
             Zak.Background = Brushes.LightGray;

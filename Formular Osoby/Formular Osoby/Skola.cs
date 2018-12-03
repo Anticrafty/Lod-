@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Formular_Osoby
 {
-    class Skola
+    public class Skola
     {
-        string jmeno;
-        List<Trida> Tridy;
+        public string Jmeno;
+        public List<Trida> Tridy;
     }
 }
