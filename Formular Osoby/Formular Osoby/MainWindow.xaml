@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Formular_Osoby"
         mc:Ignorable="d"
-        Title="MainWindow" Height="470" Width="300" Background="LightGreen">
+        Title="MainWindow" Height="100" Width="300" Background="LightGreen">
     <Grid>
         <Frame x:Name="NactenaStranka" ></Frame>
         <StackPanel HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" VerticalAlignment="Top" Width="270" Orientation="Horizontal">

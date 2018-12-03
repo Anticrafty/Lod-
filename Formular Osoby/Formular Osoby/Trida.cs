@@ -11,6 +11,6 @@ namespace Formular_Osoby
         public string Jmeno;
         public Osoba TridniUcitel;
         public string KmenovaTrida;
-        public List<Osoba> Zaci;
+        public List<Osoba> Zaci = new List<Osoba>();
     }
 }

@@ -31,6 +31,7 @@ namespace Formular_Osoby
         public StrankaSkola(Frame predchozistranka) : this()
         {
             this.pretchoziFrame = predchozistranka;
+            Application.Current.MainWindow.Height = 250;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -46,10 +47,11 @@ namespace Formular_Osoby
             IList<FluentValidation.Results.ValidationFailure> Errors = validovany.Errors;
             if (overeny)
             {
-                Jmeno.Background = Brushes.Blue;                
+                Jmeno.Background = Brushes.Blue;
 
-                    //ulož
-               
+                //ulož
+                MainWindow.skoly.Add(ososba);
+                
             }
             else
             {

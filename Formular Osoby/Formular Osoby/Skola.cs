@@ -9,6 +9,6 @@ namespace Formular_Osoby
     public class Skola
     {
         public string Jmeno;
-        public List<Trida> Tridy;
+        public List<Trida> Tridy = new List<Trida>();
     }
 }

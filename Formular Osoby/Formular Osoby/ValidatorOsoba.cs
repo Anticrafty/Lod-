@@ -13,8 +13,8 @@ namespace Formular_Osoby
         {
             
             RuleFor(x => x.Primeni).NotEqual(x => x.Jmeno).WithMessage("Příjmení a jmeno nemůžou být stejný");
-            RuleFor(x => x.Jmeno).NotEmpty().WithMessage("Zadejte prosím své jméno");
-            RuleFor(x => x.Primeni).NotEmpty().WithMessage("Zadejte prosím celé své jméno");
+            RuleFor(x => x.Jmeno).NotEmpty().WithMessage("Zadejte prosím jméno");
+            RuleFor(x => x.Primeni).NotEmpty().WithMessage("Zadejte prosím celé jméno");
             RuleFor(x => x.Email).EmailAddress().WithMessage("Zadejte praví E-mail");
             RuleFor(x => x.Email).NotEmpty().WithMessage("Zadejte prosím Email");
             RuleFor(x => x.DatumNarozeni).NotEmpty().WithMessage("Zadejte prosím datum");

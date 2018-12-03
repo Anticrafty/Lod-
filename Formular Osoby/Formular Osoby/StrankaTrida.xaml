@@ -5,12 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Formular_Osoby"
       mc:Ignorable="d" 
-      d:DesignHeight="470" d:DesignWidth="300"
+      d:DesignHeight="550" d:DesignWidth="300"
       Title="StrankaTrida">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Height="389" Margin="10,30,0,0" VerticalAlignment="Top" Width="270">
+        <StackPanel HorizontalAlignment="Left" Height="500" Margin="10,30,0,0" VerticalAlignment="Top" Width="270">
             <TextBlock TextWrapping="Wrap" Text="Jmeno Školy" Margin="5" />
+            <TextBox  x:Name="Skola" Height="23" TextWrapping="Wrap" Text="" Margin="5"  BorderBrush="DarkGreen" Foreground="White" Background="Green" BorderThickness="2" SelectionBrush="Red" />
+            <TextBlock x:Name="SkolaError" TextWrapping="Wrap" Margin="5" Foreground="Red" />
+            
+            <TextBlock TextWrapping="Wrap" Text="Jmeno Třídy" Margin="5" />
             <TextBox  x:Name="Jmeno" Height="23" TextWrapping="Wrap" Text="" Margin="5"  BorderBrush="DarkGreen" Foreground="White" Background="Green" BorderThickness="2" SelectionBrush="Red" />
             <TextBlock x:Name="JmenoError" TextWrapping="Wrap" Margin="5" Foreground="Red" />
 

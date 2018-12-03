@@ -21,7 +21,7 @@ namespace Formular_Osoby
     /// </summary>
     public partial class MainWindow : Window
     {
-        static List<Skola> skoly = new List<Skola>();
+        public static List<Skola> skoly = new List<Skola>();
         public MainWindow()
         {
             InitializeComponent();
@@ -29,7 +29,8 @@ namespace Formular_Osoby
 
         private void Osoba_Click(object sender, RoutedEventArgs e)
         {
-            NactenaStranka.Navigate(new StrankaOsoba(NactenaStranka,null));
+
+            NactenaStranka.Navigate(new StrankaOsoba(NactenaStranka,null,""));
 
             Zak.Background = Brushes.Gray;
             Zak.BorderBrush = Brushes.LightGray;
@@ -42,7 +43,7 @@ namespace Formular_Osoby
 
         private void Trida_Click(object sender, RoutedEventArgs e)
         {
-            NactenaStranka.Navigate(new StrankaTrida(NactenaStranka, null));
+            NactenaStranka.Navigate(new StrankaTrida(NactenaStranka, null,""));
 
             Trida.Background = Brushes.Gray;
             Trida.BorderBrush = Brushes.LightGray;
