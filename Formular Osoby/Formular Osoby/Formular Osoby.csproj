@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentValidation.8.0.100\lib\net45\FluentValidation.dll</HintPath>
+      <HintPath>..\packages\FluentValidation.8.0.101\lib\net45\FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -73,8 +73,16 @@
     <Compile Include="StrankaOsoba.xaml.cs">
       <DependentUpon>StrankaOsoba.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StrankaSkola.xaml.cs">
+      <DependentUpon>StrankaSkola.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StrankaTrida.xaml.cs">
+      <DependentUpon>StrankaTrida.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Trida.cs" />
     <Compile Include="ValidatorOsoba.cs" />
+    <Compile Include="ValidatorSkola.cs" />
+    <Compile Include="ValidatorTrida.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -88,6 +96,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="StrankaOsoba.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StrankaSkola.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StrankaTrida.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

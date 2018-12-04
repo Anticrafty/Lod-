@@ -5,11 +5,20 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Formular_Osoby"
       mc:Ignorable="d" 
-      d:DesignHeight="470" d:DesignWidth="300"
+      d:DesignHeight="650" d:DesignWidth="300"
       Title="StrankaOsoba">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Height="389" Margin="10,30,0,0" VerticalAlignment="Top" Width="270">
+        <StackPanel HorizontalAlignment="Left" Height="600" Margin="10,30,0,0" VerticalAlignment="Top" Width="270">
+
+            <TextBlock x:Name="NadpisSkola" TextWrapping="Wrap" Text="Škola" Margin="5" />
+            <TextBox  x:Name="Skola" Height="23" TextWrapping="Wrap" Text="" Margin="5"  BorderBrush="DarkGreen" Foreground="White" Background="Green" BorderThickness="2" SelectionBrush="Red" />
+            <TextBlock x:Name="SkolaError" TextWrapping="Wrap" Margin="5" Foreground="Red" />
+
+            <TextBlock x:Name="NadpisTrida" TextWrapping="Wrap" Text="Třída" Margin="5" />
+            <TextBox  x:Name="Trida" Height="23" TextWrapping="Wrap" Text="" Margin="5"  BorderBrush="DarkGreen" Foreground="White" Background="Green" BorderThickness="2" SelectionBrush="Red" />
+            <TextBlock x:Name="TridaError" TextWrapping="Wrap" Margin="5" Foreground="Red" />
+            
             <TextBlock TextWrapping="Wrap" Text="Jmeno" Margin="5" />
             <TextBox  x:Name="Jmeno" Height="23" TextWrapping="Wrap" Text="" Margin="5"  BorderBrush="DarkGreen" Foreground="White" Background="Green" BorderThickness="2" SelectionBrush="Red" />
             <TextBlock x:Name="JmenoError" TextWrapping="Wrap" Margin="5" Foreground="Red" />

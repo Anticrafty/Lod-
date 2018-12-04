@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Formular_Osoby
 {
-    class Trida
+    public class Trida
     {
-        string Jmeno;
-        Osoba TridniUcitel;
-        string KmenovaTrida;
-        List<Osoba> Zaci;
+        public string Jmeno;
+        public Osoba TridniUcitel;
+        public string KmenovaTrida;
+        public List<Osoba> Zaci = new List<Osoba>();
     }
 }

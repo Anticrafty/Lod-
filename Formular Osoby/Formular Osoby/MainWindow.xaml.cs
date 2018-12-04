@@ -21,7 +21,7 @@ namespace Formular_Osoby
     /// </summary>
     public partial class MainWindow : Window
     {
-        static List<Skola> skoly = new List<Skola>();
+        public static List<Skola> skoly = new List<Skola>();
         public MainWindow()
         {
             InitializeComponent();
@@ -29,8 +29,40 @@ namespace Formular_Osoby
 
         private void Osoba_Click(object sender, RoutedEventArgs e)
         {
-            NactenaStranka.Navigate(new StrankaOsoba(NactenaStranka));
 
+            NactenaStranka.Navigate(new StrankaOsoba(NactenaStranka,null,""));
+
+            Zak.Background = Brushes.Gray;
+            Zak.BorderBrush = Brushes.LightGray;
+            Trida.Background = Brushes.LightGray;
+            Trida.BorderBrush = Brushes.Gray;
+            Skola.Background = Brushes.LightGray;
+            Skola.BorderBrush = Brushes.Gray;
+
+        }
+
+        private void Trida_Click(object sender, RoutedEventArgs e)
+        {
+            NactenaStranka.Navigate(new StrankaTrida(NactenaStranka, null,""));
+
+            Trida.Background = Brushes.Gray;
+            Trida.BorderBrush = Brushes.LightGray;
+            Zak.Background = Brushes.LightGray;
+            Zak.BorderBrush = Brushes.Gray;
+            Skola.Background = Brushes.LightGray;
+            Skola.BorderBrush = Brushes.Gray;
+        }
+
+        private void Skola_Click(object sender, RoutedEventArgs e)
+        {
+            NactenaStranka.Navigate(new StrankaSkola(NactenaStranka));
+
+            Skola.Background = Brushes.Gray;
+            Skola.BorderBrush = Brushes.LightGray;
+            Zak.Background = Brushes.LightGray;
+            Zak.BorderBrush = Brushes.Gray;
+            Trida.Background = Brushes.LightGray;
+            Trida.BorderBrush = Brushes.Gray;
         }
     }
 

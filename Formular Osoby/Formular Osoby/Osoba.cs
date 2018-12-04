@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Formular_Osoby
 {
-    class Osoba
+    public class Osoba
     {
         public string Jmeno;
         public string Primeni;
