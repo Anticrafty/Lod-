@@ -160,7 +160,7 @@ namespace Hokus_Pokus_Launcher
                 }
                 
             }
-            FileInfo[] file = new DirectoryInfo(@predchoziSlozka).GetFiles("*.*", SearchOption.TopDirectoryOnly);
+            FileInfo[] file = new DirectoryInfo(@predchoziSlozka).GetFiles("*.exe", SearchOption.TopDirectoryOnly);
             foreach (FileInfo soubor in file)
             {
                 Button Naklikavac_soubor = new Button();
@@ -188,7 +188,7 @@ namespace Hokus_Pokus_Launcher
                 stack.Children.Add(nahled);
                 stack.Children.Add(blem);
 
-                Naklikavac_soubor.Click += new RoutedEventHandler(Open_Folder);
+                //Naklikavac_soubor.Click += new RoutedEventHandler(Open_Folder);
                 Naklikavac_soubor.HorizontalAlignment = HorizontalAlignment.Left;
                 Naklikavac_soubor.VerticalAlignment = VerticalAlignment.Top;
                 Naklikavac_soubor.Width = 70;
