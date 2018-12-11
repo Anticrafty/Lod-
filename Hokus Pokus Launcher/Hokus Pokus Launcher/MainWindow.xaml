@@ -5,30 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hokus_Pokus_Launcher"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="830">
-    <Grid  x:Name="okno" >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="2*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="20*"/>
-        </Grid.RowDefinitions>
-        
-    </Grid>
+        Title="MainWindow" Height="750" Width="830">
+    <Frame x:Name="stranka" />
 </Window>
