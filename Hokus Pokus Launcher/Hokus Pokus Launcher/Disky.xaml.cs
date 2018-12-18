@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Diagnostics;
+using Path = System.IO.Path;
 
 namespace Hokus_Pokus_Launcher
 {
@@ -188,7 +190,7 @@ namespace Hokus_Pokus_Launcher
                 stack.Children.Add(nahled);
                 stack.Children.Add(blem);
 
-                //Naklikavac_soubor.Click += new RoutedEventHandler(Open_Folder);
+                Naklikavac_soubor.Click += new RoutedEventHandler(Open_Exe);
                 Naklikavac_soubor.HorizontalAlignment = HorizontalAlignment.Left;
                 Naklikavac_soubor.VerticalAlignment = VerticalAlignment.Top;
                 Naklikavac_soubor.Width = 70;
@@ -231,6 +233,19 @@ namespace Hokus_Pokus_Launcher
             }
 
             pretchoziFrame.Navigate(new Disky(pretchoziFrame, path));
+        }
+        private void Open_Exe(object sender, EventArgs e)
+        {
+            Button klik = sender as Button;
+            StackPanel vnitrek = klik.Content as StackPanel;
+            TextBlock nazev = vnitrek.Children[1] as TextBlock;
+            string path = @predchoziSlozka + "\\" + nazev.Text;
+
+            Process proc = new Process();
+            proc.StartInfo.FileName = path;
+            proc.StartInfo.WorkingDirectory = Path.GetDirectoryName(path);
+            proc.Start();
+
         }
     }
 }
