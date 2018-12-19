@@ -16,14 +16,22 @@ using System.Windows.Shapes;
 namespace WandsAndGunsEvolve
 {
     /// <summary>
-    /// Interakční logika pro MainWindow.xaml
+    /// Interakční logika pro MainMenu.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainMenu : Page
     {
-        public MainWindow()
+        private Frame PredchoziOkno;
+
+        public MainMenu()
         {
             InitializeComponent();
-            Okno.Navigate(new MainMenu(Okno));
+        }
+        public MainMenu( Frame Window ) : this()
+        {
+            this.PredchoziOkno = Window;
+            Application.Current.MainWindow.Height = 500;
+            Application.Current.MainWindow.Width = 540;
+            and.Text = "" + (char)0X26;
         }
     }
 }
