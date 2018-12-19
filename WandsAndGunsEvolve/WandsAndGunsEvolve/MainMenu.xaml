@@ -21,7 +21,7 @@
         <StackPanel HorizontalAlignment="Center" Height="241" Margin="0,200,0,0" VerticalAlignment="Top" Width="520">
             <Button Content="Nová Hra" Foreground="Gray" Background="{x:Null}" Height="60" Margin="10" BorderThickness="5" FontSize="36" FontWeight="Bold"/>
             <Button Content="Načíst Hru" Foreground="Gray" Background="{x:Null}" Height="60" Margin="10" BorderThickness="5"  FontSize="36" FontWeight="Bold"/>
-            <Button Content="Konec" Foreground="Gray" Background="{x:Null}" Height="60" Margin="10 " BorderThickness="5"  FontSize="36" FontWeight="Bold"/>
+            <Button Content="Konec" Foreground="Gray" Background="{x:Null}" Height="60" Margin="10 " BorderThickness="5"  FontSize="36" FontWeight="Bold" Click="Konec"/>
         </StackPanel>
 
     </Grid>

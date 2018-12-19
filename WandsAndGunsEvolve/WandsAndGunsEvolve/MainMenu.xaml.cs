@@ -33,5 +33,10 @@ namespace WandsAndGunsEvolve
             Application.Current.MainWindow.Width = 540;
             and.Text = "" + (char)0X26;
         }
+
+        private void Konec(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
     }
 }
