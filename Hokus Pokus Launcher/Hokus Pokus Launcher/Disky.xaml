@@ -53,6 +53,10 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
+        <Button x:Name="mazac" Grid.ColumnSpan="1" Content="X" Grid.Column="8" HorizontalAlignment="Right" Margin="2" VerticalAlignment="Top" Height="25" Width="25" Foreground="Red" FontWeight="Bold" FontSize="16" Click="Smaz_Click" Background="LightGray"/>
+        <Button x:Name="Ano" Grid.ColumnSpan="1" Content="Ano" Grid.Column="4" HorizontalAlignment="Left" Margin="1" VerticalAlignment="Top" Width="40" Foreground="Green" FontWeight="Bold" Visibility="Hidden" Click="AnoNe_Click"/>
+        <Button x:Name="Ne"  Grid.ColumnSpan="1" Content="Ne" Grid.Column="4" HorizontalAlignment="Right" Margin="1" VerticalAlignment="Top" Width="40" Foreground="Red" FontWeight="Bold" Visibility="Hidden" Click="AnoNe_Click"/>
+        <Button x:Name="Copirak" Grid.ColumnSpan="2" Content="C" Grid.Column="8" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25" Foreground="DarkOrange" FontWeight="Bold" FontSize="16" Click="Copy_Click" Background="LightGray"/>
 
     </Grid>
 </Page>
