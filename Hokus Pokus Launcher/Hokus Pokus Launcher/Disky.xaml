@@ -57,6 +57,7 @@
         <Button x:Name="Ano" Grid.ColumnSpan="1" Content="Ano" Grid.Column="4" HorizontalAlignment="Left" Margin="1" VerticalAlignment="Top" Width="40" Foreground="Green" FontWeight="Bold" Visibility="Hidden" Click="AnoNe_Click"/>
         <Button x:Name="Ne"  Grid.ColumnSpan="1" Content="Ne" Grid.Column="4" HorizontalAlignment="Right" Margin="1" VerticalAlignment="Top" Width="40" Foreground="Red" FontWeight="Bold" Visibility="Hidden" Click="AnoNe_Click"/>
         <Button x:Name="Copirak" Grid.ColumnSpan="2" Content="C" Grid.Column="8" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25" Foreground="DarkOrange" FontWeight="Bold" FontSize="16" Click="Copy_Click" Background="LightGray"/>
+        <Button x:Name="zde" Grid.ColumnSpan="1" Content="kopirovat sem" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Visibility="Hidden" Click="Zde_Click" />
 
     </Grid>
 </Page>

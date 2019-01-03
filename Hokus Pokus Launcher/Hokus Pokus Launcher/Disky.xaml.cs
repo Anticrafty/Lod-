@@ -23,6 +23,7 @@ namespace Hokus_Pokus_Launcher
     /// </summary>
     public partial class Disky : Page
     {
+        private string Copirovani = null;
         private string path;
         private bool zapnutemazani = false;
         private bool zapnuteCopirovani = false;
@@ -34,14 +35,21 @@ namespace Hokus_Pokus_Launcher
             InitializeComponent();
             
         }
-        public Disky(int str, Frame predchozistranka, string slozka) : this()
+        public Disky(int str, Frame predchozistranka, string slozka,string CopirovaniZ) : this()
         {
             this.pretchoziFrame = predchozistranka;
             stranka = str;
             predchoziSlozka = slozka;
+            Copirovani = CopirovaniZ;
+
+            if (Copirovani != null)
+            {
+                zde.Visibility = Visibility.Visible;
+            }
             if (slozka == null)
             {
                 nalezeni_disku();
+                zde.Visibility = Visibility.Hidden;
                 mazac.Visibility = Visibility.Hidden;
                 Copirak.Visibility = Visibility.Hidden;
             }
@@ -277,7 +285,7 @@ namespace Hokus_Pokus_Launcher
             }
             else
             {      
-                pretchoziFrame.Navigate(new Disky(0, pretchoziFrame, path));
+                pretchoziFrame.Navigate(new Disky(0, pretchoziFrame, path, Copirovani));
             }
 
             
@@ -288,7 +296,7 @@ namespace Hokus_Pokus_Launcher
             StackPanel vnitrek = klik.Content as StackPanel;
             TextBlock nazev = vnitrek.Children[1] as TextBlock;
             path = @predchoziSlozka + "\\" + nazev.Text;
-            if (zapnutemazani)
+            if (zapnutemazani || zapnuteCopirovani)
             {
                 Ano.Visibility = Visibility.Visible;
                 Ne.Visibility = Visibility.Visible;            
@@ -315,7 +323,7 @@ namespace Hokus_Pokus_Launcher
                 stranka++;
             }
             string path = @predchoziSlozka;
-            pretchoziFrame.Navigate(new Disky(stranka,pretchoziFrame, path));
+            pretchoziFrame.Navigate(new Disky(stranka,pretchoziFrame, path, Copirovani));
         }
 
         private void  Smaz_Click(object sender, RoutedEventArgs e)
@@ -356,12 +364,12 @@ namespace Hokus_Pokus_Launcher
                     {
                         System.IO.Directory.Delete(path, true);
                     }
-                    pretchoziFrame.Navigate(new Disky(stranka, pretchoziFrame, @predchoziSlozka));
+                    pretchoziFrame.Navigate(new Disky(stranka, pretchoziFrame, @predchoziSlozka,Copirovani));
+                }           
+                else if ( zapnuteCopirovani )
+                {
+                    pretchoziFrame.Navigate(new Disky(0, pretchoziFrame, null , path));
                 }
-            }
-            else if ( zapnuteCopirovani )
-            {
-
             }
             else
             {
@@ -390,6 +398,22 @@ namespace Hokus_Pokus_Launcher
                 mazac.Foreground = Brushes.Red;
                 zapnutemazani = false;
             }
+        }
+        private void Zde_Click(object sender, RoutedEventArgs e)
+        {
+            /*try
+            { 
+                */System.IO.File.Copy(@predchoziSlozka, Copirovani);/*
+            }
+            catch
+            {
+                Copiruj(Copirovani, @predchoziSlozka);
+            }
+            pretchoziFrame.Navigate(new Disky(0, pretchoziFrame, null, null ));
+        }
+        private void Copiruj(string odkud, string kam)
+        {
+        */
         }
     }
 }

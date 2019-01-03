@@ -23,7 +23,7 @@ namespace Hokus_Pokus_Launcher
         public MainWindow()
         {
             InitializeComponent();
-            stranka.Navigate(new Disky(0,stranka,null));
+            stranka.Navigate(new Disky(0,stranka,null,null));
         }
 
         
