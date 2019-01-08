@@ -23,6 +23,7 @@ namespace Hokus_Pokus_Launcher
     /// </summary>
     public partial class Disky : Page
     {
+        private string app = null;
         private string Copirovani = null;
         private string path;
         private bool zapnutemazani = false;
@@ -35,12 +36,13 @@ namespace Hokus_Pokus_Launcher
             InitializeComponent();
             
         }
-        public Disky(int str, Frame predchozistranka, string slozka,string CopirovaniZ) : this()
+        public Disky(int str, Frame predchozistranka, string slozka,string CopirovaniZ, string soubor) : this()
         {
             this.pretchoziFrame = predchozistranka;
             stranka = str;
             predchoziSlozka = slozka;
             Copirovani = CopirovaniZ;
+            app = soubor;
 
             if (Copirovani != null)
             {
@@ -285,7 +287,7 @@ namespace Hokus_Pokus_Launcher
             }
             else
             {      
-                pretchoziFrame.Navigate(new Disky(0, pretchoziFrame, path, Copirovani));
+                pretchoziFrame.Navigate(new Disky(0, pretchoziFrame, path, Copirovani, app));
             }
 
             
@@ -296,6 +298,7 @@ namespace Hokus_Pokus_Launcher
             StackPanel vnitrek = klik.Content as StackPanel;
             TextBlock nazev = vnitrek.Children[1] as TextBlock;
             path = @predchoziSlozka + "\\" + nazev.Text;
+            app = nazev.Text;
             if (zapnutemazani || zapnuteCopirovani)
             {
                 Ano.Visibility = Visibility.Visible;
@@ -323,7 +326,7 @@ namespace Hokus_Pokus_Launcher
                 stranka++;
             }
             string path = @predchoziSlozka;
-            pretchoziFrame.Navigate(new Disky(stranka,pretchoziFrame, path, Copirovani));
+            pretchoziFrame.Navigate(new Disky(stranka,pretchoziFrame, path, Copirovani, app));
         }
 
         private void  Smaz_Click(object sender, RoutedEventArgs e)
@@ -364,11 +367,11 @@ namespace Hokus_Pokus_Launcher
                     {
                         System.IO.Directory.Delete(path, true);
                     }
-                    pretchoziFrame.Navigate(new Disky(stranka, pretchoziFrame, @predchoziSlozka,Copirovani));
+                    pretchoziFrame.Navigate(new Disky(0, pretchoziFrame, null,null,null));
                 }           
                 else if ( zapnuteCopirovani )
                 {
-                    pretchoziFrame.Navigate(new Disky(0, pretchoziFrame, null , path));
+                    pretchoziFrame.Navigate(new Disky(0, pretchoziFrame, null , path, app));
                 }
             }
             else
@@ -377,10 +380,15 @@ namespace Hokus_Pokus_Launcher
                 Ne.Visibility = Visibility.Hidden;
                 mazac.Background = Brushes.LightGray;
                 mazac.Foreground = Brushes.Red;
+                Copirak.Background = Brushes.LightGray;
+                Copirak.Foreground = Brushes.Red;
                 zapnutemazani = false;
+                zapnuteCopirovani = false;
+                app = null;
             }
             
         }
+
         private void Copy_Click(object sender, RoutedEventArgs e)
         {
             if (zapnuteCopirovani)
@@ -399,21 +407,23 @@ namespace Hokus_Pokus_Launcher
                 zapnutemazani = false;
             }
         }
+
         private void Zde_Click(object sender, RoutedEventArgs e)
         {
-            /*try
+            try
             { 
-                */System.IO.File.Copy(@predchoziSlozka, Copirovani);/*
+                System.IO.File.Copy(Copirovani, @predchoziSlozka + "\\" + app);
             }
             catch
             {
                 Copiruj(Copirovani, @predchoziSlozka);
             }
-            pretchoziFrame.Navigate(new Disky(0, pretchoziFrame, null, null ));
+            pretchoziFrame.Navigate(new Disky(0, pretchoziFrame, null, null, null ));
         }
+
         private void Copiruj(string odkud, string kam)
         {
-        */
+        
         }
     }
 }
