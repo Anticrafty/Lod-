@@ -284,6 +284,7 @@ namespace Hokus_Pokus_Launcher
             {
                 Ano.Visibility = Visibility.Visible;
                 Ne.Visibility = Visibility.Visible;
+                app = nazev.Text;
             }
             else
             {      
@@ -416,14 +417,43 @@ namespace Hokus_Pokus_Launcher
             }
             catch
             {
-                Copiruj(Copirovani, @predchoziSlozka);
+                Copiruj(Copirovani, @predchoziSlozka, true);
             }
             pretchoziFrame.Navigate(new Disky(0, pretchoziFrame, null, null, null ));
         }
 
-        private void Copiruj(string odkud, string kam)
+        private void Copiruj(string odkud, string kam, bool first)
         {
-        
+            DirectoryInfo dir = new DirectoryInfo(odkud);
+            string sem;
+            if (first)
+            {
+                sem = kam + "\\" + app;
+            }
+            else
+            {
+                sem = kam;
+            }
+            
+
+            if (!Directory.Exists(sem))
+            {
+                Directory.CreateDirectory(sem);
+            }
+
+            FileInfo[] soubory = dir.GetFiles();
+            foreach (FileInfo soubor in soubory)
+            {
+                string Docasny = Path.Combine(sem, soubor.Name);
+                soubor.CopyTo(Docasny, false);
+            }
+
+            DirectoryInfo[] dirs = dir.GetDirectories();
+            foreach (DirectoryInfo subdir in dirs)
+            {
+                string temppath = Path.Combine(sem, subdir.Name);
+                Copiruj(subdir.FullName, temppath,false);
+            }
         }
     }
 }
