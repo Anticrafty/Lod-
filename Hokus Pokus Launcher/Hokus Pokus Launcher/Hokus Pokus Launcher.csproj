@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="sln.cs" />
     <Page Include="Disky.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

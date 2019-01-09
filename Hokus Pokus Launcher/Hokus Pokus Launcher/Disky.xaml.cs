@@ -23,6 +23,7 @@ namespace Hokus_Pokus_Launcher
     /// </summary>
     public partial class Disky : Page
     {
+        private sln showProject = null;
         private string app = null;
         private string Copirovani = null;
         private string path;
@@ -123,15 +124,15 @@ namespace Hokus_Pokus_Launcher
 
         private void otevrinalezeni_slozky()
         {
-            if( stranka == 0)
+            if (stranka == 0)
             {
                 Predchozi.Visibility = Visibility.Hidden;
             }
             else
             {
-                Predchozi.Visibility = Visibility.Visible ;
-            }            
-            
+                Predchozi.Visibility = Visibility.Visible;
+            }
+
             DirectoryInfo[] dir = new DirectoryInfo(@predchoziSlozka).GetDirectories("*.*", SearchOption.TopDirectoryOnly);
             int minSloupec = 7 * stranka;
             int maxSloupec = (7 * stranka) + 7;
@@ -139,8 +140,8 @@ namespace Hokus_Pokus_Launcher
             int slozkaSloupec = 0;
             foreach (DirectoryInfo slozka in dir)
             {
-                if(slozkaRada >= minSloupec)
-                { 
+                if (slozkaRada >= minSloupec)
+                {
                     Button Naklikavac_slozka = new Button();
 
                     Image nahled = new Image();
@@ -180,7 +181,7 @@ namespace Hokus_Pokus_Launcher
                     {
                         strankovac = 1;
                     }
-                    Grid.SetRow(Naklikavac_slozka, slozkaRada - ((7 * stranka)- strankovac));
+                    Grid.SetRow(Naklikavac_slozka, slozkaRada - ((7 * stranka) - strankovac));
 
                     Naklikavac_slozka.Content = stack;
                     okno.Children.Add(Naklikavac_slozka);
@@ -198,10 +199,10 @@ namespace Hokus_Pokus_Launcher
                     Dalsi.Visibility = Visibility.Visible;
                     break;
                 }
-                
+
             }
             FileInfo[] file = new DirectoryInfo(@predchoziSlozka).GetFiles("*.exe", SearchOption.TopDirectoryOnly);
-            
+
             foreach (FileInfo soubor in file)
             {
                 if (slozkaRada >= minSloupec && slozkaRada != maxSloupec)
@@ -262,7 +263,72 @@ namespace Hokus_Pokus_Launcher
                     Dalsi.Visibility = Visibility.Visible;
                     break;
                 }
-                
+
+            }
+            FileInfo[] projects = new DirectoryInfo(@predchoziSlozka).GetFiles("*.sln", SearchOption.TopDirectoryOnly);
+
+            foreach (FileInfo project in projects)
+            {
+                if (slozkaRada >= minSloupec && slozkaRada != maxSloupec)
+                {
+                    Button Naklikavac_soubor = new Button();
+
+                    Image nahled = new Image();
+
+                    var url = @"https://img.icons8.com/color/1600/visual-studio.png";
+
+                    BitmapImage obrazek = new BitmapImage();
+                    obrazek.BeginInit();
+                    obrazek.UriSource = new Uri(url, UriKind.Absolute);
+                    obrazek.EndInit();
+
+                    nahled.Height = 70;
+                    nahled.Width = 70;
+                    nahled.Source = obrazek;
+
+                    TextBlock blem = new TextBlock();
+
+                    blem.Text = project.Name;
+                    blem.TextAlignment = TextAlignment.Center;
+
+                    StackPanel stack = new StackPanel();
+
+                    stack.Children.Add(nahled);
+                    stack.Children.Add(blem);
+
+                    showProject = loadSln();
+
+                    Naklikavac_soubor.Click += new RoutedEventHandler(Open_Exe);
+                    Naklikavac_soubor.HorizontalAlignment = HorizontalAlignment.Left;
+                    Naklikavac_soubor.VerticalAlignment = VerticalAlignment.Top;
+                    Naklikavac_soubor.Width = 70;
+                    Naklikavac_soubor.Height = 90;
+                    Naklikavac_soubor.Margin = new Thickness(10, 10, 0, 0);
+                    Naklikavac_soubor.Background = null;
+                    Naklikavac_soubor.BorderBrush = null;
+                    Grid.SetColumn(Naklikavac_soubor, slozkaSloupec);
+                    int strankovac = 0;
+                    if (stranka != 0)
+                    {
+                        strankovac = 1;
+                    }
+                    Grid.SetRow(Naklikavac_soubor, slozkaRada - ((7 * stranka) - strankovac));
+
+                    Naklikavac_soubor.Content = stack;
+                    okno.Children.Add(Naklikavac_soubor);
+                }
+                slozkaSloupec++;
+                if (slozkaSloupec > 8)
+                {
+                    slozkaSloupec = 0;
+                    slozkaRada++;
+                    Dalsi.Visibility = Visibility.Hidden;
+                }
+                if (slozkaRada == 7)
+                {
+                    Dalsi.Visibility = Visibility.Visible;
+                    break;
+                }
             }
         }
 
@@ -454,6 +520,49 @@ namespace Hokus_Pokus_Launcher
                 string temppath = Path.Combine(sem, subdir.Name);
                 Copiruj(subdir.FullName, temppath,false);
             }
+        }
+
+        private sln loadSln()
+        {
+            sln projekt = new sln();
+
+            projekt.README_location = najdi_README(@predchoziSlozka);
+            projekt.csproject_Location = najdi_csproj();
+
+
+            return projekt;
+        }
+
+        private string najdi_README(string path)
+        {
+            FileInfo[] README = new DirectoryInfo(path).GetFiles("README.txt", SearchOption.TopDirectoryOnly);
+            foreach (FileInfo text in README)
+            {
+                return path + "\\" + text.Name;
+            }
+
+            DirectoryInfo[] dir = new DirectoryInfo(path).GetDirectories("*.*", SearchOption.TopDirectoryOnly);
+            foreach (DirectoryInfo dalsi in dir)
+            {
+                return najdi_README(path + "\\" + dalsi.Name);
+            }
+            return null;
+        }
+
+        private string najdi_csproj()
+        {
+            string csproj = null;
+            DirectoryInfo[] dir = new DirectoryInfo(@predchoziSlozka).GetDirectories("*.*", SearchOption.TopDirectoryOnly);
+            foreach (DirectoryInfo dalsi in dir)
+            {
+                FileInfo[] loadcss = new DirectoryInfo(@predchoziSlozka + "\\" + dalsi.Name).GetFiles("*.csproj", SearchOption.TopDirectoryOnly);
+                foreach (FileInfo cs in loadcss)
+                {
+                    csproj = @predchoziSlozka + "\\" + dalsi.Name + "\\" + cs.Name;
+                }
+                
+            }
+            return csproj;
         }
     }
 }
