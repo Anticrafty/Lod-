@@ -29,7 +29,7 @@ namespace Milionar.Classy
             try
             {
                 // ŠKOLNÍ
-                string UserFromFile = File.ReadAllText((@"D:\novakja16\Github\Milionar\Otazky.json"));
+                string UserFromFile = File.ReadAllText((@"D:\source\GitHub\Lod-\Milionar\Otazky.json"));
 
                 // NORMAND
                 // string UserFromFile = File.ReadAllText((@"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\Milionar\Otazky.json"));
@@ -564,7 +564,7 @@ namespace Milionar.Classy
             string jsonUsers = JsonConvert.SerializeObject(this, settings);
 
             // ŠKOLNÍ
-            File.WriteAllText(@"D:\novakja16\Github\Milionar\Otazky.json", jsonUsers);
+            File.WriteAllText(@"D:\source\GitHub\Lod-\Milionar\Otazky.json", jsonUsers);
 
             // NORMAND
             //File.WriteAllText(@"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\Milionar\Otazky.json", jsonUsers);

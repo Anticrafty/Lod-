@@ -504,22 +504,24 @@ namespace Hokus_Pokus_Launcher
 
             if (!Directory.Exists(sem))
             {
+                FileInfo[] soubory = dir.GetFiles();
+                DirectoryInfo[] dirs = dir.GetDirectories();
                 Directory.CreateDirectory(sem);
+
+                foreach (FileInfo soubor in soubory)
+                {
+                    string Docasny = Path.Combine(sem, soubor.Name);
+                    soubor.CopyTo(Docasny, false);
+                }
+                foreach (DirectoryInfo subdir in dirs)
+                {
+                    string temppath = Path.Combine(sem, subdir.Name);
+                    Copiruj(subdir.FullName, temppath, false);
+                }
             }
 
-            FileInfo[] soubory = dir.GetFiles();
-            foreach (FileInfo soubor in soubory)
-            {
-                string Docasny = Path.Combine(sem, soubor.Name);
-                soubor.CopyTo(Docasny, false);
-            }
-
-            DirectoryInfo[] dirs = dir.GetDirectories();
-            foreach (DirectoryInfo subdir in dirs)
-            {
-                string temppath = Path.Combine(sem, subdir.Name);
-                Copiruj(subdir.FullName, temppath,false);
-            }
+            
+            
         }
 
         private sln loadSln()
