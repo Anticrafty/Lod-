@@ -298,7 +298,7 @@ namespace Hokus_Pokus_Launcher
 
                     showProject = loadSln();
 
-                    Naklikavac_soubor.Click += new RoutedEventHandler(Open_Exe);
+                    Naklikavac_soubor.Click += new RoutedEventHandler(Open_Sln);
                     Naklikavac_soubor.HorizontalAlignment = HorizontalAlignment.Left;
                     Naklikavac_soubor.VerticalAlignment = VerticalAlignment.Top;
                     Naklikavac_soubor.Width = 70;
@@ -591,6 +591,24 @@ namespace Hokus_Pokus_Launcher
                 
             }
             return exe_soubor;
+        }
+        private void Open_Sln(object sender, RoutedEventArgs e)
+        {
+            Button klik = sender as Button;
+            StackPanel vnitrek = klik.Content as StackPanel;
+            TextBlock nazev = vnitrek.Children[1] as TextBlock;
+            path = @predchoziSlozka + "\\" + nazev.Text;
+            app = nazev.Text;
+            if (zapnutemazani || zapnuteCopirovani)
+            {
+                Ano.Visibility = Visibility.Visible;
+                Ne.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                pretchoziFrame.Navigate(new SLN_Opener(pretchoziFrame, showProject));
+            }
+            
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace Hokus_Pokus_Launcher
 {
-    class sln
+    public class sln
     {
         public string csproject_Location;
         public string exe_location;
