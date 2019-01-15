@@ -193,10 +193,10 @@ namespace evidence_uzivatelu
 
                     IDAuta++;
                 }
-                //var newExel.SaveAs(new FileInfo(@"D:\novakja16\Github\evidence uzivatelu\Cars.xlsx");
+                 newExel.SaveAs(new FileInfo(@"D:\source\Github\Lod-\evidence uzivatelu\Cars.xlsx"));
 
                 // NORMAND
-                newExel.SaveAs(new FileInfo(@"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\evidence uzivatelu\Cars.xlsx"));
+                //newExel.SaveAs(new FileInfo(@"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\evidence uzivatelu\Cars.xlsx"));
 
                 // EMIL
                 

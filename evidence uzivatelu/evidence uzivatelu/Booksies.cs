@@ -89,7 +89,7 @@ namespace evidence_uzivatelu
             try
             {
                 // ŠKOLNÍ
-                string UserFromBooks = File.ReadAllText((@"D:\novakja16\Github\evidence uzivatelu\Books.json"));
+                string UserFromBooks = File.ReadAllText((@"D:\source\Github\Lod-\evidence uzivatelu\Books.json"));
 
                 // NORMAND
                 // string UserFromBooks = File.ReadAllText((@"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\evidence uzivatelu\Books.json"));

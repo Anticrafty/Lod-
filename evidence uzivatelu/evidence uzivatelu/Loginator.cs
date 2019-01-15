@@ -98,7 +98,7 @@ namespace evidence_uzivatelu
             try
             {
                 // ŠKOLNÍ
-                string UserFromFile = File.ReadAllText((@"D:\novakja16\Github\evidence uzivatelu\Users.json"));
+                string UserFromFile = File.ReadAllText((@"D:\source\Github\Lod-\evidence uzivatelu\Users.json"));
 
                 // NORMAND
                 //string UserFromFile = File.ReadAllText((@"C:\Users\pirat\OneDrive\Plocha\random\škola\VAH\GibHub\evidence uzivatelu\Users.json"));
