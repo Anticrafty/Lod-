@@ -20,10 +20,12 @@ namespace WandsAndGunsEvolve
     /// </summary>
     public partial class MainMenu : Page
     {
+        public static Frame prologovac;
         private Frame PredchoziOkno;
 
         public MainMenu()
         {
+            prologovac = Prolog;
             InitializeComponent();
         }
         public MainMenu( Frame Window ) : this()
@@ -33,10 +35,28 @@ namespace WandsAndGunsEvolve
             Application.Current.MainWindow.Width = 540;
             and.Text = "" + (char)0X26;
         }
+        private void Nova_hra(object sender, RoutedEventArgs e)
+        {
+            List<string> mluva = new List<string>();
+            string vesnican_obr_odkaz = "wallpaper-for-facebook-profile-photo.jpg";
+            Rozhovor prolog = new Rozhovor() { text = mluva, obr_odkaz = vesnican_obr_odkaz };
+            PredchoziOkno.Navigate(new MainMenu(PredchoziOkno,prolog));
+        }
+        
+        private void Nacist_Hru(object sender, RoutedEventArgs e)
+        {
+
+        }
 
         private void Konec(object sender, RoutedEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
         }
+
+        static public void EndProlog()
+        {
+            prologovac = null;
+        }
+
     }
 }

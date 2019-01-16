@@ -8,5 +8,8 @@ namespace WandsAndGunsEvolve
 {
     class Rozhovor
     {
+        public List<string> text = new List<string>();
+        public string obr_odkaz = "wallpaper-for-facebook-profile-photo.jpg";
+
     }
 }
