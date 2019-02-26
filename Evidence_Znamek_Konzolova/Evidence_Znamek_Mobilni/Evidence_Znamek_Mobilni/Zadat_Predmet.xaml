@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Evidence_Znamek_Mobilni.Zadat_Predmet">
+    <ContentPage.Content>
+        <StackLayout>
+
+
+            <Entry x:Name="input_jmeno" Placeholder="Jmeno předmětu" Margin="20" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" WidthRequest="500"/>
+            <Button Text="Hotovo" VerticalOptions="StartAndExpand" HorizontalOptions="End" Clicked="Done" Margin="10" />
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

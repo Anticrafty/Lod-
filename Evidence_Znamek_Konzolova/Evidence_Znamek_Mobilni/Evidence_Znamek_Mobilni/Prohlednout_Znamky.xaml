@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Evidence_Znamek_Mobilni.Prohlednout_Znamky">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="UrciPredmet_txt" Text="{Binding Source={x:Reference UrciPredmet}, Path=SelectedItem}" IsVisible="False"/>
+            <Picker x:Name="UrciPredmet" Title=" Urči Předmět"   SelectedIndexChanged="Urceny_predmet">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Frame Margin="10" >
+                <StackLayout x:Name="Output"  >
+
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
