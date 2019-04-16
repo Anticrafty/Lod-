@@ -1,0 +1,30 @@
+﻿<Window x:Class="Either_Mouse.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Either_Mouse"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="210">
+    <Grid>
+        <StackPanel>
+
+            <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Nový polohovací zařízení" VerticalAlignment="Top" Width="173"/>
+            <TextBox x:Name="Name" HorizontalAlignment="Left" Height="23" Margin="5,5,0,5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" />
+            <Button FontWeight="Black" HorizontalAlignment="Right" Margin="10,-28" VerticalAlignment="Top" Width="23" Height="23" Background="Lime" BorderThickness="3" Click="Button_Click" />
+            <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Polohovací zařízení" VerticalAlignment="Top" Width="173"/>
+            <ComboBox x:Name="Zarizeninini" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Width="180" SelectionChanged="novy_vybrany_zarizeni">
+            </ComboBox>
+            <TextBlock HorizontalAlignment="Left" Margin="5,5,0,0" TextWrapping="Wrap" Text="Nastavení zařízení" VerticalAlignment="Top" Width="173"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0,-10,0,0" TextWrapping="Wrap" Text="_______________________________________" VerticalAlignment="Top" Width="200"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Citlivost" VerticalAlignment="Top" Width="173"/>
+            <Slider x:Name="Citlivost" Margin="5,0" Maximum="20" Value="10" Minimum="1" IsSnapToTickEnabled="True" TickFrequency="1"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Rychlost Dvojkliku" VerticalAlignment="Top" Width="173"/>
+            <Slider x:Name="Dvojklik" Margin="5,0" Minimum="1" IsSnapToTickEnabled="True" TickFrequency="1"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Rychlost Scrollování" VerticalAlignment="Top" Width="173"/>
+            <Slider x:Name="Scroll" Margin="5,0" Minimum="1" IsSnapToTickEnabled="True" TickFrequency="1"/>
+            <Button Margin="10" Height="20" Content="Uložit" Click="Uloz_Click"></Button>
+
+        </StackPanel>
+    </Grid>
+</Window>
