@@ -66,11 +66,19 @@ namespace Either_Mouse
                 }
                 else
                 {
+                    MainWindow.Top = najdu_mys().Y - MainWindow.Height;
+                    MainWindow.Left = najdu_mys().X - MainWindow.Width;
                     MainWindow.Show();
                     _BiShowed = true;
                 }
             }
             
+        }
+
+        public Point najdu_mys()
+        {
+            System.Drawing.Point point = System.Windows.Forms.Control.MousePosition;
+            return new Point(point.X, point.Y);
         }
 
         private void Bi_Emptying(object sender, CancelEventArgs e)

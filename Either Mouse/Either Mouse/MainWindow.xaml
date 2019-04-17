@@ -18,11 +18,11 @@
             <TextBlock HorizontalAlignment="Left" Margin="5,5,0,0" TextWrapping="Wrap" Text="Nastavení zařízení" VerticalAlignment="Top" Width="173"/>
             <TextBlock HorizontalAlignment="Left" Margin="0,-10,0,0" TextWrapping="Wrap" Text="_______________________________________" VerticalAlignment="Top" Width="200"/>
             <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Citlivost" VerticalAlignment="Top" Width="173"/>
-            <Slider x:Name="Citlivost" Margin="5,0" Maximum="20" Value="10" Minimum="1" IsSnapToTickEnabled="True" TickFrequency="1"/>
+            <Slider x:Name="Citlivost" Margin="5,0" Maximum="20" Minimum="1" Value="10"  IsSnapToTickEnabled="True" TickFrequency="1"/>
             <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Rychlost Dvojkliku" VerticalAlignment="Top" Width="173"/>
-            <Slider x:Name="Dvojklik" Margin="5,0" Minimum="1" IsSnapToTickEnabled="True" TickFrequency="1"/>
+            <Slider x:Name="Dvojklik" Margin="5,0" Minimum="1" Maximum="5000" Value="500" IsSnapToTickEnabled="True" TickFrequency="1" />
             <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Rychlost Scrollování" VerticalAlignment="Top" Width="173"/>
-            <Slider x:Name="Scroll" Margin="5,0" Minimum="1" IsSnapToTickEnabled="True" TickFrequency="1"/>
+            <Slider x:Name="Scroll" Margin="5,0" Minimum="1" Maximum="100" Value="3" IsSnapToTickEnabled="True" TickFrequency="1"/>
             <Button Margin="10" Height="20" Content="Uložit" Click="Uloz_Click"></Button>
 
         </StackPanel>

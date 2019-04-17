@@ -11,7 +11,7 @@ namespace Either_Mouse
         public string jmeno;
 
         public int Citlivost = 10;
-        public int Click = 2;
+        public int Click = 500;
         public int Scroll = 3;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,6 +23,18 @@ namespace Either_Mouse
     {
 
         List<Zarizeni> zarizenis = new List<Zarizeni>();
+
+        public const UInt32 SPI_SETMOUSESPEED = 0x0071;
+        public const UInt32 SPI_SETWHEELSCROLLLINES = 0x0069;
+        public const UInt32 SPI_SETDOUBLECLICKTIME = 0x0020;
+
+        [DllImport("User32.dll")]
+        static extern Boolean SystemParametersInfo(
+        UInt32 uiAction,
+        UInt32 uiParam,
+        UInt32 pvParam,
+        UInt32 fWinIni);
+
         public MainWindow()
         {
             InitializeComponent();
@@ -31,7 +44,7 @@ namespace Either_Mouse
 
         public void NactiZarizeni()
         {
-            zarizenis.Add(new Zarizeni() { jmeno = "Mys" });
+            zarizenis.Add(new Zarizeni() { jmeno = "Default" });
         }
         public void vypis_zarizeni()
         {
@@ -57,6 +70,7 @@ namespace Either_Mouse
                         Citlivost.Value = zarizeni.Citlivost;
                         Dvojklik.Value = zarizeni.Click;
                         Scroll.Value = zarizeni.Scroll;
+                        nastav_nastaveny(zarizeni);
                     }
                 }
             }
@@ -64,10 +78,21 @@ namespace Either_Mouse
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            zarizenis.Add(new Zarizeni { jmeno = Name.Text });
-            vypis_zarizeni();
-            Uloz_zarizeni();
-            Name.Text = null;
+            bool jmeno_existuje = false;
+            foreach (Zarizeni zarizeni in zarizenis)
+            {
+                if (zarizeni.jmeno == Name.Text)
+                {
+                    jmeno_existuje = true;
+                }
+            }
+            if (!jmeno_existuje)
+            {
+                zarizenis.Add(new Zarizeni { jmeno = Name.Text });
+                vypis_zarizeni();
+                Uloz_zarizeni();
+                Name.Text = null;
+            }
         }
 
         public void Uloz_zarizeni()
@@ -89,9 +114,49 @@ namespace Either_Mouse
                         zarizeni.Citlivost = int.Parse(Citlivost.Value.ToString());
                         zarizeni.Click = int.Parse(Dvojklik.Value.ToString());
                         zarizeni.Scroll = int.Parse(Scroll.Value.ToString());
+                        nastav_nastaveny(zarizeni);
                     }
                 }
             }
         }
+
+        private void nastav_nastaveny(Zarizeni zarizeni)
+        {
+            nastav_speed(uint.Parse(zarizeni.Citlivost.ToString()));
+            nastav_scroll(uint.Parse(zarizeni.Scroll.ToString()));
+            nastav_click(uint.Parse(zarizeni.Click.ToString()));
+
+        }
+        private void nastav_speed(uint citlivost)
+        {
+            SystemParametersInfo
+           (
+           SPI_SETMOUSESPEED,
+           0,
+           citlivost,
+           0
+           );
+        }
+        private void nastav_scroll(uint scroll)
+        {
+            SystemParametersInfo
+            (
+                SPI_SETWHEELSCROLLLINES,
+                scroll,
+                0,                
+                0
+            );
+        }
+        private void nastav_click(uint click)
+        {
+           SystemParametersInfo
+           (
+               SPI_SETDOUBLECLICKTIME,
+               click,
+               0,
+               0
+           );
+        }
+
     }
 }
