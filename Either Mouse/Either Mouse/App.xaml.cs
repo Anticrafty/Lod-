@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.ComponentModel;
+using System.Windows.Controls;
 
 namespace Either_Mouse
 {
@@ -41,6 +42,7 @@ namespace Either_Mouse
 
         private void ThisBiEmpty()
         {
+            Either_Mouse.MainWindow.zarizeninini.SelectedIndex = 0;
             _BiEmpty = true;
             MainWindow.Close();
             _NotifikacniIkona.Dispose();

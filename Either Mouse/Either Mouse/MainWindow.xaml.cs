@@ -21,12 +21,15 @@ namespace Either_Mouse
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static  ComboBox zarizeninini;
 
         List<Zarizeni> zarizenis = new List<Zarizeni>();
 
         public const UInt32 SPI_SETMOUSESPEED = 0x0071;
         public const UInt32 SPI_SETWHEELSCROLLLINES = 0x0069;
         public const UInt32 SPI_SETDOUBLECLICKTIME = 0x0020;
+
+        public JSON soubory = new JSON(null);
 
         [DllImport("User32.dll")]
         static extern Boolean SystemParametersInfo(
@@ -45,6 +48,11 @@ namespace Either_Mouse
         public void NactiZarizeni()
         {
             zarizenis.Add(new Zarizeni() { jmeno = "Default" });
+            foreach ( Zarizeni zarizeni in soubory.nacti_zarizeni())
+            {
+                zarizenis.Add(zarizeni);
+            }
+            zarizeninini = Zarizeninini;
         }
         public void vypis_zarizeni()
         {
@@ -97,7 +105,17 @@ namespace Either_Mouse
 
         public void Uloz_zarizeni()
         {
-            
+            List<Zarizeni> ukladany = new List<Zarizeni>();
+            int id_zarizeni = 0;
+            foreach(Zarizeni zarizeni in zarizenis)
+            {
+                if(id_zarizeni != 0)
+                {
+                    ukladany.Add(zarizeni);
+                }
+                id_zarizeni++;
+            }
+            soubory.uloz_zarizeni(ukladany);
         }
 
         private void Uloz_Click(object sender, RoutedEventArgs e)
@@ -109,12 +127,13 @@ namespace Either_Mouse
                 string urceny_jmeno = urceny_text.Text;
                 foreach (Zarizeni zarizeni in zarizenis)
                 {
-                    if (zarizeni.jmeno == urceny_jmeno)
+                    if (zarizeni.jmeno == urceny_jmeno && urceny_jmeno != "Default")
                     {
                         zarizeni.Citlivost = int.Parse(Citlivost.Value.ToString());
                         zarizeni.Click = int.Parse(Dvojklik.Value.ToString());
                         zarizeni.Scroll = int.Parse(Scroll.Value.ToString());
                         nastav_nastaveny(zarizeni);
+                        Uloz_zarizeni();
                     }
                 }
             }
